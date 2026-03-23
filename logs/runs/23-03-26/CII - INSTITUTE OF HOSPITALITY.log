@@ -1,0 +1,46 @@
+2026-03-23 13:49:09 - INFO - [CII - INSTITUTE OF HOSPITALITY] Open URL, login...
+2026-03-23 13:49:28 - INFO - [CII - INSTITUTE OF HOSPITALITY] Campaign Detailed View (/campaign/details)…
+2026-03-23 13:49:29 - INFO - [CII - INSTITUTE OF HOSPITALITY] Sidebar: Campaigns → Detailed View
+2026-03-23 13:49:29 - INFO - [CII - INSTITUTE OF HOSPITALITY] Clicked Detailed View (accessible name)
+2026-03-23 13:49:31 - INFO - [CII - INSTITUTE OF HOSPITALITY] Campaign Detailed View UI ready (after sidebar)
+2026-03-23 13:49:31 - INFO - [CII - INSTITUTE OF HOSPITALITY] Waiting 2500ms after Detailed View for institute list / filters to load…
+2026-03-23 13:49:34 - INFO - [CII - INSTITUTE OF HOSPITALITY] Fill institute...
+2026-03-23 13:49:36 - INFO - [CII - INSTITUTE OF HOSPITALITY] Fill source...
+2026-03-23 13:49:38 - INFO - [CII - INSTITUTE OF HOSPITALITY] Fill date range...
+2026-03-23 13:49:45 - INFO - Date range: 01-10-2025 - 23-03-2026
+2026-03-23 13:49:45 - INFO - [CII - INSTITUTE OF HOSPITALITY] Apply Paid Applications = Yes...
+2026-03-23 13:49:47 - INFO - [CII - INSTITUTE OF HOSPITALITY] Search...
+2026-03-23 13:50:03 - INFO - [CII - INSTITUTE OF HOSPITALITY] Page 1: 0 records
+2026-03-23 13:50:33 - INFO - [CII - INSTITUTE OF HOSPITALITY] Pagination error on page 2: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("a[aria-label='Next']").nth(1)
+    - locator resolved to <a _ngcontent-c13="" aria-label="Next" class="page-link" href="javascript:void(0)">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div _ngcontent-c25="" class="fixed-loader ng-tns-c25-2 ng-star-inserted">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div _ngcontent-c25="" class="fixed-loader ng-tns-c25-2 ng-star-inserted">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div _ngcontent-c25="" class="fixed-loader ng-tns-c25-2 ng-star-inserted">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+2026-03-23 13:50:33 - INFO - [CII - INSTITUTE OF HOSPITALITY] No API data – falling back to DOM scraping
+2026-03-23 13:50:41 - INFO - DOM fallback error: Page.wait_for_selector: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator("app-leadsdatatable table thead tr th") to be visible
+
+2026-03-23 13:50:41 - INFO - [CII - INSTITUTE OF HOSPITALITY] No records captured

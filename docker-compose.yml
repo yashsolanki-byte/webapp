@@ -1,0 +1,13 @@
+# Optional: Redis only — then run from project root:
+#   docker compose up -d
+#   python run_stack.py
+#
+# This gives you one command for Redis if you use Docker; the app + workers
+# still start via run_stack.py (or start workers separately).
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    restart: unless-stopped

@@ -1,0 +1,141 @@
+2026-03-23 13:05:45 - INFO - ============================================================
+2026-03-23 13:05:45 - INFO - 127.0.0.1 - - [23/Mar/2026 13:05:45] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:05:45 - INFO - Script_Scraper - Nopaperforms Data Scraper
+2026-03-23 13:05:45 - INFO - Log file: C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\logs\script\script_scraper_20260323_130545.log
+2026-03-23 13:05:45 - INFO - ============================================================
+2026-03-23 13:05:47 - INFO - 127.0.0.1 - - [23/Mar/2026 13:05:47] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:05:49 - INFO - 127.0.0.1 - - [23/Mar/2026 13:05:49] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:05:51 - INFO - 127.0.0.1 - - [23/Mar/2026 13:05:51] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:05:53 - INFO - 127.0.0.1 - - [23/Mar/2026 13:05:53] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:05:55 - INFO - 127.0.0.1 - - [23/Mar/2026 13:05:55] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:05:57 - INFO - 127.0.0.1 - - [23/Mar/2026 13:05:57] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:05:59 - INFO - 127.0.0.1 - - [23/Mar/2026 13:05:59] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:00 - INFO - Playwright Chromium browser is working
+2026-03-23 13:06:01 - INFO - NumExpr defaulting to 8 threads.
+2026-03-23 13:06:01 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:01] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:03 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:03] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:03 - INFO - Step 1: Logging in...
+2026-03-23 13:06:05 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:05] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:07 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:07] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:08 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-23 13:06:08 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-23 13:06:08 - INFO - Step 2: Selecting institute and source...
+2026-03-23 13:06:09 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:09] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:10 - INFO - Skipping Instance filter
+2026-03-23 13:06:10 - INFO - Skipping advanced filters (none selected)
+2026-03-23 13:06:10 - INFO - Skipping sub-filter options (none selected)
+2026-03-23 13:06:10 - INFO - Applying date filter...
+2026-03-23 13:06:10 - WARNING - Date parse error: Unsupported date format: 22-03-26
+2026-03-23 13:06:10 - INFO - ⚠️ Invalid date format: Unsupported date format: 22-03-26
+2026-03-23 13:06:11 - INFO - Page not ready – neither 'No Record Found' nor 'Total ... Primary Leads' detected
+2026-03-23 13:06:11 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:11] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:17 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:17] "POST /api/manual-scrape/run HTTP/1.1" 200 -
+2026-03-23 13:06:17 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:17] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:18 - INFO - Step 1: Logging in...
+2026-03-23 13:06:19 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:19] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:21 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:21] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:21 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-23 13:06:21 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-23 13:06:21 - INFO - Step 2: Selecting institute and source...
+2026-03-23 13:06:22 - INFO - Skipping Instance filter
+2026-03-23 13:06:22 - INFO - Skipping advanced filters (none selected)
+2026-03-23 13:06:22 - INFO - Skipping sub-filter options (none selected)
+2026-03-23 13:06:22 - INFO - Applying date filter...
+2026-03-23 13:06:22 - WARNING - Date parse error: Unsupported date format: 22-03-26
+2026-03-23 13:06:22 - INFO - ⚠️ Invalid date format: Unsupported date format: 22-03-26
+2026-03-23 13:06:23 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:23] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:23 - INFO - Page not ready – neither 'No Record Found' nor 'Total ... Primary Leads' detected
+2026-03-23 13:06:25 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:25] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:46 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:46] "POST /api/manual-scrape/run HTTP/1.1" 200 -
+2026-03-23 13:06:46 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:46] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:47 - INFO - Step 1: Logging in...
+2026-03-23 13:06:48 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:48] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:50 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:50] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:50 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-23 13:06:50 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-23 13:06:50 - INFO - Step 2: Selecting institute and source...
+2026-03-23 13:06:51 - INFO - Skipping Instance filter
+2026-03-23 13:06:51 - INFO - Skipping advanced filters (none selected)
+2026-03-23 13:06:51 - INFO - Skipping sub-filter options (none selected)
+2026-03-23 13:06:51 - INFO - Applying date filter...
+2026-03-23 13:06:51 - WARNING - Date parse error: Unsupported date format: 22-03-26
+2026-03-23 13:06:51 - INFO - ⚠️ Invalid date format: Unsupported date format: 22-03-26
+2026-03-23 13:06:52 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:52] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:06:52 - INFO - Page not ready – neither 'No Record Found' nor 'Total ... Primary Leads' detected
+2026-03-23 13:06:54 - INFO - 127.0.0.1 - - [23/Mar/2026 13:06:54] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:07:15 - INFO - 127.0.0.1 - - [23/Mar/2026 13:07:15] "GET /api/scraper-logs/dates HTTP/1.1" 200 -
+2026-03-23 13:07:15 - INFO - 127.0.0.1 - - [23/Mar/2026 13:07:15] "GET /api/settings/auth-summary HTTP/1.1" 200 -
+2026-03-23 13:07:30 - INFO - 127.0.0.1 - - [23/Mar/2026 13:07:30] "GET /api/institutes HTTP/1.1" 200 -
+2026-03-23 13:07:30 - INFO - 127.0.0.1 - - [23/Mar/2026 13:07:30] "GET /api/manual-scrape/urls HTTP/1.1" 200 -
+2026-03-23 13:07:57 - INFO - 127.0.0.1 - - [23/Mar/2026 13:07:57] "POST /api/manual-scrape/run HTTP/1.1" 200 -
+2026-03-23 13:07:57 - INFO - 127.0.0.1 - - [23/Mar/2026 13:07:57] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:07:59 - INFO - Step 1: Logging in...
+2026-03-23 13:07:59 - INFO - 127.0.0.1 - - [23/Mar/2026 13:07:59] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:01 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:01] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:02 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-23 13:08:02 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-23 13:08:02 - INFO - Step 2: Selecting institute and source...
+2026-03-23 13:08:03 - INFO - Skipping Instance filter
+2026-03-23 13:08:03 - INFO - Skipping advanced filters (none selected)
+2026-03-23 13:08:03 - INFO - Skipping sub-filter options (none selected)
+2026-03-23 13:08:03 - INFO - Applying date filter...
+2026-03-23 13:08:03 - WARNING - Date parse error: Unsupported date format: 22-02-26
+2026-03-23 13:08:03 - INFO - ⚠️ Invalid date format: Unsupported date format: 22-02-26
+2026-03-23 13:08:03 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:03] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:04 - INFO - Page not ready – neither 'No Record Found' nor 'Total ... Primary Leads' detected
+2026-03-23 13:08:05 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:05] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:20 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:20] "POST /api/manual-scrape/run HTTP/1.1" 200 -
+2026-03-23 13:08:20 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:20] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:21 - INFO - Step 1: Logging in...
+2026-03-23 13:08:22 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:22] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:24 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:24] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:25 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-23 13:08:25 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-23 13:08:25 - INFO - Step 2: Selecting institute and source...
+2026-03-23 13:08:26 - INFO - Skipping Instance filter
+2026-03-23 13:08:26 - INFO - Skipping advanced filters (none selected)
+2026-03-23 13:08:26 - INFO - Skipping sub-filter options (none selected)
+2026-03-23 13:08:26 - INFO - Applying date filter...
+2026-03-23 13:08:26 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:26] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:28 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:28] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:30 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:30] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:32 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:32] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:34 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:34] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:34 - INFO - Date range selected: 22-02-2026 - 23-02-2026
+2026-03-23 13:08:36 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:36] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:37 - INFO - Waiting 5s for page to load...
+2026-03-23 13:08:38 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:38] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:40 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:40] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:42 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:42] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:43 - INFO - ✅ Date filter applied successfully
+2026-03-23 13:08:43 - INFO - Page not ready – neither 'No Record Found' nor 'Total ... Primary Leads' detected
+2026-03-23 13:08:44 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:44] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:57 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:57] "POST /api/manual-scrape/run HTTP/1.1" 200 -
+2026-03-23 13:08:57 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:57] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:08:58 - INFO - Step 1: Logging in...
+2026-03-23 13:08:59 - INFO - 127.0.0.1 - - [23/Mar/2026 13:08:59] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:09:01 - INFO - 127.0.0.1 - - [23/Mar/2026 13:09:01] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:09:02 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-23 13:09:02 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-23 13:09:02 - INFO - Step 2: Selecting institute and source...
+2026-03-23 13:09:03 - INFO - 127.0.0.1 - - [23/Mar/2026 13:09:03] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:09:03 - INFO - Skipping Instance filter
+2026-03-23 13:09:03 - INFO - Skipping advanced filters (none selected)
+2026-03-23 13:09:03 - INFO - Skipping sub-filter options (none selected)
+2026-03-23 13:09:03 - INFO - Applying date filter...
+2026-03-23 13:09:05 - INFO - 127.0.0.1 - - [23/Mar/2026 13:09:05] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:09:07 - INFO - 127.0.0.1 - - [23/Mar/2026 13:09:07] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:09:09 - INFO - 127.0.0.1 - - [23/Mar/2026 13:09:09] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:09:11 - INFO - 127.0.0.1 - - [23/Mar/2026 13:09:11] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:09:13 - INFO - 127.0.0.1 - - [23/Mar/2026 13:09:13] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:09:14 - INFO - Date range selected: 22-02-2026 - 23-02-2026
+2026-03-23 13:09:15 - INFO - 127.0.0.1 - - [23/Mar/2026 13:09:15] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:09:16 - INFO - Waiting 5s for page to load...
+2026-03-23 13:09:17 - INFO - 127.0.0.1 - - [23/Mar/2026 13:09:17] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:09:19 - INFO - 127.0.0.1 - - [23/Mar/2026 13:09:19] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:09:21 - INFO - 127.0.0.1 - - [23/Mar/2026 13:09:21] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:09:22 - INFO - ✅ Date filter applied successfully
+2026-03-23 13:09:22 - INFO - Capturing screenshot...
+2026-03-23 13:09:23 - INFO - 127.0.0.1 - - [23/Mar/2026 13:09:23] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-23 13:09:23 - INFO - ✅ Screenshot saved to C:\Users\CollegeDunia\Downloads\Woxsen University_23-03-26_130857.png
+2026-03-23 13:09:25 - INFO - 127.0.0.1 - - [23/Mar/2026 13:09:25] "GET /api/manual-scrape/status HTTP/1.1" 200 -

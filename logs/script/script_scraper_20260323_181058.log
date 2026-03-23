@@ -1,0 +1,21 @@
+2026-03-23 18:10:58 - INFO - ============================================================
+2026-03-23 18:10:58 - INFO - Script_Scraper - Nopaperforms Data Scraper
+2026-03-23 18:10:58 - INFO - Log file: C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\logs\script\script_scraper_20260323_181058.log
+2026-03-23 18:10:58 - INFO - ============================================================
+2026-03-23 18:11:23 - INFO - Playwright Chromium browser is working
+2026-03-23 18:11:25 - INFO - NumExpr defaulting to 8 threads.
+2026-03-23 18:11:30 - INFO - Step 1: Logging in...
+2026-03-23 18:11:39 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-23 18:11:39 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-23 18:11:39 - INFO - Step 2: Selecting institute and source...
+2026-03-23 18:11:40 - INFO - Skipping Instance filter
+2026-03-23 18:11:40 - INFO - Skipping advanced filters (none selected)
+2026-03-23 18:11:40 - INFO - Skipping sub-filter options (none selected)
+2026-03-23 18:11:40 - INFO - Applying date filter...
+2026-03-23 18:11:49 - INFO - Date range selected: 22-03-2026 - 23-03-2026
+2026-03-23 18:11:53 - INFO - Waiting 5s for page to load...
+2026-03-23 18:11:59 - INFO - ✅ Date filter applied successfully
+2026-03-23 18:12:00 - INFO - Capturing screenshot...
+2026-03-23 18:12:01 - INFO - ✅ Screenshot saved to C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\data\runtime\manual_jobs\07de16fb-d33e-4fff-806f-f515894de53a\screenshot.png
+2026-03-23 18:12:01 - INFO - [32mmanual_scrape[39;49;00m: [34mJob OK[39;49;00m (07de16fb-d33e-4fff-806f-f515894de53a)
+2026-03-23 18:12:01 - INFO - Result is kept for 500 seconds

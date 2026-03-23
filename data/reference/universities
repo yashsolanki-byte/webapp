@@ -1,0 +1,151 @@
+index	url	email	pass	university	source	File_name	Current_status	college_id	pcid	FI
+48	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		ABBS Institute	Collegedunia	ABBS Institute_01-10-2025_19-03-2026.csv	03/19/2026	0	0	11
+23	https://publisher.nopaperforms.com/login	central.crm@collegedunia.com		Alliance University	Collegedunia	Alliance University_01-10-2025_19-03-2026.csv	"failed: Page.wait_for_selector: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""ngb-datepicker"") to be visible
+    25 × locator resolved to hidden <ngb-datepicker _nghost-c20="""" _ngcontent-c15="""">…</ngb-datepicker>
+"	25591	72756	11
+108	https://publisher.nopaperforms.com/login	sanjay.meena@collegedunia.com		AURO UNIVERSITY	Collegedunia	AURO UNIVERSITY_01-10-2025_19-03-2026.csv	"failed: Page.wait_for_selector: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""ngb-datepicker"") to be visible
+    25 × locator resolved to hidden <ngb-datepicker _nghost-c20="""" _ngcontent-c15="""">…</ngb-datepicker>
+"	25478	75634	11
+136	https://publisher.nopaperforms.com/login	central.crm@collegedunia.com		Bennett University	Collegedunia	Bennett University_01-10-2025_19-03-2026.csv	"failed: Page.wait_for_selector: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator(""ngb-datepicker"") to be visible
+    25 × locator resolved to hidden <ngb-datepicker _nghost-c20="""" _ngcontent-c15="""">…</ngb-datepicker>
+"	55776	75089	11
+19	https://publisher.in5.nopaperforms.com/lead/details	central.crm@collegedunia.com		Bharathidasan Institute of Management	College dunia	Bharathidasan Institute of Management_01-10-2025_19-03-2026.csv	03/19/2026	17354	73163	11
+11	https://publisher.nopaperforms.com/login	sanjay.meena@collegedunia.com		BIMTECH, Greater Noida	Collegedunia	BIMTECH, Greater Noida_01-10-2025_19-03-2026.csv	03/19/2026	17377	72461	11
+11	https://publisher.nopaperforms.com/login	sanjay.meena@collegedunia.com		BIMTECH, Greater Noida	Collegedunia	BIMTECH, Greater Noida_01-10-2025_19-03-2026.csv	03/19/2026	17377	72461	11
+56	https://publisher.nopaperforms.com/login	sanjay.meena@collegedunia.com		BIRLA GLOBAL UNIVERSITY	Collegedunia	BIRLA GLOBAL UNIVERSITY_01-10-2025_19-03-2026.csv	03/19/2026	55881	73442	11
+8	https://publisher.in6.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Unitedworld Institute of Design (UID)	Collegedunia		Paid application not found	5928	72471	11
+114	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		BM Group of Institutions	Collegedunia	BM Group of Institutions_01-10-2025_19-03-2026.csv	03/19/2026	12942	75703	11
+51	https://publisher.in8.nopaperforms.com/login	sanjay.meena@collegedunia.com		CENTURION UNIVERSITY OF TECHNOLOGY AND MANAGEMENT	Collegedunia	CENTURION UNIVERSITY OF TECHNOLOGY AND MANAGEMENT_01-10-2025_19-03-2026.csv	03/19/2026	25757	74162	11
+46	https://publisher.in4.nopaperforms.com/login	central.crm@collegedunia.com		CGC University, Mohali	Collegedunia	CGC University, Mohali_01-10-2025_19-03-2026.csv	03/19/2026	57350	72946	11
+131	https://publisher.in4.nopaperforms.com/lead/details	central.crm@collegedunia.com		CII - INSTITUTE OF HOSPITALITY	Collegedunia	CII - INSTITUTE OF HOSPITALITY_01-10-2025_19-03-2026.csv	03/19/2026	62763	76012	11
+101	https://publisher.in8.nopaperforms.com/login	central.crm@collegedunia.com		Dev Bhoomi Uttarakhand University	Collegedunia	Dev Bhoomi Uttarakhand University_01-10-2025_19-03-2026.csv	03/19/2026	63221	76033	11
+68	https://publisher.in4.nopaperforms.com/	central.crm@collegedunia.com		Dnyaan Prasad Global University	Collegedunia	Dnyaan Prasad Global University_01-10-2025_19-03-2026.csv	03/19/2026	65584	73383	11
+15	https://publisher.in8.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		The Design Village Foundation	Collegedunia		03/17/2026	58096	72890	11
+0	https://publisher.in5.nopaperforms.com/	central.crm@collegedunia.com		Dr. DY Patil School of Design	Collegedunia	Dr. DY Patil School of Design_01-10-2025_19-03-2026.csv	03/17/2026	63771	72385	11
+17	https://publisher.in5.nopaperforms.com/	sanjay.meena@collegedunia.com		ATLAS SkillTech University	Collegedunia		03/17/2026	62742	72754	11
+40	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		EMPI Business School	Collegedunia	EMPI Business School_01-10-2025_19-03-2026.csv	03/17/2026	17570	73487	11
+1	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		Firebird Institute of Research in Management	Collegedunia	Firebird Institute of Research in Management_01-10-2025_19-03-2026.csv	03/17/2026	59231	72784	11
+18	https://publisher.in8.nopaperforms.com/lead/details	central.crm@collegedunia.com		Galileo Global Education	Collegedunia	Galileo Global Education_01-10-2025_19-03-2026.csv	03/17/2026	62342	72895	11
+99	https://publisher.in6.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Geeta University	Collegedunia	Geeta University_01-10-2025_19-03-2026.csv	03/17/2026	57449	75726	11
+25	https://publisher.in4.nopaperforms.com/lead/details	central.crm@collegedunia.com		GEMS B SCHOOL	Collegedunia	GEMS B SCHOOL_01-10-2025_19-03-2026.csv	03/17/2026	17721	72738	11
+3	https://publisher.nopaperforms.com/login	central.crm@collegedunia.com		GIBS Business School, Bengaluru	Collegedunia	GIBS Business School, Bengaluru_01-10-2025_19-03-2026.csv	03/17/2026	56795	72260	11
+24	https://publisher.nopaperforms.com/	sanjay.meena@collegedunia.com		SDA Bocconi Asia Center	Collegedunia		03/17/2026	55142	72543	11
+9	https://publisher.nopaperforms.com/login	central.crm@collegedunia.com		GIBS Business School, Bengaluru	Collegedunia	GIBS Business School, Bengaluru_01-10-2025_19-03-2026.csv	03/17/2026	56795	72260	11
+29	https://publisher.nopaperforms.com/login	central.crm@collegedunia.com		GIBS Business School, Bengaluru	Collegedunia	GIBS Business School, Bengaluru_01-10-2025_19-03-2026.csv	03/17/2026	56795	72260	11
+49	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Globsyn Business School	Collegedunia	Globsyn Business School_01-10-2025_19-03-2026.csv	03/17/2026	57279	73429	11
+28	https://publisher.in8.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Delhi School of Business	Collegedunia		03/17/2026	45105	72247	11
+75	https://publisher.in6.nopaperforms.com/login	sanjay.meena@collegedunia.com		GNANAM SCHOOL OF BUSINESS	Collegedunia	GNANAM SCHOOL OF BUSINESS_01-10-2025_19-03-2026.csv	03/17/2026	17704	74301	11
+98	https://publisher.in4.nopaperforms.com/lead/details	central.crm@collegedunia.com		Graphic Era Deemed to be University	Collegedunia	Graphic Era Deemed to be University_01-10-2025_19-03-2026.csv	03/17/2026	25985	76394	11
+39	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Greater Noida Institute of Technology (GNIOT)	Collegedunia	Greater Noida Institute of Technology (GNIOT)_01-10-2025_19-03-2026.csv	03/17/2026	0	0	11
+126	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		IFIM Institutions	Collegedunia	IFIM Institutions_01-10-2025_19-03-2026.csv	03/17/2026	27859	73036	11
+21	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		IFMR GSB, Krea University	Collegedunia	IFMR GSB, Krea University_01-10-2025_18-03-2026.csv	03/17/2026	17952	72613	11
+4	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		IMS Ghaziabad	Collegedunia	IMS Ghaziabad_01-10-2025_19-03-2026.csv	03/17/2026	18036	72256	11
+30	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		IMS Ghaziabad, University Courses Campus	Collegedunia	IMS Ghaziabad, University Courses Campus_01-10-2025_19-03-2026.csv	03/17/2026	59348	72911	11
+27	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		Indian Institute of Art and Design	Collegedunia	Indian Institute of Art and Design_01-10-2025_19-03-2026.csv	03/17/2026	0	0	11
+77	https://publisher.in6.nopaperforms.com/lead/details	central.crm@collegedunia.com		Indian Institute of Fashion Technology	Collegedunia	Indian Institute of Fashion Technology_01-10-2025_19-03-2026.csv	03/17/2026	59469	73280	11
+55	https://publisher.in5.nopaperforms.com/	central.crm@collegedunia.com		Indira University, Pune	Collegedunia	Indira University, Pune_01-10-2025_19-03-2026.csv	03/17/2026	59461	73497	11
+123	https://publisher.in5.nopaperforms.com/login	central.crm@collegedunia.com		Indus Business Academy (IBA), Bangalore	Collegedunia	Indus Business Academy (IBA), Bangalore_01-10-2025_19-03-2026.csv	03/17/2026	17944	75289	11
+130	https://publisher.in5.nopaperforms.com/lead/details	central.crm@collegedunia.com		Indus Business Academy (IBA), Bangalore	Collegedunia	Indus Business Academy (IBA), Bangalore_01-10-2025_19-03-2026.csv	03/17/2026	17944	75289	11
+35	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		International Institute of Business Studies	Collegedunia	International Institute of Business Studies_01-10-2025_19-03-2026.csv	03/17/2026	18088	73446	11
+10	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		International School of Management Excellence	Collegedunia	International School of Management Excellence_01-10-2025_19-03-2026.csv	03/17/2026	18119	72611	11
+44	https://lpupublisher.nopaperforms.com/login	central.crm@collegedunia.com		Lovely Professional University	Collegedunia2		03/17/2026	25787	72467	11
+32	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		INTERNATIONAL SCHOOL OF MANAGEMENT EXCELLENCE	Collegedunia	INTERNATIONAL SCHOOL OF MANAGEMENT EXCELLENCE_01-10-2025_19-03-2026.csv	03/17/2026	18119	72611	11
+33	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		INTERNATIONAL SCHOOL OF MANAGEMENT EXCELLENCE	Collegedunia	INTERNATIONAL SCHOOL OF MANAGEMENT EXCELLENCE_01-10-2025_19-03-2026.csv	03/17/2026	18119	72611	11
+12	https://publisher.in6.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		IQ City United World School of Business	Collegedunia	IQ City United World School of Business_01-10-2025_19-03-2026.csv	03/17/2026	57455	72832	11
+82	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		ISBR Bangalore	Collegedunia	ISBR Bangalore_01-10-2025_19-03-2026.csv	03/17/2026	18107	74091	11
+13	https://publisher.nopaperforms.com/	sanjay.meena@collegedunia.com		ITM Business School	Collegedunia	ITM Business School_01-10-2025_19-03-2026.csv	03/17/2026	17956	72404	11
+5	https://publisher.nopaperforms.com/	sanjay.meena@collegedunia.com		ITM Institute of Design and Media	Collegedunia	ITM Institute of Design and Media_01-10-2025_19-03-2026.csv	03/17/2026	59381	72402	11
+81	https://publisher.in8.nopaperforms.com/	sanjay.meena@collegedunia.com		ITM Skills University	Collegedunia	ITM Skills University_01-10-2025_19-03-2026.csv	03/17/2026	20051316028	0	11
+84	https://publisher.nopaperforms.com/login	sanjay.meena@collegedunia.com		ITS College	Collegedunia	ITS College_01-10-2025_19-03-2026.csv	03/17/2026	13761	76035	11
+54	https://publisher.in8.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Rajalakshmi Institute of Technology	Collegedunia		03/17/2026	14707	73481	11
+64	https://publisher.in6.nopaperforms.com/lead/details	central.crm@collegedunia.com		IZee Business School	Collegedunia	IZee Business School_01-10-2025_19-03-2026.csv	03/17/2026	18128	74097	11
+7	https://publisher.in5.nopaperforms.com/login	central.crm@collegedunia.com		Jagan Institute of Management Studies	Collegedunia	Jagan Institute of Management Studies_01-10-2025_19-03-2026.csv	03/17/2026	18158	72145	11
+42	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		Jagdish Sheth School of Management	Collegedunia	Jagdish Sheth School of Management_01-10-2025_19-03-2026.csv	03/17/2026	60003	0	11
+41	https://publisher.in5.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Jaipuria School Of Business	Collegedunia	Jaipuria School Of Business_01-10-2025_19-03-2026.csv	03/17/2026	59523	73742	11
+50	https://publisher.nopaperforms.com/login	central.crm@collegedunia.com		JD Institute Of Fashion Technology	Collegedunia	JD Institute Of Fashion Technology_01-10-2025_19-03-2026.csv	03/17/2026	59263	73165	11
+60	https://publisher.in5.nopaperforms.com/	sanjay.meena@collegedunia.com		Pillai University -Navi Mumbai	Collegedunia		03/17/2026	57388	0	11
+61	https://publisher.in6.nopaperforms.com/lead/details	central.crm@collegedunia.com		Taxila Business School, Jaipur	Collegedunia		03/17/2026	0	0	11
+43	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		JIMS, Kalkaji	Collegedunia	JIMS, Kalkaji_01-10-2025_19-03-2026.csv	03/17/2026	18161	73041	11
+63	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		JBIT Group of Institutions	Collegedunia		03/17/2026	28468	73635	11
+140	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		JK Lakshmipat University	Collegedunia	JK Lakshmipat University_01-10-2025_18-03-2026.csv	03/17/2026	25812	75032	11
+134	https://publisher.nopaperforms.com/login	sanjay.meena@collegedunia.com		Kalinga Institute of Industrial Technology	Collegedunia	Kalinga Institute of Industrial Technology_01-10-2025_18-03-2026.csv	03/17/2026	25760	76676	11
+26	https://publisher.in6.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Karnavati University	Collegedunia	Karnavati University_01-10-2025_18-03-2026.csv	03/17/2026	59251	72473	11
+67	https://publisher.nopaperforms.com/	sanjay.meena@collegedunia.com		ITM Institute of Hotel Management	Collegedunia		03/17/2026	7939	73321	11
+137	https://publisher.in5.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		KCC Group of Institutions	Collegedunia	KCC Group of Institutions_01-10-2025_18-03-2026.csv	03/17/2026	59494	76915	11
+69	https://publisher.nopaperforms.com/login	central.crm@collegedunia.com		Ecole Intuit Lab	Collegedunia		03/17/2026	0	0	11
+70	https://publisher.in4.nopaperforms.com/	central.crm@collegedunia.com		Dr. D. Y. Patil B-School	Collegedunia		03/17/2026	62203	0	11
+71	https://publisher.in8.nopaperforms.com/lead/details	central.crm@collegedunia.com		EIMR Business School	Collegedunia		03/17/2026	64870	73421	11
+72	https://publisher.in6.nopaperforms.com/	central.crm@collegedunia.com		Whistling Woods International	Collegedunia		03/17/2026	7516	73440	11
+138	https://publisher.in5.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		KCC Group of Institutions	Collegedunia	KCC Group of Institutions_01-10-2025_18-03-2026.csv	03/17/2026	59494	76915	11
+74	https://publisher.in5.nopaperforms.com/lead/details	central.crm@collegedunia.com		Gian Jyoti Institute of Management and Technology, Mohali	Collegedunia		03/17/2026	17673	74093	11
+87	https://publisher.in5.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		KIET Deemed to be University	Collegedunia	KIET Deemed to be University_01-10-2025_18-03-2026.csv	03/17/2026	14038	75749	11
+76	https://publisher.in4.nopaperforms.com/	central.crm@collegedunia.com		DPGU - SBS & SMR (DY Patil Unitech Society)	Collegedunia		03/17/2026	65779	0	11
+31	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		Lal Bahadur Shastri Institute of Management, Delhi	Collegedunia	Lal Bahadur Shastri Institute of Management, Delhi_01-10-2025_18-03-2026.csv	03/17/2026	18325	72119	11
+78	https://publisher.in4.nopaperforms.com/	central.crm@collegedunia.com		DPGU - SBS & SMR (DY Patil Unitech Society)	Collegedunia		03/17/2026	65779	0	11
+79	https://publisher.in6.nopaperforms.com/lead/details	central.crm@collegedunia.com		Soundarya Institute of Management and Science	Collegedunia		03/17/2026	59427	75766	11
+80	https://publisher.in6.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		RMS Business School Gurugram (Delhi NCR)	Collegedunia		03/17/2026	64761	73423	11
+112	https://publisher.in8.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Lead College of Management	Collegedunia	Lead College of Management_01-10-2025_18-03-2026.csv	03/17/2026	55254	74676	11
+22	https://publisher.nopaperforms.com/	central.crm@collegedunia.com		Lexicon MILE	Collegedunia	Lexicon MILE_01-10-2025_18-03-2026.csv	03/17/2026	45303	72371	11
+83	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		ITS Mohan Nagar Campus, Ghaziabad	Collegedunia		03/17/2026	0	0	11
+20	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		LISAA SCHOOL OF DESIGN	Collegedunia	LISAA SCHOOL OF DESIGN_01-10-2025_18-03-2026.csv	03/17/2026	59471	72230	11
+91	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		LM THAPAR SCHOOL OF MANAGEMENT	Collegedunia	LM THAPAR SCHOOL OF MANAGEMENT_01-10-2025_18-03-2026.csv	03/17/2026	57202	75319	11
+6	https://publisher.in8.nopaperforms.com/login	sanjay.meena@collegedunia.com		Management Development Institute	Collegedunia	Management Development Institute_01-10-2025_18-03-2026.csv	03/17/2026	27696	0	11
+16	https://publisher.in5.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Management Education And Research Institute	Collegedunia	Management Education And Research Institute_01-10-2025_18-03-2026.csv	03/17/2026	0	0	11
+89	https://publisher.in8.nopaperforms.com/login	central.crm@collegedunia.com		GRD IMT	Collegedunia		03/17/2026	17643	74941	11
+90	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		SRM University Delhi-NCR, Sonepat	Collegedunia		03/17/2026	54838	74672	11
+66	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		Mangalmay Group of Institution	Collegedunia	Mangalmay Group of Institution_01-10-2025_18-03-2026.csv	03/17/2026	0	0	11
+92	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		CGC, Landran	Collegedunia		03/17/2026	28064	75134	11
+93	https://publisher.in5.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		JAIPUR NATIONAL UNIVERSITY	Collegedunia		03/17/2026	25819	75291	11
+94	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Arya College of Engineering and IT	Collegedunia		03/17/2026	0	0	11
+37	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		MICA	Collegedunia	MICA_01-10-2025_18-03-2026.csv	03/17/2026	7440	73507	11
+96	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		KR Mangalam university	Collegedunia		03/17/2026	25462	76334	11
+97	https://publisher.in8.nopaperforms.com/login	central.crm@collegedunia.com		Delhi Metropolitan Education	Collegedunia		03/17/2026	57706	75746	11
+52	https://publisher.in6.nopaperforms.com/lead/details	central.crm@collegedunia.com		MIT Vishwaprayag University	Collegedunia	MIT Vishwaprayag University_01-10-2025_18-03-2026.csv	03/17/2026	64774	73544	11
+38	https://publisher.in5.nopaperforms.com/	sanjay.meena@collegedunia.com		MIT-WPU Pune	Collegedunia	MIT-WPU Pune_01-10-2025_18-03-2026.csv	03/17/2026	0	0	11
+100	https://publisher.in6.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Geeta Institue of Law	Collegedunia		03/17/2026	8740	75935	11
+141	https://publisher.in5.nopaperforms.com/lead/details	Amit.swami@collegedunia.com		Mody University	Collegedunia	Mody University_01-10-2025_18-03-2026.csv	03/17/2026	28802	76371	11
+14	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		MYRA School of Business	Collegedunia	MYRA School of Business_01-10-2025_18-03-2026.csv	03/17/2026	45373	72249	11
+103	https://publisher.in8.nopaperforms.com/	central.crm@collegedunia.com		MIT AOE	Collegedunia		03/17/2026	64709	75640	11
+119	https://publisher.in5.nopaperforms.com/	central.crm@collegedunia.com		N. L. Dalmia Institute of Management Studies and Research	Collegedunia	N. L. Dalmia Institute of Management Studies and Research_01-10-2025_18-03-2026.csv	03/17/2026	57820	75515	11
+105	https://publisher.in6.nopaperforms.com/lead/details	central.crm@collegedunia.com		Remo International College (RIC)	Collegedunia		03/17/2026	59918	76540	11
+106	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		East Point Group of Institutions	Collegedunia		03/17/2026	13428	75169	11
+125	https://publisher.in5.nopaperforms.com/	central.crm@collegedunia.com		N. L. Dalmia Institute of Management Studies and Research	Collegedunia	N. L. Dalmia Institute of Management Studies and Research_01-10-2025_18-03-2026.csv	03/17/2026	57820	75515	11
+62	https://publisher.in8.nopaperforms.com/lead/details	central.crm@collegedunia.com		Narayana Business School	Collegedunia	Narayana Business School_01-10-2025_18-03-2026.csv	03/17/2026	45397	73123	11
+109	https://publisher.in8.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Swami Devi Dyal Group of Professional Institutes	Collegedunia		03/17/2026	0	0	11
+111	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		East Point Group of Institutions	Collegedunia		03/17/2026	13428	75169	11
+59	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		NIIT University	Collegedunia	NIIT University_01-10-2025_18-03-2026.csv	03/17/2026	25835	72957	11
+86	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Quantum University	Collegedunia	Quantum University_01-10-2025_18-03-2026.csv	03/17/2026	0	0	11
+58	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Rajalakshmi School of Business	Collegedunia	Rajalakshmi School of Business_01-10-2025_18-03-2026.csv	03/17/2026	56977	73493	11
+115	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		RV University	Collegedunia	RV University_01-10-2025_14-03-2026.csv	03/17/2026	60480	74790	11
+116	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Karunya Institute of Technology and Sciences	Collegedunia		03/17/2026	25885	75513	11
+104	https://publisher.in4.nopaperforms.com/login	central.crm@collegedunia.com		RV University, Mysore	Collegedunia	RV University, Mysore_01-10-2025_18-03-2026.csv	03/17/2026	261583711121	0	11
+121	https://publisher.in4.nopaperforms.com/login	central.crm@collegedunia.com		RV University, Mysore	Collegedunia	RV University, Mysore_01-10-2025_18-03-2026.csv	03/17/2026	0	0	11
+120	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		Rishihood University	Collegedunia		03/17/2026	59480	74988	11
+113	https://publisher.in8.nopaperforms.com/lead/details	central.crm@collegedunia.com		Saintgits Group of Institutions	Collegedunia	Saintgits Group of Institutions_01-10-2025_18-03-2026.csv	03/17/2026	14902	76338	11
+73	https://publisher.nopaperforms.com/login	sanjay.meena@collegedunia.com		Shoolini University	Collegedunia	Shoolini University_01-10-2025_18-03-2026.csv	03/17/2026	25565	73221	11
+135	https://publisher.nopaperforms.com/login	sanjay.meena@collegedunia.com		Shoolini University	Collegedunia	Shoolini University_01-10-2025_18-03-2026.csv	03/17/2026	25565	73221	11
+57	https://publisher.in4.nopaperforms.com/lead/details	central.crm@collegedunia.com		Sri Sri University	Collegedunia	Sri Sri University_01-10-2025_18-03-2026.csv	03/17/2026	0	0	11
+88	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		Sushant University	Collegedunia	Sushant University_01-10-2025_18-03-2026.csv	03/17/2026	25517	75780	11
+107	https://publisher.in5.nopaperforms.com/	central.crm@collegedunia.com		Tolani Maritime Institute	Collegedunia	Tolani Maritime Institute_01-10-2025_18-03-2026.csv	03/17/2026	15482	75933	11
+127	https://publisher.in8.nopaperforms.com/	central.crm@collegedunia.com		THAKUR GLOBAL BUSINESS SCHOOL	Collegedunia		03/17/2026	60894	76230	11
+128	https://publisher.in8.nopaperforms.com/	central.crm@collegedunia.com		THAKUR GLOBAL BUSINESS SCHOOL	Collegedunia		03/17/2026	60894	76230	11
+129	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		RV University	Collegedunia	RV University_01-10-2025_14-03-2026.csv	03/17/2026	60480	74790	11
+122	https://publisher.in5.nopaperforms.com/	central.crm@collegedunia.com		Tolani Maritime Institute	Collegedunia	Tolani Maritime Institute_01-10-2025_18-03-2026.csv	03/17/2026	15482	75933	11
+45	https://publisher.nopaperforms.com/login	sanjay.meena@collegedunia.com		Universal AI University	Collegedunia	Universal AI University_01-10-2025_18-03-2026.csv	03/17/2026	57075	56794	11
+132	https://publisher.in8.nopaperforms.com/login	sanjay.meena@collegedunia.com		Maharaja Agrasen Business School	Collegedunia		03/17/2026	63891	76392	11
+133	https://publisher.in8.nopaperforms.com/login	sanjay.meena@collegedunia.com		World College of Technology and Management	Collegedunia		03/17/2026	19257	77633	11
+102	https://publisher.in5.nopaperforms.com/	central.crm@collegedunia.com		Vivekanand Business School	Collegedunia	Vivekanand Business School_01-10-2025_18-03-2026.csv	03/17/2026	62321	75587	11
+124	https://publisher.in5.nopaperforms.com/	central.crm@collegedunia.com		Vivekanand Business School	Collegedunia	Vivekanand Business School_01-10-2025_18-03-2026.csv	03/17/2026	62321	75587	11
+95	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		Vogue Institute of Art and Design	Collegedunia	Vogue Institute of Art and Design_01-10-2025_18-03-2026.csv	03/17/2026	5932	76141	11
+118	https://publisher.nopaperforms.com/	sanjay.meena@collegedunia.com		WeSchool	Collegedunia	WeSchool_01-10-2025_18-03-2026.csv	03/17/2026	19246	74991	11
+142	https://publisher.nopaperforms.com/lead/details	sanjay.meena@collegedunia.com		Woxsen University	Collegedunia	Woxsen University_01-10-2025_18-03-2026.csv	03/17/2026	60661	72282	11
+139	https://publisher.nopaperforms.com/lead/details	central.crm@collegedunia.com		Global Institute of Technology	Collegedunia		03/17/2026	13561	76925	11
+36	https://publisher.in6.nopaperforms.com/lead/details	central.crm@collegedunia.com		Xavier Institute of Management and Entrepreneurship	Collegedunia	Xavier Institute of Management and Entrepreneurship_01-10-2025_18-03-2026.csv	03/17/2026	19264	73161	11
+53	https://publisher.in6.nopaperforms.com/lead/details	central.crm@collegedunia.com		Xavier Institute of Management and Entrepreneurship	Collegedunia	Xavier Institute of Management and Entrepreneurship_01-10-2025_18-03-2026.csv	03/17/2026	19264	73161	11
+65	https://publisher.in6.nopaperforms.com/lead/details	central.crm@collegedunia.com		Xavier Institute of Management and Entrepreneurship	Collegedunia	Xavier Institute of Management and Entrepreneurship_01-10-2025_18-03-2026.csv	03/17/2026	19264	73161	11

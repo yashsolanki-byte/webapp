@@ -1,0 +1,46 @@
+2026-03-23 14:02:55 - INFO - [GEMS B SCHOOL] Open URL, login...
+2026-03-23 14:03:35 - INFO - [GEMS B SCHOOL] Campaign Detailed View (/campaign/details)…
+2026-03-23 14:03:36 - INFO - [GEMS B SCHOOL] Sidebar: Campaigns → Detailed View
+2026-03-23 14:03:36 - INFO - [GEMS B SCHOOL] Clicked Detailed View (accessible name)
+2026-03-23 14:03:38 - INFO - [GEMS B SCHOOL] Campaign Detailed View UI ready (after sidebar)
+2026-03-23 14:03:38 - INFO - [GEMS B SCHOOL] Waiting 2500ms after Detailed View for institute list / filters to load…
+2026-03-23 14:03:41 - INFO - [GEMS B SCHOOL] Fill institute...
+2026-03-23 14:03:43 - INFO - [GEMS B SCHOOL] Fill source...
+2026-03-23 14:03:44 - INFO - [GEMS B SCHOOL] Fill date range...
+2026-03-23 14:03:49 - INFO - Date range: 01-10-2025 - 23-03-2026
+2026-03-23 14:03:49 - INFO - [GEMS B SCHOOL] Apply Paid Applications = Yes...
+2026-03-23 14:03:51 - INFO - [GEMS B SCHOOL] Search...
+2026-03-23 14:04:10 - INFO - [GEMS B SCHOOL] Page 1: 0 records
+2026-03-23 14:04:40 - INFO - [GEMS B SCHOOL] Pagination error on page 2: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("a[aria-label='Next']").nth(1)
+    - locator resolved to <a _ngcontent-c13="" aria-label="Next" class="page-link" href="javascript:void(0)">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div _ngcontent-c25="" class="fixed-loader ng-tns-c25-2 ng-star-inserted">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div _ngcontent-c25="" class="fixed-loader ng-tns-c25-2 ng-star-inserted">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div _ngcontent-c25="" class="fixed-loader ng-tns-c25-2 ng-star-inserted">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+2026-03-23 14:04:40 - INFO - [GEMS B SCHOOL] No API data – falling back to DOM scraping
+2026-03-23 14:04:48 - INFO - DOM fallback error: Page.wait_for_selector: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator("app-leadsdatatable table thead tr th") to be visible
+
+2026-03-23 14:04:48 - INFO - [GEMS B SCHOOL] No records captured

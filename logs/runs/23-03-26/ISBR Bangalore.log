@@ -1,0 +1,32 @@
+2026-03-23 14:28:00 - INFO - [ISBR Bangalore] Open URL, login...
+2026-03-23 14:28:41 - INFO - [ISBR Bangalore] Login retry 1/5: Timeout 30000ms exceeded.
+2026-03-23 14:29:20 - INFO - [ISBR Bangalore] Login retry 2/5: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[formcontrolname=\"email\"]")
+
+2026-03-23 14:30:06 - INFO - [ISBR Bangalore] Login retry 3/5: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[formcontrolname=\"email\"]")
+
+2026-03-23 14:31:05 - INFO - [ISBR Bangalore] Login retry 4/5: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[formcontrolname=\"email\"]")
+
+2026-03-23 14:32:06 - INFO - [ISBR Bangalore] FAIL: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[formcontrolname=\"email\"]")
+
+2026-03-23 15:39:04 - INFO - [ISBR Bangalore] Open URL, login...
+2026-03-23 15:39:39 - INFO - [ISBR Bangalore] Campaign Detailed View (/campaign/details)…
+2026-03-23 15:39:40 - INFO - [ISBR Bangalore] Sidebar: Campaigns → Detailed View
+2026-03-23 15:39:40 - INFO - [ISBR Bangalore] Clicked Detailed View (accessible name)
+2026-03-23 15:39:42 - INFO - [ISBR Bangalore] Campaign Detailed View UI ready (after sidebar)
+2026-03-23 15:39:42 - INFO - [ISBR Bangalore] Waiting 2500ms after Detailed View for institute list / filters to load…
+2026-03-23 15:39:45 - INFO - [ISBR Bangalore] Fill institute...
+2026-03-23 15:39:47 - INFO - [ISBR Bangalore] Fill source...
+2026-03-23 15:39:49 - INFO - [ISBR Bangalore] Fill date range...
+2026-03-23 15:39:59 - INFO - Date range: 01-10-2025 - 23-03-2026
+2026-03-23 15:39:59 - INFO - [ISBR Bangalore] Apply Paid Applications = Yes...
+2026-03-23 15:40:01 - INFO - [ISBR Bangalore] Search...
+2026-03-23 15:40:30 - INFO - [ISBR Bangalore] Page 1: 15 records
+2026-03-23 15:40:31 - INFO - [ISBR Bangalore] Saved 15 records to C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\DATA_Scraped\23-03-26\ISBR Bangalore\ISBR Bangalore_01-10-2025_23-03-2026.csv

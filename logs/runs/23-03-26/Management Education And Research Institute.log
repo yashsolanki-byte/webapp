@@ -1,0 +1,46 @@
+2026-03-23 15:13:34 - INFO - [Management Education And Research Institute] Open URL, login...
+2026-03-23 15:14:07 - INFO - [Management Education And Research Institute] Campaign Detailed View (/campaign/details)…
+2026-03-23 15:14:08 - INFO - [Management Education And Research Institute] Sidebar: Campaigns → Detailed View
+2026-03-23 15:14:08 - INFO - [Management Education And Research Institute] Clicked Detailed View (accessible name)
+2026-03-23 15:14:11 - INFO - [Management Education And Research Institute] Campaign Detailed View UI ready (after sidebar)
+2026-03-23 15:14:11 - INFO - [Management Education And Research Institute] Waiting 2500ms after Detailed View for institute list / filters to load…
+2026-03-23 15:14:14 - INFO - [Management Education And Research Institute] Fill institute...
+2026-03-23 15:14:16 - INFO - [Management Education And Research Institute] Fill source...
+2026-03-23 15:14:18 - INFO - [Management Education And Research Institute] Fill date range...
+2026-03-23 15:14:26 - INFO - Date range: 01-10-2025 - 23-03-2026
+2026-03-23 15:14:26 - INFO - [Management Education And Research Institute] Apply Paid Applications = Yes...
+2026-03-23 15:14:28 - INFO - [Management Education And Research Institute] Search...
+2026-03-23 15:14:50 - INFO - [Management Education And Research Institute] Page 1: 0 records
+2026-03-23 15:15:20 - INFO - [Management Education And Research Institute] Pagination error on page 2: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("a[aria-label='Next']").nth(1)
+    - locator resolved to <a _ngcontent-c13="" aria-label="Next" class="page-link" href="javascript:void(0)">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div _ngcontent-c25="" class="fixed-loader ng-tns-c25-2 ng-star-inserted">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div _ngcontent-c25="" class="fixed-loader ng-tns-c25-2 ng-star-inserted">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    55 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div _ngcontent-c25="" class="fixed-loader ng-tns-c25-2 ng-star-inserted">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+2026-03-23 15:15:20 - INFO - [Management Education And Research Institute] No API data – falling back to DOM scraping
+2026-03-23 15:15:28 - INFO - DOM fallback error: Page.wait_for_selector: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator("app-leadsdatatable table thead tr th") to be visible
+
+2026-03-23 15:15:28 - INFO - [Management Education And Research Institute] No records captured

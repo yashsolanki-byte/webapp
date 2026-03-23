@@ -1,0 +1,24 @@
+2026-03-23 18:31:39 - INFO - ============================================================
+2026-03-23 18:31:39 - INFO - Script_Scraper - Nopaperforms Data Scraper
+2026-03-23 18:31:39 - INFO - Log file: C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\logs\script\script_scraper_20260323_183139.log
+2026-03-23 18:31:39 - INFO - ============================================================
+2026-03-23 18:31:41 - INFO - Playwright Chromium browser is working
+2026-03-23 18:31:42 - INFO - NumExpr defaulting to 8 threads.
+2026-03-23 18:31:44 - INFO - Step 1: Logging in...
+2026-03-23 18:31:49 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-23 18:31:49 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-23 18:31:49 - INFO - Step 2: Selecting institute and source...
+2026-03-23 18:31:50 - INFO - Skipping Instance filter
+2026-03-23 18:31:50 - INFO - Applying 1 advanced filter(s)...
+2026-03-23 18:32:05 - INFO - ✅ Applied 1 advanced filter(s)
+2026-03-23 18:32:05 - INFO - Applying sub-filter options...
+2026-03-23 18:32:06 - INFO - ✅ Applied sub-filter options
+2026-03-23 18:32:06 - INFO - Applying date filter...
+2026-03-23 18:32:10 - INFO - Date range selected: 22-03-2026 - 23-03-2026
+2026-03-23 18:32:14 - INFO - Waiting 5s for page to load...
+2026-03-23 18:32:20 - INFO - ✅ Date filter applied successfully
+2026-03-23 18:32:21 - INFO - Page not ready – neither 'No Record Found' nor 'Total ... Primary Leads' detected
+2026-03-23 18:32:21 - INFO - [32mmanual_scrape[39;49;00m: [34mJob OK[39;49;00m (083fec15-d672-4c66-8111-fe1c8636b126)
+2026-03-23 18:32:21 - INFO - Result is kept for 500 seconds
+2026-03-23 18:45:51 - INFO - Cleaning registries for queue: manual_scrape
+2026-03-23 18:59:22 - INFO - Cleaning registries for queue: manual_scrape

@@ -1,0 +1,552 @@
+{
+  "woxsen university|collegedunia": {
+    "filters": [
+      {
+        "id": "u_lead_type",
+        "label": "Lead Origin"
+      },
+      {
+        "id": "u_status",
+        "label": "Lead Status"
+      },
+      {
+        "id": "u_email_verified",
+        "label": "Email Verification Status"
+      },
+      {
+        "id": "u_mobile_verified",
+        "label": "Mobile Verification Status"
+      },
+      {
+        "id": "u_parent_admin_id",
+        "label": "Merge Lead"
+      },
+      {
+        "id": "u_lead_score",
+        "label": "Lead Score"
+      },
+      {
+        "id": "u_device",
+        "label": "Registration Device"
+      },
+      {
+        "id": "u_form_initiated",
+        "label": "Form Initiated"
+      },
+      {
+        "id": "u_payment_approved",
+        "label": "Paid Applications"
+      },
+      {
+        "id": "u_country_dialcode",
+        "label": "Country"
+      },
+      {
+        "id": "ud_state_id",
+        "label": "State"
+      },
+      {
+        "id": "ud_city_id",
+        "label": "City"
+      },
+      {
+        "id": "ud_last_activity_time",
+        "label": "Last Lead Activity Date"
+      },
+      {
+        "id": "ud_lead_stage",
+        "label": "Lead Stage"
+      },
+      {
+        "id": "cmp_source_value",
+        "label": "Source"
+      },
+      {
+        "id": "cmp_medium_value",
+        "label": "Medium"
+      },
+      {
+        "id": "cmp_name_value",
+        "label": "Campaign"
+      },
+      {
+        "id": "u_enrollment_status",
+        "label": "Enrolment Status"
+      }
+    ],
+    "subfilter_options": {
+      "u_status": [
+        "Lead Status",
+        "Verified",
+        "Unverified"
+      ],
+      "u_payment_approved": [
+        "Paid Applications",
+        "Yes",
+        "No"
+      ],
+      "u_form_initiated": [
+        "Form Initiated",
+        "Yes",
+        "No"
+      ],
+      "ud_lead_stage": [
+        "Lead Stage",
+        "Hot",
+        "Junk",
+        "Interested",
+        "Lost",
+        "Not Eligible",
+        "Not Interested",
+        "Initiated",
+        "Applied",
+        "Unanswered/No response",
+        "Email Opened",
+        "Live",
+        "watesting",
+        "Untouched"
+      ]
+    },
+    "cached_at": "2026-03-16T10:20:52.840113",
+    "institute": "Woxsen University",
+    "source": "Collegedunia"
+  },
+  "bimtech, greater noida|collegedunia": {
+    "filters": [
+      {
+        "id": "u_lead_type",
+        "label": "Lead Origin"
+      },
+      {
+        "id": "u_status",
+        "label": "Lead Status"
+      },
+      {
+        "id": "u_email_verified",
+        "label": "Email Verification Status"
+      },
+      {
+        "id": "u_mobile_verified",
+        "label": "Mobile Verification Status"
+      },
+      {
+        "id": "u_parent_admin_id",
+        "label": "Merge Lead"
+      },
+      {
+        "id": "u_device",
+        "label": "Registration Device"
+      },
+      {
+        "id": "u_form_initiated",
+        "label": "Form Initiated"
+      },
+      {
+        "id": "u_payment_approved",
+        "label": "Paid Applications"
+      },
+      {
+        "id": "u_country_dialcode",
+        "label": "Country"
+      },
+      {
+        "id": "ud_state_id",
+        "label": "State"
+      },
+      {
+        "id": "ud_city_id",
+        "label": "City"
+      },
+      {
+        "id": "ud_last_activity_time",
+        "label": "Last Lead Activity Date"
+      },
+      {
+        "id": "ud_lead_stage",
+        "label": "Lead Stage"
+      },
+      {
+        "id": "cmp_source_value",
+        "label": "Source"
+      },
+      {
+        "id": "cmp_medium_value",
+        "label": "Medium"
+      },
+      {
+        "id": "cmp_name_value",
+        "label": "Campaign"
+      }
+    ],
+    "subfilter_options": {
+      "ud_lead_stage": [
+        "Lead Stage",
+        "Invalid",
+        "No Response",
+        "NOT ELIGIBLE",
+        "Cold",
+        "Warm",
+        "Hot",
+        "Opened Campaign 1",
+        "Opened Campaign 2",
+        "Opened Campaign 3",
+        "Opened Campaign 4",
+        "Opened Campaign 5",
+        "Opened Communication",
+        "Cancel Offer",
+        "Email Status",
+        "SMS Delivered",
+        "Untouched"
+      ],
+      "u_status": [
+        "Lead Status",
+        "Verified",
+        "Unverified"
+      ]
+    },
+    "cached_at": "2026-02-26T15:39:08.708566",
+    "institute": "BIMTECH, Greater Noida",
+    "source": "Collegedunia"
+  },
+  "alliance university|collegedunia": {
+    "filters": [
+      {
+        "id": "u_lead_type",
+        "label": "Lead Origin"
+      },
+      {
+        "id": "u_status",
+        "label": "Lead Status"
+      },
+      {
+        "id": "u_email_verified",
+        "label": "Email Verification Status"
+      },
+      {
+        "id": "u_mobile_verified",
+        "label": "Mobile Verification Status"
+      },
+      {
+        "id": "u_parent_admin_id",
+        "label": "Merge Lead"
+      },
+      {
+        "id": "u_device",
+        "label": "Registration Device"
+      },
+      {
+        "id": "u_form_initiated",
+        "label": "Form Initiated"
+      },
+      {
+        "id": "u_payment_approved",
+        "label": "Paid Applications"
+      },
+      {
+        "id": "u_application_submitted",
+        "label": "Submitted Applications"
+      },
+      {
+        "id": "u_country_dialcode",
+        "label": "Country"
+      },
+      {
+        "id": "ud_state_id",
+        "label": "State"
+      },
+      {
+        "id": "ud_city_id",
+        "label": "City"
+      },
+      {
+        "id": "ud_lead_stage",
+        "label": "Lead Stage"
+      },
+      {
+        "id": "cmp_source_value",
+        "label": "Source"
+      },
+      {
+        "id": "cmp_medium_value",
+        "label": "Medium"
+      },
+      {
+        "id": "cmp_name_value",
+        "label": "Campaign"
+      },
+      {
+        "id": "u_enrollment_status",
+        "label": "Enrolment Status"
+      }
+    ],
+    "subfilter_options": {
+      "u_form_initiated": [
+        "Form Initiated",
+        "Yes",
+        "No"
+      ]
+    },
+    "cached_at": "2026-03-02T12:55:59.220041",
+    "institute": "Alliance University",
+    "source": "Collegedunia"
+  },
+  "i business institute|collegedunia": {
+    "filters": [
+      {
+        "id": "u_lead_type",
+        "label": "Lead Origin"
+      },
+      {
+        "id": "u_status",
+        "label": "Lead Status"
+      },
+      {
+        "id": "u_email_verified",
+        "label": "Email Verification Status"
+      },
+      {
+        "id": "u_mobile_verified",
+        "label": "Mobile Verification Status"
+      },
+      {
+        "id": "u_parent_admin_id",
+        "label": "Merge Lead"
+      },
+      {
+        "id": "u_lead_score",
+        "label": "Lead Score"
+      },
+      {
+        "id": "u_form_initiated",
+        "label": "Form Initiated"
+      },
+      {
+        "id": "u_payment_approved",
+        "label": "Paid Applications"
+      },
+      {
+        "id": "u_country_dialcode",
+        "label": "Country"
+      },
+      {
+        "id": "ud_state_id",
+        "label": "State"
+      },
+      {
+        "id": "ud_city_id",
+        "label": "City"
+      },
+      {
+        "id": "ud_last_activity_time",
+        "label": "Last Lead Activity Date"
+      },
+      {
+        "id": "ud_lead_stage",
+        "label": "Lead Stage"
+      },
+      {
+        "id": "cmp_source_value",
+        "label": "Source"
+      },
+      {
+        "id": "cmp_medium_value",
+        "label": "Medium"
+      },
+      {
+        "id": "cmp_name_value",
+        "label": "Campaign"
+      }
+    ],
+    "subfilter_options": {
+      "u_payment_approved": [
+        "Paid Applications",
+        "Yes",
+        "No"
+      ]
+    },
+    "cached_at": "2026-03-13T23:44:34.251194",
+    "institute": "I Business Institute",
+    "source": "Collegedunia"
+  },
+  "auro university|collegedunia": {
+    "filters": [
+      {
+        "id": "u_lead_type",
+        "label": "Lead Origin"
+      },
+      {
+        "id": "u_status",
+        "label": "Lead Status"
+      },
+      {
+        "id": "u_email_verified",
+        "label": "Email Verification Status"
+      },
+      {
+        "id": "u_mobile_verified",
+        "label": "Mobile Verification Status"
+      },
+      {
+        "id": "u_parent_admin_id",
+        "label": "Merge Lead"
+      },
+      {
+        "id": "u_lead_score",
+        "label": "Lead Score"
+      },
+      {
+        "id": "u_device",
+        "label": "Registration Device"
+      },
+      {
+        "id": "u_form_initiated",
+        "label": "Form Initiated"
+      },
+      {
+        "id": "u_payment_approved",
+        "label": "Paid Applications"
+      },
+      {
+        "id": "u_country_dialcode",
+        "label": "Country"
+      },
+      {
+        "id": "ud_state_id",
+        "label": "State"
+      },
+      {
+        "id": "ud_city_id",
+        "label": "City"
+      },
+      {
+        "id": "ud_last_activity_time",
+        "label": "Last Lead Activity Date"
+      },
+      {
+        "id": "ud_lead_stage",
+        "label": "Lead Stage"
+      },
+      {
+        "id": "cmp_source_value",
+        "label": "Source"
+      },
+      {
+        "id": "cmp_medium_value",
+        "label": "Medium"
+      },
+      {
+        "id": "cmp_name_value",
+        "label": "Campaign"
+      },
+      {
+        "id": "u_enrollment_status",
+        "label": "Enrolment Status"
+      }
+    ],
+    "subfilter_options": {
+      "u_payment_approved": [
+        "Paid Applications",
+        "Yes",
+        "No"
+      ],
+      "u_form_initiated": [
+        "Form Initiated",
+        "Yes",
+        "No"
+      ]
+    },
+    "institute": "AURO UNIVERSITY",
+    "source": "Collegedunia",
+    "updatedAt": "2026-03-20T14:52:50"
+  },
+  "gibs business school, bengaluru|collegedunia": {
+    "filters": [
+      {
+        "id": "u_lead_type",
+        "label": "Lead Origin"
+      },
+      {
+        "id": "u_status",
+        "label": "Lead Status"
+      },
+      {
+        "id": "u_email_verified",
+        "label": "Email Verification Status"
+      },
+      {
+        "id": "u_mobile_verified",
+        "label": "Mobile Verification Status"
+      },
+      {
+        "id": "u_parent_admin_id",
+        "label": "Merge Lead"
+      },
+      {
+        "id": "u_lead_score",
+        "label": "Lead Score"
+      },
+      {
+        "id": "u_device",
+        "label": "Registration Device"
+      },
+      {
+        "id": "u_form_initiated",
+        "label": "Form Initiated"
+      },
+      {
+        "id": "u_payment_approved",
+        "label": "Paid Applications"
+      },
+      {
+        "id": "u_application_submitted",
+        "label": "Submitted Applications"
+      },
+      {
+        "id": "u_country_dialcode",
+        "label": "Country"
+      },
+      {
+        "id": "ud_state_id",
+        "label": "State"
+      },
+      {
+        "id": "ud_city_id",
+        "label": "City"
+      },
+      {
+        "id": "ud_last_activity_time",
+        "label": "Last Lead Activity Date"
+      },
+      {
+        "id": "ud_lead_stage",
+        "label": "Lead Stage"
+      },
+      {
+        "id": "cmp_source_value",
+        "label": "Source"
+      },
+      {
+        "id": "cmp_medium_value",
+        "label": "Medium"
+      },
+      {
+        "id": "cmp_name_value",
+        "label": "Campaign"
+      },
+      {
+        "id": "u_enrollment_status",
+        "label": "Enrolment Status"
+      }
+    ],
+    "subfilter_options": {
+      "u_payment_approved": [
+        "Paid Applications",
+        "Yes",
+        "No"
+      ]
+    },
+    "institute": "GIBS Business School, Bengaluru",
+    "source": "Collegedunia",
+    "updatedAt": "2026-03-23T18:26:06"
+  }
+}

@@ -1,0 +1,271 @@
+2026-03-20 19:10:10 - INFO - ============================================================
+2026-03-20 19:10:10 - INFO - Script_Scraper - Nopaperforms Data Scraper
+2026-03-20 19:10:10 - INFO - Log file: C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\logs\script\script_scraper_20260320_191010.log
+2026-03-20 19:10:10 - INFO - ============================================================
+2026-03-20 19:10:12 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:12] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:13 - INFO - Playwright Chromium browser is working
+2026-03-20 19:10:14 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:14] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:15 - INFO - Step 1: Logging in...
+2026-03-20 19:10:16 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:16] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:17 - INFO - Step 1b: Campaign Detailed View (/campaign/details)…
+2026-03-20 19:10:18 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:18] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:18 - INFO - Sidebar: Campaigns → Detailed View
+2026-03-20 19:10:19 - INFO - Clicked Detailed View (accessible name)
+2026-03-20 19:10:20 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:20] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:20 - INFO - Campaign Detailed View UI ready (after sidebar)
+2026-03-20 19:10:20 - INFO - Waiting 2500ms after Detailed View for institute list / filters to load…
+2026-03-20 19:10:22 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:22] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:22 - INFO - Step 2: Selecting institute and source...
+2026-03-20 19:10:23 - INFO - Skipping Instance filter
+2026-03-20 19:10:23 - INFO - Skipping advanced filters (none selected)
+2026-03-20 19:10:23 - INFO - Skipping sub-filter options (none selected)
+2026-03-20 19:10:23 - INFO - Applying date filter...
+2026-03-20 19:10:24 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:24] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:26 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:26] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:28 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:28] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:30 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:30] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:32 - INFO - Date range selected: 01-02-2026 - 15-02-2026
+2026-03-20 19:10:32 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:32] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:34 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:34] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:35 - INFO - ✅ Date filter applied successfully
+2026-03-20 19:10:35 - INFO - Step 3: Configuring columns (Select All)...
+2026-03-20 19:10:36 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:36] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:38 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:38] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:40 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:40] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:42 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:42] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:44 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:44] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:46 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:46] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:48 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:48] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:50 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:50] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:52 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:52] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:54 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:54] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:56 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:56] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:10:58 - INFO - 127.0.0.1 - - [20/Mar/2026 19:10:58] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:00 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:00] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:02 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:02] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:04 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:04] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:06] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:06] "GET /api/upload-status HTTP/1.1" 200 -
+2026-03-20 19:11:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:06] "GET /api/upload-status HTTP/1.1" 200 -
+2026-03-20 19:11:08 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:08] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:10 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:10] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:12 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:12] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:14 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:14] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:16 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:16] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:17 - INFO - Captured 12 headers from table: ['Source', 'Medium', 'Campaign Name', 'Primary Leads', 'Secondary Leads']...
+2026-03-20 19:11:17 - INFO - Step 4: Setting rows per page & capturing API...
+2026-03-20 19:11:18 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:18] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:20 - INFO - 📡 Captured API: https://services.nopaperforms.com/publishers/v1/getLeadDetailsSummary...
+2026-03-20 19:11:20 - INFO - 📡 Captured API: https://services.nopaperforms.com/publishers/v1/getCampaignDetailsViewList...
+2026-03-20 19:11:20 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:20] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:22 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:22] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:22 - INFO - 📡 Captured API: https://services.nopaperforms.com/publishers/v1/getLeadDetailsSummary...
+2026-03-20 19:11:22 - INFO - 📡 Captured API: https://services.nopaperforms.com/publishers/v1/getCampaignDetailsViewList...
+2026-03-20 19:11:24 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:24] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:26 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:26] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:28 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:28] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:30 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:30] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:32 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:32] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:34 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:34] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:36 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:36] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:38 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:38] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:40 - INFO - Page 1: 5000 records (API)
+2026-03-20 19:11:40 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:40] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:41 - INFO - Step 5: Paginating and capturing API data...
+2026-03-20 19:11:42 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:42] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:43 - INFO - 📄 Fetching Page 2 (API)...
+2026-03-20 19:11:44 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:44] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:46 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:46] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:47 - INFO - 📡 Captured API: https://services.nopaperforms.com/publishers/v1/getLeadDetailsSummary...
+2026-03-20 19:11:47 - INFO - 📡 Captured API: https://services.nopaperforms.com/publishers/v1/getCampaignDetailsViewList...
+2026-03-20 19:11:48 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:48] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:50 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:50] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:52 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:52] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:52 - INFO - Page 2: 502 records (API)
+2026-03-20 19:11:52 - INFO - ✅ Last page detected from API.
+2026-03-20 19:11:52 - INFO - ✅ Collected 5502 records. Writing CSV...
+2026-03-20 19:11:52 - INFO - Using 12 headers from API
+2026-03-20 19:11:52 - INFO - ✅ Saved to C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\DATA_Scraped\manual\20-03-26\Woxsen University\Woxsen University_20-03-26.csv
+2026-03-20 19:11:52 - INFO - Scrape complete: 5502 records saved to C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\DATA_Scraped\manual\20-03-26\Woxsen University\Woxsen University_20-03-26.csv
+2026-03-20 19:11:54 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:54] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:56 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:56] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:11:57 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:57] "GET /api/manual-scrape/download?path=manual/20-03-26/Woxsen%20University/Woxsen%20University_20-03-26.csv HTTP/1.1" 200 -
+2026-03-20 19:11:58 - INFO - 127.0.0.1 - - [20/Mar/2026 19:11:58] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:00 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:00] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:02 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:02] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:04 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:04] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:06] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:06] "GET /api/upload-status HTTP/1.1" 200 -
+2026-03-20 19:12:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:06] "GET /api/upload-status HTTP/1.1" 200 -
+2026-03-20 19:12:08 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:08] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:10 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:10] "GET /api/upload-logs HTTP/1.1" 200 -
+2026-03-20 19:12:10 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:10] "GET /api/scraper-logs/dates HTTP/1.1" 200 -
+2026-03-20 19:12:10 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:10] "GET /api/feedback-ready-logs HTTP/1.1" 200 -
+2026-03-20 19:12:10 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:10] "GET /api/manual-scrape-logs HTTP/1.1" 200 -
+2026-03-20 19:12:10 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:10] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:12 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:12] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:14 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:14] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:16 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:16] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:18 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:18] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:20 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:20] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:22 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:22] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:24 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:24] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:26 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:26] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:28 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:28] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:30 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:30] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:32 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:32] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:34 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:34] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:36 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:36] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:38 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:38] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:40 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:40] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:42 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:42] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:44 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:44] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:46 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:46] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:48 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:48] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:50 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:50] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:52 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:52] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:54 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:54] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:56 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:56] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:12:58 - INFO - 127.0.0.1 - - [20/Mar/2026 19:12:58] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:00 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:00] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:02 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:02] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:04 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:04] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:06] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:06] "GET /api/upload-status HTTP/1.1" 200 -
+2026-03-20 19:13:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:06] "GET /api/upload-status HTTP/1.1" 200 -
+2026-03-20 19:13:08 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:08] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:10 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:10] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:12 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:12] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:14 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:14] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:16 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:16] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:18 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:18] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:20 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:20] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:22 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:22] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:24 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:24] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:26 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:26] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:28 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:28] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:30 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:30] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:32 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:32] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:34 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:34] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:36 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:36] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:38 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:38] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:40 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:40] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:42 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:42] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:44 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:44] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:46 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:46] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:48 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:48] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:50 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:50] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:52 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:52] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:54 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:54] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:56 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:56] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:13:58 - INFO - 127.0.0.1 - - [20/Mar/2026 19:13:58] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:00 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:00] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:02 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:02] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:04 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:04] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:06] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:06] "GET /api/upload-status HTTP/1.1" 200 -
+2026-03-20 19:14:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:06] "GET /api/upload-status HTTP/1.1" 200 -
+2026-03-20 19:14:08 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:08] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:10 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:10] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:12 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:12] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:14 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:14] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:16 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:16] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:18 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:18] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:20 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:20] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:22 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:22] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:24 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:24] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:26 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:26] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:28 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:28] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:30 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:30] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:32 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:32] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:34 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:34] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:36 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:36] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:38 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:38] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:40 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:40] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:14:42 - INFO - 127.0.0.1 - - [20/Mar/2026 19:14:42] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:15:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:15:06] "GET /api/upload-status HTTP/1.1" 200 -
+2026-03-20 19:15:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:15:06] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:15:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:15:06] "GET /api/upload-status HTTP/1.1" 200 -
+2026-03-20 19:16:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:16:06] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:16:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:16:06] "GET /api/upload-status HTTP/1.1" 200 -
+2026-03-20 19:16:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:16:06] "GET /api/upload-status HTTP/1.1" 200 -
+2026-03-20 19:17:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:06] "GET /api/upload-status HTTP/1.1" 200 -
+2026-03-20 19:17:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:06] "GET /api/upload-status HTTP/1.1" 200 -
+2026-03-20 19:17:06 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:06] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:08 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:08] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:10 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:10] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:12 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:12] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:14 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:14] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:16 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:16] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:18 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:18] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:20 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:20] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:22 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:22] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:24 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:24] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:24 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:24] "GET /api/scrape-status HTTP/1.1" 200 -
+2026-03-20 19:17:24 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:24] "GET /api/upload-dates HTTP/1.1" 200 -
+2026-03-20 19:17:24 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:24] "GET /api/scrape-list HTTP/1.1" 200 -
+2026-03-20 19:17:26 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:26] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:27 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:27] "GET /api/institutes HTTP/1.1" 200 -
+2026-03-20 19:17:28 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:28] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:30 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:30] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:31 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:31] "GET /api/feedback-ready-dates HTTP/1.1" 200 -
+2026-03-20 19:17:31 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:31] "GET /api/feedback-ready/status HTTP/1.1" 200 -
+2026-03-20 19:17:32 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:32] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:32 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:32] "GET /api/institutes HTTP/1.1" 200 -
+2026-03-20 19:17:34 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:34] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:36 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:36] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:38 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:38] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:40 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:40] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:42 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:42] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:43 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:43] "POST /api/manual-scrape/run HTTP/1.1" 200 -
+2026-03-20 19:17:43 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:43] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:44 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:44] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:45 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:45] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:45 - INFO - Step 1: Logging in...
+2026-03-20 19:17:46 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:46] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:47 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:47] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:48 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:48] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:49 - INFO - Step 1b: Campaign Detailed View (/campaign/details)…
+2026-03-20 19:17:49 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:49] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:49 - INFO - Sidebar: Campaigns → Detailed View
+2026-03-20 19:17:50 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:50] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:50 - INFO - Clicked Detailed View (accessible name)
+2026-03-20 19:17:51 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:51] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:52 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:52] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:52 - INFO - Campaign Detailed View UI ready (after sidebar)
+2026-03-20 19:17:52 - INFO - Waiting 2500ms after Detailed View for institute list / filters to load…
+2026-03-20 19:17:53 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:53] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:54 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:54] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:54 - WARNING - Login retry 1/3: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-03-20 19:17:55 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:55] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:56 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:56] "GET /api/manual-scrape/status HTTP/1.1" 200 -
+2026-03-20 19:17:56 - ERROR - Script failed: Page.goto: Target page, context or browser has been closed
+Traceback (most recent call last):
+  File "C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\scrapers\script_scraper.py", line 1843, in run_scraping
+    context = await browser.new_context()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        # Step 1: Login (with retry on network error)
+        ^^^^^^^^^
+  File "C:\Users\CollegeDunia\anaconda3\Lib\site-packages\playwright\async_api\_generated.py", line 9041, in goto
+    await self._impl_obj.goto(
+        url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+    )
+  File "C:\Users\CollegeDunia\anaconda3\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\CollegeDunia\anaconda3\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\CollegeDunia\anaconda3\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\CollegeDunia\anaconda3\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+2026-03-20 19:17:56 - INFO - ❌ Script failed: Page.goto: Target page, context or browser has been closed
+2026-03-20 19:17:57 - INFO - 127.0.0.1 - - [20/Mar/2026 19:17:57] "GET /api/manual-scrape/status HTTP/1.1" 200 -

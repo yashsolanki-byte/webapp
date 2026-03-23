@@ -1,0 +1,16 @@
+2026-03-23 11:58:57 - INFO - ============================================================
+2026-03-23 11:58:57 - INFO - Script_Scraper - Nopaperforms Data Scraper
+2026-03-23 11:58:57 - INFO - Log file: C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\logs\script\script_scraper_20260323_115857.log
+2026-03-23 11:58:57 - INFO - ============================================================
+2026-03-23 11:58:59 - INFO - 127.0.0.1 - - [23/Mar/2026 11:58:59] "GET /api/institutes HTTP/1.1" 200 -
+2026-03-23 11:58:59 - INFO - Playwright Chromium browser is working
+2026-03-23 11:58:59 - INFO - 127.0.0.1 - - [23/Mar/2026 11:58:59] "POST /api/stop-all-scrapers HTTP/1.1" 200 -
+2026-03-23 11:59:08 - INFO - 127.0.0.1 - - [23/Mar/2026 11:59:08] "GET /api/scrape-status HTTP/1.1" 200 -
+2026-03-23 11:59:08 - INFO - 127.0.0.1 - - [23/Mar/2026 11:59:08] "GET /api/scrape-list HTTP/1.1" 200 -
+2026-03-23 11:59:08 - INFO - 127.0.0.1 - - [23/Mar/2026 11:59:08] "GET /api/upload-dates HTTP/1.1" 200 -
+2026-03-23 11:59:10 - INFO - 127.0.0.1 - - [23/Mar/2026 11:59:10] "GET /api/feedback-ready/status HTTP/1.1" 200 -
+2026-03-23 11:59:10 - INFO - 127.0.0.1 - - [23/Mar/2026 11:59:10] "GET /api/feedback-ready-dates HTTP/1.1" 200 -
+2026-03-23 11:59:12 - INFO - 127.0.0.1 - - [23/Mar/2026 11:59:12] "GET /api/dashboard-dates HTTP/1.1" 200 -
+2026-03-23 11:59:13 - INFO - 127.0.0.1 - - [23/Mar/2026 11:59:13] "GET /api/scrape-list HTTP/1.1" 200 -
+2026-03-23 11:59:13 - INFO - 127.0.0.1 - - [23/Mar/2026 11:59:13] "GET /api/upload-dates HTTP/1.1" 200 -
+2026-03-23 11:59:13 - INFO - 127.0.0.1 - - [23/Mar/2026 11:59:13] "GET /api/scrape-status HTTP/1.1" 200 -

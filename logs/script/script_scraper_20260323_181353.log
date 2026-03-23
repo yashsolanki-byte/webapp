@@ -1,0 +1,99 @@
+2026-03-23 18:13:53 - INFO - ============================================================
+2026-03-23 18:13:53 - INFO - Script_Scraper - Nopaperforms Data Scraper
+2026-03-23 18:13:53 - INFO - Log file: C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\logs\script\script_scraper_20260323_181353.log
+2026-03-23 18:13:53 - INFO - ============================================================
+2026-03-23 18:13:56 - INFO - Playwright Chromium browser is working
+2026-03-23 18:13:59 - INFO - NumExpr defaulting to 8 threads.
+2026-03-23 18:14:02 - INFO - Step 1: Logging in...
+2026-03-23 18:14:08 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-23 18:14:08 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-23 18:14:08 - INFO - Step 2: Selecting institute and source...
+2026-03-23 18:14:10 - INFO - Skipping Instance filter
+2026-03-23 18:14:10 - INFO - Skipping advanced filters (none selected)
+2026-03-23 18:14:10 - INFO - Skipping sub-filter options (none selected)
+2026-03-23 18:14:10 - INFO - Applying date filter...
+2026-03-23 18:14:14 - INFO - Date range selected: 22-03-2026 - 23-03-2026
+2026-03-23 18:14:19 - INFO - Waiting 5s for page to load...
+2026-03-23 18:14:25 - INFO - ✅ Date filter applied successfully
+2026-03-23 18:14:26 - INFO - Capturing screenshot...
+2026-03-23 18:14:27 - INFO - ✅ Screenshot saved to C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\data\runtime\manual_jobs\6c7bd4b6-a1b6-49fd-b09c-570d0f118cf1\screenshot.png
+2026-03-23 18:14:28 - INFO - [32mmanual_scrape[39;49;00m: [34mJob OK[39;49;00m (6c7bd4b6-a1b6-49fd-b09c-570d0f118cf1)
+2026-03-23 18:14:28 - INFO - Result is kept for 500 seconds
+2026-03-23 18:15:43 - INFO - [32mmanual_scrape[39;49;00m: [34mscrapers.manual_scrape_worker.run_manual_scrape_worker('d585808f-cf62-45e0-a7a9-0d1ba6c48115', {'login_url': 'https://publisher.nopaperforms.com/lead/details', 'email': '...)[39;49;00m (d585808f-cf62-45e0-a7a9-0d1ba6c48115)
+2026-03-23 18:15:45 - INFO - Step 1: Logging in...
+2026-03-23 18:15:51 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-23 18:15:51 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-23 18:15:51 - INFO - Step 2: Selecting institute and source...
+2026-03-23 18:15:53 - INFO - Skipping Instance filter
+2026-03-23 18:15:53 - INFO - Skipping advanced filters (none selected)
+2026-03-23 18:15:53 - INFO - Skipping sub-filter options (none selected)
+2026-03-23 18:15:53 - INFO - Applying date filter...
+2026-03-23 18:15:57 - INFO - Date range selected: 22-03-2026 - 23-03-2026
+2026-03-23 18:15:59 - INFO - Waiting 5s for page to load...
+2026-03-23 18:16:05 - INFO - ✅ Date filter applied successfully
+2026-03-23 18:16:06 - INFO - Capturing screenshot...
+2026-03-23 18:16:07 - INFO - ✅ Screenshot saved to C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\data\runtime\manual_jobs\d585808f-cf62-45e0-a7a9-0d1ba6c48115\screenshot.png
+2026-03-23 18:16:07 - INFO - [32mmanual_scrape[39;49;00m: [34mJob OK[39;49;00m (d585808f-cf62-45e0-a7a9-0d1ba6c48115)
+2026-03-23 18:16:07 - INFO - Result is kept for 500 seconds
+2026-03-23 18:16:07 - INFO - [32mmanual_scrape[39;49;00m: [34mscrapers.manual_scrape_worker.run_manual_scrape_worker('5351921f-b94b-4dd6-a259-06b2cd7b048a', {'login_url': 'https://publisher.nopaperforms.com/lead/details', 'email': '...)[39;49;00m (5351921f-b94b-4dd6-a259-06b2cd7b048a)
+2026-03-23 18:16:08 - INFO - Step 1: Logging in...
+2026-03-23 18:16:12 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-23 18:16:12 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-23 18:16:12 - INFO - Step 2: Selecting institute and source...
+2026-03-23 18:16:13 - INFO - Skipping Instance filter
+2026-03-23 18:16:13 - INFO - Skipping advanced filters (none selected)
+2026-03-23 18:16:13 - INFO - Skipping sub-filter options (none selected)
+2026-03-23 18:16:13 - INFO - Applying date filter...
+2026-03-23 18:16:27 - INFO - Date range selected: 22-03-2026 - 23-03-2026
+2026-03-23 18:16:33 - INFO - Waiting 5s for page to load...
+2026-03-23 18:16:38 - INFO - ✅ Date filter applied successfully
+2026-03-23 18:16:39 - INFO - Page not ready – neither 'No Record Found' nor 'Total ... Primary Leads' detected
+2026-03-23 18:16:40 - INFO - [32mmanual_scrape[39;49;00m: [34mJob OK[39;49;00m (5351921f-b94b-4dd6-a259-06b2cd7b048a)
+2026-03-23 18:16:40 - INFO - Result is kept for 500 seconds
+2026-03-23 18:17:10 - INFO - [32mmanual_scrape[39;49;00m: [34mscrapers.manual_scrape_worker.run_manual_scrape_worker('c6c6e52e-8212-4916-a593-c363d39b9a2e', {'login_url': 'https://publisher.nopaperforms.com/lead/details', 'email': '...)[39;49;00m (c6c6e52e-8212-4916-a593-c363d39b9a2e)
+2026-03-23 18:17:12 - INFO - Step 1: Logging in...
+2026-03-23 18:17:17 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-23 18:17:17 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-23 18:17:17 - INFO - Step 2: Selecting institute and source...
+2026-03-23 18:17:18 - INFO - Skipping Instance filter
+2026-03-23 18:17:18 - INFO - Skipping advanced filters (none selected)
+2026-03-23 18:17:18 - INFO - Skipping sub-filter options (none selected)
+2026-03-23 18:17:18 - INFO - Applying date filter...
+2026-03-23 18:17:22 - INFO - Date range selected: 22-03-2026 - 23-03-2026
+2026-03-23 18:17:28 - INFO - Waiting 5s for page to load...
+2026-03-23 18:17:34 - INFO - ✅ Date filter applied successfully
+2026-03-23 18:17:34 - INFO - Capturing screenshot...
+2026-03-23 18:17:35 - INFO - ✅ Screenshot saved to C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\data\runtime\manual_jobs\c6c6e52e-8212-4916-a593-c363d39b9a2e\screenshot.png
+2026-03-23 18:17:35 - INFO - [32mmanual_scrape[39;49;00m: [34mJob OK[39;49;00m (c6c6e52e-8212-4916-a593-c363d39b9a2e)
+2026-03-23 18:17:35 - INFO - Result is kept for 500 seconds
+2026-03-23 18:17:35 - INFO - [32mmanual_scrape[39;49;00m: [34mscrapers.manual_scrape_worker.run_manual_scrape_worker('a3f2e647-f795-4950-87ff-ca094126f271', {'login_url': 'https://publisher.nopaperforms.com/lead/details', 'email': '...)[39;49;00m (a3f2e647-f795-4950-87ff-ca094126f271)
+2026-03-23 18:17:37 - INFO - Step 1: Logging in...
+2026-03-23 18:17:44 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-23 18:17:44 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-23 18:17:44 - INFO - Step 2: Selecting institute and source...
+2026-03-23 18:17:45 - INFO - Skipping Instance filter
+2026-03-23 18:17:45 - INFO - Skipping advanced filters (none selected)
+2026-03-23 18:17:45 - INFO - Skipping sub-filter options (none selected)
+2026-03-23 18:17:45 - INFO - Applying date filter...
+2026-03-23 18:17:49 - INFO - Date range selected: 22-03-2026 - 23-03-2026
+2026-03-23 18:17:52 - INFO - Waiting 5s for page to load...
+2026-03-23 18:17:57 - INFO - ✅ Date filter applied successfully
+2026-03-23 18:17:58 - INFO - Page not ready – neither 'No Record Found' nor 'Total ... Primary Leads' detected
+2026-03-23 18:17:59 - INFO - [32mmanual_scrape[39;49;00m: [34mJob OK[39;49;00m (a3f2e647-f795-4950-87ff-ca094126f271)
+2026-03-23 18:17:59 - INFO - Result is kept for 500 seconds
+2026-03-23 18:18:04 - INFO - [32mmanual_scrape[39;49;00m: [34mscrapers.manual_scrape_worker.run_manual_scrape_worker('497ece10-e05f-46df-8a37-ad83da51fd9e', {'login_url': 'https://publisher.nopaperforms.com/lead/details', 'email': '...)[39;49;00m (497ece10-e05f-46df-8a37-ad83da51fd9e)
+2026-03-23 18:18:05 - INFO - Step 1: Logging in...
+2026-03-23 18:18:08 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-23 18:18:08 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-23 18:18:08 - INFO - Step 2: Selecting institute and source...
+2026-03-23 18:18:09 - INFO - Skipping Instance filter
+2026-03-23 18:18:09 - INFO - Skipping advanced filters (none selected)
+2026-03-23 18:18:09 - INFO - Skipping sub-filter options (none selected)
+2026-03-23 18:18:09 - INFO - Applying date filter...
+2026-03-23 18:18:19 - INFO - Date range selected: 22-03-2026 - 23-03-2026
+2026-03-23 18:18:22 - INFO - Waiting 5s for page to load...
+2026-03-23 18:18:28 - INFO - ✅ Date filter applied successfully
+2026-03-23 18:18:29 - INFO - Capturing screenshot...
+2026-03-23 18:18:30 - INFO - ✅ Screenshot saved to C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\data\runtime\manual_jobs\497ece10-e05f-46df-8a37-ad83da51fd9e\screenshot.png
+2026-03-23 18:18:30 - INFO - [32mmanual_scrape[39;49;00m: [34mJob OK[39;49;00m (497ece10-e05f-46df-8a37-ad83da51fd9e)
+2026-03-23 18:18:30 - INFO - Result is kept for 500 seconds

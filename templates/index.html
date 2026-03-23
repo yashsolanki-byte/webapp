@@ -1,0 +1,2675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPF Scraper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #1a1d21;
+            --sidebar-bg: #141619;
+            --main-bg: #1e2226;
+            --text: #e4e6eb;
+            --text-muted: #9ca3af;
+            --border: #2d3238;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            /* Scroll areas: max visible body rows ≈ 5 (+ sticky header) */
+            --table-viewport-rows: 5;
+            --table-viewport-row-h: 2.75rem;
+            --table-viewport-header-h: 3rem;
+            --list-viewport-rows: 5;
+            --list-viewport-item-h: 2.85rem;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            background: var(--main-bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 20%;
+            min-width: 200px;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border);
+            padding: 1.25rem 0;
+        }
+
+        .sidebar-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            padding: 0 1.25rem 0.75rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 0.75rem;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+        }
+
+        .sidebar nav a {
+            display: block;
+            padding: 0.6rem 1.25rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.15s, background 0.15s;
+        }
+
+        .sidebar nav a:hover {
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .sidebar nav a.active {
+            color: var(--accent);
+            background: rgba(59, 130, 246, 0.1);
+            border-right: 2px solid var(--accent);
+        }
+
+        .sidebar-stop-wrap {
+            padding: 1rem 1.25rem 0;
+            margin-top: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .btn-stop-all {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.8rem;
+            background: transparent;
+            color: #f87171;
+            border: 1px solid rgba(248, 113, 113, 0.5);
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn-stop-all:hover {
+            background: rgba(248, 113, 113, 0.12);
+            border-color: #f87171;
+        }
+
+        .btn-stop-job {
+            padding: 0.5rem 0.85rem;
+            font-size: 0.8rem;
+            background: transparent;
+            color: #f87171;
+            border: 1px solid rgba(248, 113, 113, 0.5);
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn-stop-job:hover:not(:disabled) {
+            background: rgba(248, 113, 113, 0.12);
+            border-color: #f87171;
+        }
+
+        .btn-stop-job:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
+        .main {
+            flex: 1;
+            width: 80%;
+            padding: 2rem;
+            overflow: auto;
+        }
+
+        .main h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .institutes-table-wrap {
+            overflow-x: auto;
+            overflow-y: auto;
+            max-height: calc(var(--table-viewport-header-h) + var(--table-viewport-rows) * var(--table-viewport-row-h));
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--sidebar-bg);
+        }
+
+        .institutes-table thead th,
+        .scrape-list-table thead th {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            background: var(--sidebar-bg);
+            box-shadow: 0 1px 0 var(--border);
+        }
+
+        .institutes-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+
+        .institutes-table th,
+        .institutes-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .institutes-table th {
+            font-weight: 600;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .institutes-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .institutes-table tbody tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .institutes-table .url-cell {
+            max-width: 280px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .institutes-table .url-cell a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .institutes-table .url-cell a:hover {
+            text-decoration: underline;
+        }
+
+        .loading, .error {
+            color: var(--text-muted);
+            padding: 1rem 0;
+        }
+
+        .error {
+            color: #f87171;
+        }
+
+        .text-muted {
+            color: var(--text-muted);
+        }
+
+        .job-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .job-section {
+            background: var(--sidebar-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+
+        .job-section h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .job-section p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .scrape-list-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .upload-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .upload-toolbar select {
+            padding: 0.4rem 0.6rem;
+            background: var(--main-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            font-size: 0.875rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-danger {
+            background: #dc2626;
+            color: #fff;
+        }
+
+        .btn-danger:hover {
+            background: #b91c1c;
+        }
+
+        .scrape-list-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+
+        .scrape-list-table th,
+        .scrape-list-table td {
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .scrape-list-table th {
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .scrape-list-table tbody tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .scrape-list-table .url-cell {
+            max-width: 220px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .scrape-list-table .url-cell a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--sidebar-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            width: 90%;
+            max-width: 480px;
+            max-height: 80vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal h3 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .modal-search {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 0.75rem;
+            background: var(--main-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            font-size: 0.875rem;
+        }
+
+        .modal-search::placeholder {
+            color: var(--text-muted);
+        }
+
+        .modal-list {
+            flex: 1;
+            overflow-y: auto;
+            max-height: calc(var(--list-viewport-rows) * var(--list-viewport-item-h));
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--main-bg);
+        }
+
+        .modal-list-item {
+            padding: 0.6rem 0.75rem;
+            cursor: pointer;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.875rem;
+        }
+
+        .modal-list-item:last-child {
+            border-bottom: none;
+        }
+
+        .modal-list-item:hover {
+            background: rgba(59, 130, 246, 0.15);
+        }
+
+        .modal-list-item .item-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .modal-actions {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.5rem;
+        }
+
+        .modal-empty {
+            padding: 1rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .modal-list-item.selected {
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .modal-list-item input[type="checkbox"] {
+            margin-right: 0.5rem;
+            cursor: pointer;
+        }
+
+        .scrape-list-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-select-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-select-actions .btn-sm {
+            padding: 0.35rem 0.6rem;
+            font-size: 0.8rem;
+        }
+
+        .scrape-run-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .scrape-status {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .scrape-status.running {
+            color: var(--accent);
+        }
+
+        .scrape-status.error {
+            color: #f87171;
+        }
+
+        .scrape-results {
+            margin-top: 0.75rem;
+            font-size: 0.8rem;
+            max-height: calc(var(--table-viewport-rows) * 1.5rem + 1rem);
+            overflow-y: auto;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.5rem;
+            background: var(--main-bg);
+        }
+
+        .scrape-results li {
+            margin: 0.2rem 0;
+        }
+
+        .settings-logs {
+            margin-top: 1rem;
+        }
+
+        .settings-logs h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .settings-logs-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .settings-logs-pre {
+            font-family: ui-monospace, monospace;
+            font-size: 0.75rem;
+            line-height: 1.45;
+            background: var(--sidebar-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.75rem;
+            max-height: calc(var(--table-viewport-rows) * 1.1rem + 2rem);
+            overflow: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
+            color: var(--text-muted);
+        }
+
+        .settings-logs-path {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .settings-subsection {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .settings-subsection:first-of-type {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .settings-subsection-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 0 0 0.5rem;
+        }
+
+        .settings-log-kind {
+            margin-top: 1.25rem;
+        }
+
+        .settings-log-kind h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 0 0 0.25rem;
+        }
+
+        .settings-log-kind .log-kind-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0 0 0.5rem;
+        }
+
+        .settings-log-kind .log-sections {
+            max-height: 280px;
+        }
+
+        .settings-log-kind .log-section-list {
+            max-height: 220px;
+        }
+
+        .settings-log-kind .log-content-pre {
+            max-height: 220px;
+        }
+
+        .settings-auth-summary {
+            background: var(--sidebar-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            font-size: 0.875rem;
+        }
+
+        .settings-auth-summary dl {
+            margin: 0;
+            display: grid;
+            grid-template-columns: 10rem 1fr;
+            gap: 0.5rem 1rem;
+        }
+
+        .settings-auth-summary dt {
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .settings-auth-summary dd {
+            margin: 0;
+            word-break: break-all;
+        }
+
+        .settings-auth-profiles {
+            margin-top: 1rem;
+        }
+
+        .settings-auth-profiles table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+
+        .settings-auth-profiles th,
+        .settings-auth-profiles td {
+            text-align: left;
+            padding: 0.35rem 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .settings-log-viewer {
+            margin-top: 1rem;
+        }
+
+        .settings-log-viewer h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+        }
+
+        .settings-log-viewer .log-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .settings-log-viewer .log-toolbar select {
+            padding: 0.4rem 0.6rem;
+            background: var(--main-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            font-size: 0.875rem;
+        }
+
+        .settings-log-viewer .log-sections {
+            display: flex;
+            gap: 1rem;
+            min-height: 0;
+            align-items: stretch;
+        }
+
+        .settings-log-viewer .log-section-list {
+            width: 220px;
+            flex-shrink: 0;
+            background: var(--sidebar-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.5rem;
+            overflow-y: auto;
+            max-height: calc(var(--list-viewport-rows) * var(--list-viewport-item-h) + 0.5rem);
+        }
+
+        .settings-log-viewer .log-section-list .section-item {
+            display: block;
+            width: 100%;
+            padding: 0.45rem 0.5rem;
+            text-align: left;
+            background: transparent;
+            border: none;
+            border-radius: 4px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .settings-log-viewer .log-section-list .section-item:hover {
+            background: rgba(255,255,255,0.06);
+            color: var(--text);
+        }
+
+        .settings-log-viewer .log-section-list .section-item.active {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--accent);
+        }
+
+        .settings-log-viewer .log-content-wrap {
+            flex: 1;
+            min-width: 0;
+            min-height: 0;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            max-height: calc(var(--list-viewport-rows) * var(--list-viewport-item-h) + 4rem);
+        }
+
+        .settings-log-viewer .log-content-pre {
+            flex: 1;
+            margin: 0;
+            padding: 0.75rem;
+            font-family: ui-monospace, monospace;
+            font-size: 0.75rem;
+            line-height: 1.45;
+            background: var(--sidebar-bg);
+            color: var(--text-muted);
+            overflow: auto;
+            max-height: calc(var(--table-viewport-rows) * 1.1rem + 2rem);
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .settings-upload-logs {
+            margin-top: 1.5rem;
+        }
+
+        .settings-upload-logs .settings-upload-logs-pre {
+            min-height: 0;
+            max-height: calc(var(--table-viewport-rows) * 1.1rem + 2rem);
+            overflow-y: auto;
+        }
+
+        .dashboard-stats { margin-top: 1rem; }
+        .dashboard-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+        .dashboard-toolbar select {
+            padding: 0.4rem 0.6rem;
+            background: var(--main-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            font-size: 0.875rem;
+        }
+        .dashboard-summary {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .dashboard-card {
+            background: var(--sidebar-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            min-width: 120px;
+        }
+        .dashboard-card-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .dashboard-card-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .dashboard-table-wrap h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+        .dashboard-table-wrap .table-responsive {
+            overflow-x: auto;
+            overflow-y: auto;
+            max-height: calc(var(--table-viewport-header-h) + var(--table-viewport-rows) * var(--table-viewport-row-h));
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+        .dashboard-table-wrap .data-table thead th {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            background: var(--sidebar-bg);
+            box-shadow: 0 1px 0 var(--border);
+        }
+        .dashboard-table-wrap .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        .dashboard-table-wrap .data-table th,
+        .dashboard-table-wrap .data-table td {
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .dashboard-table-wrap .data-table th {
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+        .dashboard-table-wrap .data-table tbody tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        .dashboard-table-wrap .data-table .status-ok { color: var(--accent); }
+        .dashboard-table-wrap .data-table .status-none { color: var(--text-muted); }
+        .dashboard-table-wrap .data-table .status-fail { color: #e85d5d; max-width: 22rem; }
+
+        .manual-scrape-form { margin-top: 1rem; }
+        .manual-layout {
+            display: grid;
+            grid-template-columns: minmax(360px, 520px) minmax(320px, 1fr);
+            gap: 1rem;
+            align-items: start;
+        }
+        .manual-left-col { min-width: 0; }
+        .manual-right-col { min-width: 0; }
+        .manual-scrape-form .form-row { margin-bottom: 0.75rem; }
+        .manual-scrape-form .form-row label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.25rem; }
+        .manual-scrape-form .form-input,
+        .manual-scrape-form select { width: 100%; max-width: 400px; padding: 0.4rem 0.6rem; background: var(--main-bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 0.875rem; }
+        .manual-url-custom-input { max-width: 400px; }
+        .manual-scrape-form .manual-result { margin-top: 1rem; padding: 0.75rem; background: var(--sidebar-bg); border-radius: 6px; font-size: 0.875rem; }
+        .manual-filters-toolbar { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+        .manual-filters-status { font-size: 0.8rem; }
+        .manual-advanced-filters {
+            margin-top: 0.5rem;
+            max-height: calc(var(--table-viewport-rows) * 2.4rem);
+            overflow-y: auto;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.35rem 0.5rem;
+            background: var(--main-bg);
+        }
+        .manual-advanced-filters label { display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; cursor: pointer; font-weight: normal; }
+        .manual-subfilter-options {
+            margin-top: 0.75rem;
+            max-height: calc(var(--table-viewport-rows) * 3.25rem);
+            overflow-y: auto;
+            padding-right: 0.25rem;
+        }
+        .manual-subfilter-options .subfilter-group { margin-bottom: 0.5rem; }
+        .manual-subfilter-options .subfilter-group label { font-size: 0.85rem; color: var(--text-muted); }
+        .manual-subfilter-options select { max-width: 100%; min-width: 180px; }
+        .manual-actions-row { display: flex; gap: 0.5rem; align-items: center; }
+        .feedback-file-list {
+            margin-top: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--main-bg);
+            max-height: calc(var(--table-viewport-rows) * 4rem);
+            overflow-y: auto;
+            padding: 0.5rem 0.75rem;
+        }
+        .feedback-file-list .uni-group { margin-bottom: 0.5rem; }
+        .feedback-file-list .uni-title { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.25rem; }
+        .feedback-file-list label { display: flex; gap: 0.4rem; align-items: center; margin: 0.15rem 0; font-size: 0.85rem; }
+        @media (max-width: 1100px) {
+            .manual-layout { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-title">Features</div>
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link active" data-view="dashboard">Dashboard</a></li>
+                <li><a href="#" class="nav-link" data-view="single">Jobs</a></li>
+                <li><a href="#" class="nav-link" data-view="manual">Manual scrape</a></li>
+                <li><a href="#" class="nav-link" data-view="feedback-ready">Feedback uploader ready</a></li>
+                <li><a href="#" class="nav-link" data-view="institutes">Institutes</a></li>
+                <li><a href="#" class="nav-link" data-view="settings">Settings</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-stop-wrap">
+            <button type="button" class="btn btn-stop-all" id="stop-all-scrapers-btn" title="Stop batch scrape, manual scrape, upload, and feedback-ready (after current step)">Stop all jobs</button>
+        </div>
+    </aside>
+    <main class="main">
+        <div id="content-dashboard" class="view-content">
+            <h1>Dashboard</h1>
+            <div class="dashboard-stats">
+                <div class="dashboard-toolbar">
+                    <label>Date:</label>
+                    <select id="dashboard-date-select">
+                        <option value="">Select date</option>
+                    </select>
+                    <button type="button" class="btn btn-primary" id="dashboard-refresh-btn">Refresh</button>
+                    <button type="button" class="btn-stop-job" id="stop-dashboard-scrape-btn" disabled title="Stop scrape (after current university)">Stop scrape</button>
+                </div>
+                <div id="dashboard-summary" class="dashboard-summary" style="display: none;">
+                    <div class="dashboard-card">
+                        <span class="dashboard-card-value" id="dashboard-total">0</span>
+                        <span class="dashboard-card-label">Scrape runs (this date)</span>
+                    </div>
+                    <div class="dashboard-card">
+                        <span class="dashboard-card-value" id="dashboard-scraped">0</span>
+                        <span class="dashboard-card-label">Scraped</span>
+                    </div>
+                    <div class="dashboard-card">
+                        <span class="dashboard-card-value" id="dashboard-scrape-failed">0</span>
+                        <span class="dashboard-card-label">Scrape failed</span>
+                    </div>
+                    <div class="dashboard-card">
+                        <span class="dashboard-card-value" id="dashboard-uploaded">0</span>
+                        <span class="dashboard-card-label">Uploaded</span>
+                    </div>
+                </div>
+                <div id="dashboard-table-wrap" class="dashboard-table-wrap" style="display: none;">
+                    <h2>Institute status</h2>
+                    <div class="table-responsive">
+                        <table class="data-table" id="dashboard-institute-table">
+                            <thead>
+                                <tr>
+                                    <th>Institute</th>
+                                    <th>Scrape status</th>
+                                    <th>Upload status</th>
+                                    <th>Records</th>
+                                    <th>Download</th>
+                                    <th>Retry paid scrape</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dashboard-institute-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <p id="dashboard-placeholder" class="text-muted">Select a date to view scrape and upload counts.</p>
+            </div>
+        </div>
+        <div id="content-institutes" class="view-content" style="display: none;">
+            <h1>Institutes</h1>
+            <div id="institutes-container"></div>
+        </div>
+        <div id="content-feedback-ready" class="view-content" style="display: none;">
+            <h1>Feedback uploader ready</h1>
+            <p class="text-muted">Build date-wise feedback-ready CSVs from Drive uploaded scrape data and upload into the Feedback Uploader Ready folder.</p>
+            <div class="job-sections">
+                <section class="job-section">
+                    <h2>Run transformation</h2>
+                    <div class="upload-toolbar">
+                        <label>Date folder:</label>
+                        <select id="feedback-ready-date-select">
+                            <option value="">Loading…</option>
+                        </select>
+                        <button type="button" class="btn btn-primary" id="feedback-ready-run-btn">Run</button>
+                        <button type="button" class="btn-stop-job" id="stop-feedback-ready-btn" disabled title="Stop after current file">Stop</button>
+                    </div>
+                    <div class="manual-filters-toolbar">
+                        <button type="button" class="btn btn-sm" id="feedback-ready-select-all-btn">Select all files</button>
+                        <button type="button" class="btn btn-sm" id="feedback-ready-clear-btn">Clear</button>
+                        <span class="text-muted manual-filters-status" id="feedback-ready-selection-meta">No files loaded.</span>
+                    </div>
+                    <div id="feedback-ready-file-list" class="feedback-file-list">
+                        <p class="text-muted">Select a date to load files.</p>
+                    </div>
+                    <div class="scrape-run-bar">
+                        <span class="scrape-status" id="feedback-ready-status-text"></span>
+                    </div>
+                    <div id="feedback-ready-results-container" style="display: none;">
+                        <div class="scrape-results" id="feedback-ready-results"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div id="content-single" class="view-content" style="display: none;">
+            <h1>Jobs</h1>
+            <div class="job-sections">
+                <section class="job-section">
+                    <h2>Scrape</h2>
+                    <div class="scrape-list-toolbar">
+                        <button type="button" class="btn btn-primary" id="scrape-add-btn">Add university</button>
+                        <span class="scrape-list-meta" id="scrape-list-meta"></span>
+                    </div>
+                    <div id="scrape-list-container">
+                        <p class="text-muted">Loading list…</p>
+                    </div>
+                    <div class="scrape-run-bar">
+                        <button type="button" class="btn btn-primary" id="scrape-run-btn">Run scrape</button>
+                        <button type="button" class="btn-stop-job" id="stop-scrape-btn" disabled title="Stop after current university">Stop scrape</button>
+                        <span class="scrape-status" id="scrape-status-text"></span>
+                    </div>
+                    <div id="scrape-results-container" style="display: none;">
+                        <div class="scrape-results" id="scrape-results"></div>
+                    </div>
+                </section>
+                <section class="job-section">
+                    <h2>Upload</h2>
+                    <p class="text-muted">Upload scraped data (DATA_Scraped) to Google Drive. Uses same credentials as NPF paid application.</p>
+                    <div class="upload-toolbar">
+                        <label>Date folder:</label>
+                        <select id="upload-date-select">
+                            <option value="">Loading…</option>
+                        </select>
+                        <button type="button" class="btn btn-primary" id="upload-to-drive-btn">Upload to Drive</button>
+                        <button type="button" class="btn-stop-job" id="stop-upload-btn" disabled title="Stop after current file">Stop upload</button>
+                    </div>
+                    <div class="scrape-run-bar">
+                        <span class="scrape-status" id="upload-status-text"></span>
+                    </div>
+                    <div id="upload-results-container" style="display: none;">
+                        <div class="scrape-results" id="upload-results"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div id="content-manual" class="view-content" style="display: none;">
+            <h1>Manual scrape</h1>
+            <p class="text-muted">Single-institute scrape with filters (Script_Scraper logic). CSV exports and screenshots are saved to your PC’s <strong>Downloads</strong> folder (not under DATA_Scraped).</p>
+            <div class="manual-scrape-form">
+                <div class="manual-layout">
+                <div class="manual-left-col">
+                <div class="form-row">
+                    <label>Institute</label>
+                    <select id="manual-institute">
+                        <option value="">Select institute</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>Credentials</label>
+                    <select id="manual-credentials">
+                        <option value="central">central</option>
+                        <option value="sanjay">sanjay</option>
+                        <option value="amit">amit</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>URL</label>
+                    <select id="manual-url-select" class="form-input">
+                        <option value="">Loading…</option>
+                    </select>
+                    <input type="url" id="manual-url-custom" class="form-input manual-url-custom-input" placeholder="https://… (custom publisher URL)" style="display:none;margin-top:0.4rem;" autocomplete="off" />
+                </div>
+                <div class="form-row">
+                    <label>Source</label>
+                    <input type="text" id="manual-source" value="Collegedunia" class="form-input" />
+                </div>
+                <div class="form-row">
+                    <label>From date (DD-MM-YYYY)</label>
+                    <input type="text" id="manual-from-date" class="form-input" placeholder="DD-MM-YYYY" />
+                </div>
+                <div class="form-row">
+                    <label>To date (DD-MM-YYYY)</label>
+                    <input type="text" id="manual-to-date" class="form-input" placeholder="DD-MM-YYYY" />
+                </div>
+                <div class="form-row">
+                    <label>Instance</label>
+                    <select id="manual-instance">
+                        <option value="All">All</option>
+                        <option value="Primary">Primary</option>
+                        <option value="Secondary">Secondary</option>
+                        <option value="Tertiary">Tertiary</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>Rows per page</label>
+                    <select id="manual-rows">
+                        <option value="100">100</option>
+                        <option value="500">500</option>
+                        <option value="1000">1000</option>
+                        <option value="5000" selected>5000</option>
+                        <option value="10000">10000</option>
+                        <option value="20000">20000</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>Order</label>
+                    <select id="manual-order">
+                        <option value="Ascending">Ascending</option>
+                        <option value="Descending">Descending</option>
+                    </select>
+                </div>
+                </div>
+                <div class="manual-right-col">
+                <div class="form-row manual-filters-row">
+                    <label>Advanced filters</label>
+                    <div class="manual-filters-toolbar">
+                        <button type="button" class="btn btn-sm" id="manual-load-filters-btn">Load Filters</button>
+                        <button type="button" class="btn btn-sm" id="manual-load-subfilter-options-btn" style="display: none;">Load subfilter options</button>
+                        <span class="text-muted manual-filters-status" id="manual-filters-status">(Load filters for this institute/source, or leave empty to skip)</span>
+                    </div>
+                    <div id="manual-advanced-filters" class="manual-advanced-filters"></div>
+                    <div id="manual-subfilter-options" class="manual-subfilter-options"></div>
+                </div>
+                </div>
+                </div>
+                <div class="form-row manual-actions-row">
+                    <button type="button" class="btn btn-primary" id="manual-run-btn">Run manual scrape</button>
+                    <button type="button" class="btn-stop-job" id="stop-manual-btn" disabled title="Stop after current page">Stop manual</button>
+                    <button type="button" class="btn" id="manual-screenshot-btn">Take Screenshot</button>
+                </div>
+                <div class="scrape-run-bar">
+                    <span class="scrape-status" id="manual-status-text"></span>
+                </div>
+                <div id="manual-result" class="manual-result" style="display: none;"></div>
+            </div>
+        </div>
+        <div id="content-settings" class="view-content" style="display: none;">
+            <h1>Settings</h1>
+
+            <section class="settings-subsection" aria-labelledby="settings-logs-heading">
+                <h2 id="settings-logs-heading" class="settings-subsection-title">Logs history</h2>
+                <p class="text-muted" style="font-size:0.875rem;margin-bottom:0.75rem;">Browse by <strong>date</strong> then <strong>institute / job file</strong>. Files live under <code>logs/runs/&lt;dd-mm-yy&gt;/</code>. Aggregate lines also append to <code>logs/app/</code> (scraper, upload, manual, feedback).</p>
+                <div class="settings-log-viewer">
+                    <div class="log-toolbar">
+                        <label>Date:</label>
+                        <select id="settings-history-log-date">
+                            <option value="">Select date</option>
+                        </select>
+                        <button type="button" class="btn btn-primary" id="settings-history-logs-refresh">Refresh dates</button>
+                    </div>
+
+                    <div class="settings-log-kind">
+                        <h3>Scrape logs</h3>
+                        <p class="log-kind-desc">Paid application batch scrape per institute (<code>*.log</code>).</p>
+                        <div class="log-sections">
+                            <div class="log-section-list" id="settings-log-list-scrape">
+                                <p class="text-muted" style="padding: 0.5rem; font-size: 0.85rem;">Select a date.</p>
+                            </div>
+                            <div class="log-content-wrap">
+                                <pre class="log-content-pre" id="settings-log-content-scrape">Select a date, then an institute.</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-log-kind">
+                        <h3>Upload logs</h3>
+                        <p class="log-kind-desc">Per-institute upload lines and <strong>Job summary</strong> (<code>upload_*.log</code>).</p>
+                        <div class="log-sections">
+                            <div class="log-section-list" id="settings-log-list-upload">
+                                <p class="text-muted" style="padding: 0.5rem; font-size: 0.85rem;">Select a date.</p>
+                            </div>
+                            <div class="log-content-wrap">
+                                <pre class="log-content-pre" id="settings-log-content-upload">Select a date, then a file.</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-log-kind">
+                        <h3>Manual scrape logs</h3>
+                        <p class="log-kind-desc">Per-institute manual runs (<code>manual_*.log</code>).</p>
+                        <div class="log-sections">
+                            <div class="log-section-list" id="settings-log-list-manual">
+                                <p class="text-muted" style="padding: 0.5rem; font-size: 0.85rem;">Select a date.</p>
+                            </div>
+                            <div class="log-content-wrap">
+                                <pre class="log-content-pre" id="settings-log-content-manual">Select a date, then a file.</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-log-kind">
+                        <h3>Feedback uploader ready logs</h3>
+                        <p class="log-kind-desc">Per-institute feedback-ready lines (<code>feedback_*.log</code>).</p>
+                        <div class="log-sections">
+                            <div class="log-section-list" id="settings-log-list-feedback">
+                                <p class="text-muted" style="padding: 0.5rem; font-size: 0.85rem;">Select a date.</p>
+                            </div>
+                            <div class="log-content-wrap">
+                                <pre class="log-content-pre" id="settings-log-content-feedback">Select a date, then a file.</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="settings-subsection" aria-labelledby="settings-auth-heading">
+                <h2 id="settings-auth-heading" class="settings-subsection-title">Authentications</h2>
+                <p class="text-muted" style="font-size:0.875rem;margin-bottom:0.75rem;">Credential paths and NPF profile status (passwords are never shown). Configure <code>.env</code> and <code>data/runtime/credentials.json</code> per project docs.</p>
+                <div class="settings-auth-summary" id="settings-auth-summary">Loading…</div>
+            </section>
+        </div>
+    </main>
+    <div id="add-institute-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal">
+            <h3>Add university from institute list</h3>
+            <p class="scrape-list-meta" id="add-modal-meta"></p>
+            <input type="text" class="modal-search" id="add-institute-search" placeholder="Search by name or source…" autocomplete="off">
+            <div class="modal-select-actions">
+                <button type="button" class="btn btn-sm" id="add-institute-select-all">Select all</button>
+                <button type="button" class="btn btn-sm" id="add-institute-select-none">Clear selection</button>
+            </div>
+            <div class="modal-list" id="add-institute-list"></div>
+            <div class="modal-actions">
+                <button type="button" class="btn" id="add-institute-cancel">Cancel</button>
+                <button type="button" class="btn btn-primary" id="add-institute-submit">Add selected (0)</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const views = ['dashboard', 'single', 'manual', 'feedback-ready', 'institutes', 'settings'];
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const view = link.getAttribute('data-view');
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                views.forEach(v => {
+                    const el = document.getElementById('content-' + v);
+                    if (el) el.style.display = v === view ? 'block' : 'none';
+                });
+                if (view === 'institutes') loadInstitutes();
+                if (view === 'single') {
+                    loadScrapeList();
+                    loadUploadDates();
+                    pollScrapeStatus();
+                }
+                if (view === 'settings') {
+                    loadSettingsHistoryLogs();
+                    loadSettingsAuthSummary();
+                }
+                if (view === 'dashboard') {
+                    loadDashboardDates();
+                    startDashboardScrapeStopSync();
+                } else {
+                    stopDashboardScrapeStopSync();
+                }
+                if (view === 'manual') loadManualInstitutes();
+                if (view === 'feedback-ready') {
+                    loadFeedbackReadyDates();
+                    pollFeedbackReadyStatus();
+                }
+            });
+        });
+
+        document.getElementById('settings-history-logs-refresh').addEventListener('click', loadSettingsHistoryLogs);
+        document.getElementById('settings-history-log-date').addEventListener('change', onSettingsHistoryLogDateChange);
+        document.getElementById('upload-to-drive-btn').addEventListener('click', startUploadToDrive);
+        document.getElementById('manual-run-btn').addEventListener('click', runManualScrape);
+        document.getElementById('manual-screenshot-btn').addEventListener('click', runManualScreenshot);
+        document.getElementById('manual-load-filters-btn').addEventListener('click', loadManualFilters);
+        document.getElementById('manual-load-subfilter-options-btn').addEventListener('click', loadManualSubfilterOptions);
+        const manualUrlSelect = document.getElementById('manual-url-select');
+        if (manualUrlSelect) manualUrlSelect.addEventListener('change', onManualUrlSelectChange);
+        document.getElementById('feedback-ready-run-btn').addEventListener('click', startFeedbackReady);
+        document.getElementById('feedback-ready-select-all-btn').addEventListener('click', function() { setAllFeedbackReadyFiles(true); });
+        document.getElementById('feedback-ready-clear-btn').addEventListener('click', function() { setAllFeedbackReadyFiles(false); });
+        document.getElementById('feedback-ready-date-select').addEventListener('change', loadFeedbackReadyFiles);
+        document.getElementById('dashboard-date-select').addEventListener('change', onDashboardDateChange);
+        document.getElementById('dashboard-refresh-btn').addEventListener('click', function () {
+            loadDashboardDates();
+            const sel = document.getElementById('dashboard-date-select');
+            if (sel && sel.value) loadDashboardStats(sel.value);
+        });
+
+        let scrapeStatusPollTimer = null;
+        let feedbackReadyPollTimer = null;
+        let feedbackReadyFiles = [];
+        let dashboardScrapeStopSyncTimer = null;
+
+        function stopDashboardScrapeStopSync() {
+            if (dashboardScrapeStopSyncTimer) {
+                clearInterval(dashboardScrapeStopSyncTimer);
+                dashboardScrapeStopSyncTimer = null;
+            }
+        }
+
+        function startDashboardScrapeStopSync() {
+            stopDashboardScrapeStopSync();
+            function tick() {
+                fetch('/api/scrape-status')
+                    .then(r => r.json())
+                    .then(st => {
+                        const b = document.getElementById('stop-dashboard-scrape-btn');
+                        if (b) b.disabled = !(st && st.running);
+                    })
+                    .catch(() => {});
+            }
+            tick();
+            dashboardScrapeStopSyncTimer = setInterval(tick, 2500);
+        }
+
+        function loadFeedbackReadyDates() {
+            const sel = document.getElementById('feedback-ready-date-select');
+            if (!sel) return;
+            fetch('/api/feedback-ready-dates')
+                .then(r => r.json())
+                .then(data => {
+                    const dates = data.dates || [];
+                    sel.innerHTML = dates.length
+                        ? dates.map(d => '<option value="' + escapeHtml(d) + '">' + escapeHtml(d) + '</option>').join('')
+                        : '<option value="">No uploaded dates</option>';
+                    loadFeedbackReadyFiles();
+                })
+                .catch(() => {
+                    sel.innerHTML = '<option value="">Failed to load</option>';
+                });
+        }
+
+        function loadFeedbackReadyFiles() {
+            const sel = document.getElementById('feedback-ready-date-select');
+            const listEl = document.getElementById('feedback-ready-file-list');
+            const metaEl = document.getElementById('feedback-ready-selection-meta');
+            const dateVal = sel && sel.value ? sel.value : '';
+            feedbackReadyFiles = [];
+            if (!dateVal) {
+                if (listEl) listEl.innerHTML = '<p class="text-muted">Select a date to load files.</p>';
+                if (metaEl) metaEl.textContent = 'No files loaded.';
+                return;
+            }
+            if (listEl) listEl.innerHTML = '<p class="text-muted">Loading files…</p>';
+            fetch('/api/feedback-ready/files?date=' + encodeURIComponent(dateVal))
+                .then(r => r.json())
+                .then(data => {
+                    const institutes = data.institutes || [];
+                    renderFeedbackReadyFiles(institutes);
+                })
+                .catch(() => {
+                    if (listEl) listEl.innerHTML = '<p class="text-muted">Failed to load files.</p>';
+                    if (metaEl) metaEl.textContent = 'Failed to load files.';
+                });
+        }
+
+        function renderFeedbackReadyFiles(institutes) {
+            const listEl = document.getElementById('feedback-ready-file-list');
+            feedbackReadyFiles = [];
+            (institutes || []).forEach(uni => {
+                const files = uni.files || [];
+                files.forEach(f => feedbackReadyFiles.push({ id: f.id, name: f.name, university: uni.name || '' }));
+            });
+            if (!listEl) return;
+            if (!feedbackReadyFiles.length) {
+                listEl.innerHTML = '<p class="text-muted">No CSV files found for selected date.</p>';
+                updateFeedbackReadySelectionMeta();
+                return;
+            }
+            listEl.innerHTML = (institutes || []).map(uni => {
+                const files = uni.files || [];
+                if (!files.length) return '';
+                return '<div class="uni-group">' +
+                    '<div class="uni-title">' + escapeHtml(uni.name || '-') + '</div>' +
+                    files.map(f => '<label><input type="checkbox" class="feedback-file-cb" data-id="' + escapeHtml(f.id) + '"> ' + escapeHtml(f.name || '-') + '</label>').join('') +
+                    '</div>';
+            }).join('');
+            listEl.querySelectorAll('.feedback-file-cb').forEach(cb => cb.addEventListener('change', updateFeedbackReadySelectionMeta));
+            setAllFeedbackReadyFiles(true);
+        }
+
+        function setAllFeedbackReadyFiles(checked) {
+            document.querySelectorAll('.feedback-file-cb').forEach(cb => { cb.checked = checked; });
+            updateFeedbackReadySelectionMeta();
+        }
+
+        function getSelectedFeedbackReadyFileIds() {
+            return Array.from(document.querySelectorAll('.feedback-file-cb:checked')).map(cb => cb.getAttribute('data-id'));
+        }
+
+        function updateFeedbackReadySelectionMeta() {
+            const metaEl = document.getElementById('feedback-ready-selection-meta');
+            const selected = getSelectedFeedbackReadyFileIds().length;
+            const total = feedbackReadyFiles.length;
+            if (metaEl) metaEl.textContent = total ? `Selected ${selected} / ${total} files` : 'No files loaded.';
+        }
+
+        function startFeedbackReady() {
+            const sel = document.getElementById('feedback-ready-date-select');
+            const dateVal = sel && sel.value ? sel.value : '';
+            if (!dateVal) return;
+            const fileIds = getSelectedFeedbackReadyFileIds();
+            if (!fileIds.length) return;
+            const statusEl = document.getElementById('feedback-ready-status-text');
+            const resultEl = document.getElementById('feedback-ready-results');
+            const wrap = document.getElementById('feedback-ready-results-container');
+            const runBtn = document.getElementById('feedback-ready-run-btn');
+            if (statusEl) { statusEl.textContent = 'Starting...'; statusEl.className = 'scrape-status running'; }
+            if (wrap) wrap.style.display = 'none';
+            if (resultEl) resultEl.innerHTML = '';
+            if (runBtn) runBtn.disabled = true;
+            const sfr = document.getElementById('stop-feedback-ready-btn');
+            if (sfr) sfr.disabled = false;
+            fetch('/api/feedback-ready/run', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ date: dateVal, fileIds: fileIds })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.error) throw new Error(data.error);
+                    pollFeedbackReadyStatus();
+                })
+                .catch(err => {
+                    if (statusEl) { statusEl.textContent = 'Error: ' + escapeHtml(err.message || 'Failed'); statusEl.className = 'scrape-status error'; }
+                    if (runBtn) runBtn.disabled = false;
+                });
+        }
+
+        function pollFeedbackReadyStatus() {
+            if (feedbackReadyPollTimer) return;
+            function poll() {
+                fetch('/api/feedback-ready/status')
+                    .then(r => r.json())
+                    .then(updateFeedbackReadyUI)
+                    .catch(() => {});
+                if (document.getElementById('content-feedback-ready') && document.getElementById('content-feedback-ready').style.display === 'block') {
+                    feedbackReadyPollTimer = setTimeout(poll, 2000);
+                } else {
+                    feedbackReadyPollTimer = null;
+                }
+            }
+            poll();
+        }
+
+        function updateFeedbackReadyUI(status) {
+            const txt = document.getElementById('feedback-ready-status-text');
+            const runBtn = document.getElementById('feedback-ready-run-btn');
+            const resultsContainer = document.getElementById('feedback-ready-results-container');
+            const resultsEl = document.getElementById('feedback-ready-results');
+            if (!txt) return;
+            if (!status.running && feedbackReadyPollTimer) {
+                clearTimeout(feedbackReadyPollTimer);
+                feedbackReadyPollTimer = null;
+            }
+            if (runBtn) runBtn.disabled = !!status.running;
+            const stopFrBtn = document.getElementById('stop-feedback-ready-btn');
+            if (stopFrBtn) stopFrBtn.disabled = !status.running;
+            txt.className = 'scrape-status';
+            if (status.running) {
+                txt.textContent = `Running... ${status.processed || 0} processed`;
+                txt.classList.add('running');
+                if (resultsContainer) resultsContainer.style.display = 'none';
+                return;
+            }
+            if (status.error) {
+                txt.textContent = 'Error: ' + status.error;
+                txt.classList.add('error');
+                if (resultsContainer) resultsContainer.style.display = 'none';
+                return;
+            }
+            const proc = status.processed || 0, fail = status.failed || 0, skip = status.skipped || 0;
+            if (proc > 0 || fail > 0 || skip > 0 || ((status.details || []).length > 0)) {
+                const outDir = status.outputDir ? ` | output: ${status.outputDir}` : '';
+                txt.textContent = `Done: ${proc} processed, ${fail} failed, ${skip} skipped${outDir}`;
+                if (resultsContainer) resultsContainer.style.display = 'block';
+                if (resultsEl) {
+                    const list = (status.details || []).slice(0, 200);
+                    resultsEl.innerHTML = '<ul>' + list.map(r => {
+                        let label = 'failed';
+                        if (r.success === 'true') label = 'ok';
+                        else if (r.success === 'skipped') label = 'skipped' + (r.note ? ' (' + r.note + ')' : '');
+                        return `<li><strong>${escapeHtml(r.university || '-')}</strong> / ${escapeHtml(r.file || '-')} : ${label}${r.error ? ' (' + escapeHtml(r.error) + ')' : ''}${r.output ? ' -> ' + escapeHtml(r.output) : ''}</li>`;
+                    }).join('') + '</ul>';
+                }
+                return;
+            }
+            txt.textContent = '';
+            if (resultsContainer) resultsContainer.style.display = 'none';
+        }
+
+        function pollScrapeStatus() {
+            if (scrapeStatusPollTimer) return;
+            function poll() {
+                fetch('/api/scrape-status')
+                    .then(r => r.json())
+                    .then(updateScrapeStatusUI)
+                    .catch(() => {});
+                if (document.getElementById('content-single') && document.getElementById('content-single').style.display === 'block') {
+                    scrapeStatusPollTimer = setTimeout(poll, 2000);
+                } else {
+                    scrapeStatusPollTimer = null;
+                }
+            }
+            poll();
+        }
+
+        function updateScrapeStatusUI(status) {
+            const txt = document.getElementById('scrape-status-text');
+            const runBtn = document.getElementById('scrape-run-btn');
+            const resultsContainer = document.getElementById('scrape-results-container');
+            const resultsEl = document.getElementById('scrape-results');
+            if (!txt) return;
+            if (!status.running && scrapeStatusPollTimer) {
+                clearTimeout(scrapeStatusPollTimer);
+                scrapeStatusPollTimer = null;
+            }
+            runBtn.disabled = !!status.running;
+            const stopScrapeBtn = document.getElementById('stop-scrape-btn');
+            if (stopScrapeBtn) stopScrapeBtn.disabled = !status.running;
+            txt.className = 'scrape-status';
+            if (status.running) {
+                const cur = status.current || '…';
+                txt.textContent = `Scraping… ${status.done}/${status.total} (${cur})`;
+                txt.classList.add('running');
+                resultsContainer.style.display = 'none';
+            } else if (status.error) {
+                txt.textContent = 'Error: ' + status.error;
+                txt.classList.add('error');
+                resultsContainer.style.display = 'none';
+            } else if (status.stoppedByUser) {
+                txt.textContent = 'Stopped by user. Completed ' + (status.done || 0) + '/' + (status.total || 0) + ' before stop.';
+                txt.classList.add('error');
+                resultsContainer.style.display = 'none';
+            } else if (status.results && status.results.length) {
+                txt.textContent = `Done: ${status.done}/${status.total} universities. Output: DATA_Scraped/dd-mm-yy/university_name/`;
+                resultsContainer.style.display = 'block';
+                resultsEl.innerHTML = '<ul>' + status.results.map(r => {
+                    let line;
+                    if (r.skipped) line = 'Skipped — ' + escapeHtml(r.skipReason || 'already done');
+                    else if (r.success) line = r.count + ' records';
+                    else line = 'Failed: ' + escapeHtml(r.error || 'Error occurred');
+                    return `<li><strong>${escapeHtml(r.university)}</strong>: ${line}</li>`;
+                }).join('') + '</ul>';
+            } else {
+                txt.textContent = '';
+                resultsContainer.style.display = 'none';
+            }
+        }
+
+        const SETTINGS_LOG_KINDS = [
+            { kind: 'scrape', listId: 'settings-log-list-scrape', contentId: 'settings-log-content-scrape', emptyMsg: 'No scrape logs for this date.' },
+            { kind: 'upload', listId: 'settings-log-list-upload', contentId: 'settings-log-content-upload', emptyMsg: 'No upload logs for this date yet. Run Upload to Drive for this date.' },
+            { kind: 'manual', listId: 'settings-log-list-manual', contentId: 'settings-log-content-manual', emptyMsg: 'No manual scrape logs for this date yet.' },
+            { kind: 'feedback', listId: 'settings-log-list-feedback', contentId: 'settings-log-content-feedback', emptyMsg: 'No feedback-ready logs for this date yet.' }
+        ];
+
+        function loadSettingsHistoryLogs() {
+            const dateSelect = document.getElementById('settings-history-log-date');
+            if (!dateSelect) return;
+            const prev = dateSelect.value || '';
+            fetch('/api/scraper-logs/dates')
+                .then(r => r.json())
+                .then(data => {
+                    const dates = data.dates || [];
+                    dateSelect.innerHTML = '<option value="">Select date</option>' +
+                        dates.map(d => '<option value="' + escapeHtml(d) + '">' + escapeHtml(d) + '</option>').join('');
+                    if (prev && dates.indexOf(prev) !== -1) dateSelect.value = prev;
+                    SETTINGS_LOG_KINDS.forEach(({ listId, contentId }) => {
+                        const listEl = document.getElementById(listId);
+                        const pre = document.getElementById(contentId);
+                        if (listEl) listEl.innerHTML = '<p class="text-muted" style="padding: 0.5rem; font-size: 0.85rem;">Select a date.</p>';
+                        if (pre) pre.textContent = 'Select a date, then a file.';
+                    });
+                    onSettingsHistoryLogDateChange();
+                })
+                .catch(() => {
+                    dateSelect.innerHTML = '<option value="">Select date</option>';
+                    SETTINGS_LOG_KINDS.forEach(({ contentId }) => {
+                        const pre = document.getElementById(contentId);
+                        if (pre) pre.textContent = 'Failed to load dates.';
+                    });
+                });
+        }
+
+        function onSettingsHistoryLogDateChange() {
+            const dateSelect = document.getElementById('settings-history-log-date');
+            const dateVal = (dateSelect && dateSelect.value) ? dateSelect.value.trim() : '';
+            SETTINGS_LOG_KINDS.forEach(cfg => {
+                const listEl = document.getElementById(cfg.listId);
+                const contentPre = document.getElementById(cfg.contentId);
+                if (!listEl || !contentPre) return;
+                if (!dateVal) {
+                    listEl.innerHTML = '<p class="text-muted" style="padding: 0.5rem; font-size: 0.85rem;">Select a date.</p>';
+                    contentPre.textContent = 'Select a date, then a file.';
+                    return;
+                }
+                fetch('/api/scraper-logs/files?date=' + encodeURIComponent(dateVal) + '&kind=' + encodeURIComponent(cfg.kind))
+                    .then(r => r.json())
+                    .then(data => {
+                        const files = data.files || [];
+                        if (files.length === 0) {
+                            listEl.innerHTML = '<p class="text-muted" style="padding: 0.5rem; font-size: 0.85rem;">' + escapeHtml(cfg.emptyMsg) + '</p>';
+                            contentPre.textContent = cfg.emptyMsg;
+                            return;
+                        }
+                        listEl.innerHTML = files.map(f => {
+                            const label = escapeHtml((f.label || f.name || '').replace(/\.log$/i, '') || f.name);
+                            return '<button type="button" class="section-item" data-kind="' + escapeHtml(cfg.kind) + '" data-date="' + escapeHtml(dateVal) + '" data-file="' + escapeHtml(f.name) + '">' + label + '</button>';
+                        }).join('');
+                        listEl.querySelectorAll('.section-item').forEach(btn => {
+                            btn.addEventListener('click', function () {
+                                listEl.querySelectorAll('.section-item').forEach(b => b.classList.remove('active'));
+                                this.classList.add('active');
+                                loadSettingsHistoryLogContent(cfg.kind, this.dataset.date || '', this.dataset.file || '');
+                            });
+                        });
+                        const first = listEl.querySelector('.section-item');
+                        if (first) {
+                            first.classList.add('active');
+                            loadSettingsHistoryLogContent(cfg.kind, first.dataset.date || '', first.dataset.file || '');
+                        }
+                    })
+                    .catch(() => {
+                        listEl.innerHTML = '<p class="text-muted" style="padding: 0.5rem; font-size: 0.85rem;">Failed to load list.</p>';
+                        contentPre.textContent = 'Failed to load file list.';
+                    });
+            });
+        }
+
+        function loadSettingsHistoryLogContent(kind, dateStr, fileStr) {
+            const cfg = SETTINGS_LOG_KINDS.find(x => x.kind === kind);
+            const pre = cfg ? document.getElementById(cfg.contentId) : null;
+            if (!pre || !dateStr || !fileStr) return;
+            pre.textContent = 'Loading…';
+            const url = '/api/scraper-logs?date=' + encodeURIComponent(dateStr) + '&file=' + encodeURIComponent(fileStr);
+            fetch(url)
+                .then(r => r.json())
+                .then(data => {
+                    pre.textContent = (data.log || '').trim() || '(Empty log.)';
+                    pre.scrollTop = pre.scrollHeight;
+                })
+                .catch(() => {
+                    pre.textContent = 'Failed to load log.';
+                });
+        }
+
+        function loadSettingsAuthSummary() {
+            const el = document.getElementById('settings-auth-summary');
+            if (!el) return;
+            el.textContent = 'Loading…';
+            fetch('/api/settings/auth-summary')
+                .then(r => r.json())
+                .then(data => {
+                    const credOk = data.credentialsJsonExists ? 'Yes' : 'No';
+                    const envOk = data.envFileExists ? 'Yes' : 'No';
+                    let profilesHtml = '';
+                    const profs = data.npfProfiles || [];
+                    if (profs.length) {
+                        profilesHtml = '<div class="settings-auth-profiles"><table><thead><tr><th>Profile</th><th>Email</th><th>Password in .env</th></tr></thead><tbody>' +
+                            profs.map(p => '<tr><td>' + escapeHtml(p.profile) + '</td><td>' + escapeHtml(p.email || '') + '</td><td>' + (p.passwordConfigured ? '<span class="status-ok">Set</span>' : '<span class="text-muted">Not set</span>') + '</td></tr>').join('') +
+                            '</tbody></table></div>';
+                    }
+                    el.innerHTML =
+                        '<dl>' +
+                        '<dt>credentials.json</dt><dd>' + escapeHtml(data.credentialsJsonPath || '') + ' — ' + credOk + '</dd>' +
+                        '<dt>.env</dt><dd>' + escapeHtml(data.envFilePath || '') + ' — ' + envOk + '</dd>' +
+                        '<dt>Drive folder</dt><dd>' + (data.driveFolderIdConfigured ? 'DRIVE_FOLDER_ID is set in environment.' : 'Using default folder ID (see upload code).') + ' ' + escapeHtml(data.driveFolderIdNote || '') + '</dd>' +
+                        '</dl>' + profilesHtml;
+                })
+                .catch(() => {
+                    el.textContent = 'Could not load auth summary.';
+                });
+        }
+
+        /**
+         * @param {string} [preferredDate] — if set, ensure this dd-mm-yy is selected after refresh (e.g. after scrape retry writes history for today).
+         */
+        function loadDashboardDates(preferredDate) {
+            const sel = document.getElementById('dashboard-date-select');
+            if (!sel) return Promise.resolve();
+            const keep = (preferredDate !== undefined && preferredDate !== null && String(preferredDate).trim() !== '')
+                ? String(preferredDate).trim()
+                : (sel.value || '');
+            return fetch('/api/dashboard-dates')
+                .then(r => r.json())
+                .then(data => {
+                    let dates = data.dates || [];
+                    if (keep && dates.indexOf(keep) === -1) {
+                        dates = [keep].concat(dates);
+                    }
+                    sel.innerHTML = '<option value="">Select date</option>' +
+                        dates.map(d => '<option value="' + escapeHtml(d) + '">' + escapeHtml(d) + '</option>').join('');
+                    if (keep && dates.indexOf(keep) !== -1) sel.value = keep;
+                    if (sel.value) loadDashboardStats(sel.value);
+                })
+                .catch(() => {
+                    sel.innerHTML = '<option value="">Select date</option>';
+                });
+        }
+
+        function onDashboardDateChange() {
+            const sel = document.getElementById('dashboard-date-select');
+            if (sel && sel.value) loadDashboardStats(sel.value);
+            else {
+                document.getElementById('dashboard-summary').style.display = 'none';
+                document.getElementById('dashboard-table-wrap').style.display = 'none';
+                document.getElementById('dashboard-placeholder').style.display = 'block';
+            }
+        }
+
+        function pollDashboardScrapeUntilIdle(btn, origLabel, previousDashboardDate) {
+            let attempts = 0;
+            const maxAttempts = 450;
+            function tick() {
+                attempts++;
+                if (attempts > maxAttempts) {
+                    if (btn) { btn.disabled = false; btn.textContent = origLabel; }
+                    return;
+                }
+                fetch('/api/scrape-status')
+                    .then(r => r.json())
+                    .then(st => {
+                        if (!st || !st.running) {
+                            if (btn) {
+                                btn.disabled = false;
+                                btn.textContent = origLabel;
+                            }
+                            const dash = document.getElementById('content-dashboard');
+                            if (!dash || dash.style.display !== 'block') return;
+                            // Retry writes scrape_history for *today*; refresh that date so status shows Scraped / new Failed.
+                            const historyDate = st && st.lastRunHistoryDate ? st.lastRunHistoryDate : null;
+                            if (historyDate) {
+                                loadDashboardDates(historyDate);
+                            } else if (previousDashboardDate) {
+                                loadDashboardStats(previousDashboardDate);
+                            }
+                            return;
+                        }
+                        setTimeout(tick, 2000);
+                    })
+                    .catch(() => setTimeout(tick, 3000));
+            }
+            setTimeout(tick, 1500);
+        }
+
+        function dashboardRetryPaidScrape(universityName, btn) {
+            if (!universityName || !btn) return;
+            const orig = btn.textContent;
+            const sel = document.getElementById('dashboard-date-select');
+            const dateStr = sel ? sel.value : '';
+            if (!confirm('Run paid application scrape for this institute? Files go to DATA_Scraped for today (same as Jobs).')) return;
+            btn.disabled = true;
+            btn.textContent = 'Starting…';
+            fetch('/api/scrape-retry', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ university: universityName })
+            })
+                .then(r => r.json().then(data => ({ ok: r.ok, data })))
+                .then(({ ok, data }) => {
+                    if (!ok) {
+                        alert(data.error || 'Could not start scrape');
+                        btn.disabled = false;
+                        btn.textContent = orig;
+                        return;
+                    }
+                    btn.textContent = 'Running…';
+                    pollDashboardScrapeUntilIdle(btn, orig, dateStr);
+                })
+                .catch(() => {
+                    alert('Network error');
+                    btn.disabled = false;
+                    btn.textContent = orig;
+                });
+        }
+
+        function loadDashboardStats(dateStr) {
+            const summaryEl = document.getElementById('dashboard-summary');
+            const tableWrap = document.getElementById('dashboard-table-wrap');
+            const placeholder = document.getElementById('dashboard-placeholder');
+            const totalEl = document.getElementById('dashboard-total');
+            const scrapedEl = document.getElementById('dashboard-scraped');
+            const scrapeFailedEl = document.getElementById('dashboard-scrape-failed');
+            const uploadedEl = document.getElementById('dashboard-uploaded');
+            const tbody = document.getElementById('dashboard-institute-tbody');
+            if (!dateStr || !tbody) return;
+            if (placeholder) placeholder.style.display = 'none';
+            if (summaryEl) summaryEl.style.display = 'flex';
+            if (totalEl) totalEl.textContent = '…';
+            if (scrapedEl) scrapedEl.textContent = '…';
+            if (scrapeFailedEl) scrapeFailedEl.textContent = '…';
+            if (uploadedEl) uploadedEl.textContent = '…';
+            tbody.innerHTML = '<tr><td colspan="6">Loading…</td></tr>';
+            fetch('/api/dashboard-stats?date=' + encodeURIComponent(dateStr))
+                .then(r => r.json())
+                .then(data => {
+                    if (data.error) {
+                        if (placeholder) { placeholder.textContent = data.error; placeholder.style.display = 'block'; }
+                        if (summaryEl) summaryEl.style.display = 'none';
+                        if (tableWrap) tableWrap.style.display = 'none';
+                        return;
+                    }
+                    if (totalEl) totalEl.textContent = data.totalInstitutes ?? 0;
+                    if (scrapedEl) scrapedEl.textContent = data.scrapedCount ?? 0;
+                    if (scrapeFailedEl) scrapeFailedEl.textContent = data.failedScrapeCount ?? 0;
+                    if (uploadedEl) uploadedEl.textContent = data.uploadedCount ?? 0;
+                    const rows = data.institutes || [];
+                    if (tableWrap) tableWrap.style.display = 'block';
+                    tbody.innerHTML = rows.length === 0
+                        ? '<tr><td colspan="6" class="text-muted">No scrape runs recorded for this date.</td></tr>'
+                        : rows.map(r => {
+                            let scrapeCls = 'status-none';
+                            if (r.scrapeStatus === 'Scraped') scrapeCls = 'status-ok';
+                            else if (r.scrapeStatus && String(r.scrapeStatus).indexOf('Failed:') === 0) scrapeCls = 'status-fail';
+                            const uploadCls = r.uploadStatus === 'Uploaded' ? 'status-ok' : 'status-none';
+                            const rec = r.recordCount != null ? r.recordCount : '—';
+                            const downloadCell = r.driveLink
+                                ? '<a href="' + escapeHtml(r.driveLink) + '" target="_blank" rel="noopener" class="status-ok">Download</a>'
+                                : '<span class="status-none">—</span>';
+                            const titleAttr = r.scrapeErrorFull ? ' title="' + escapeAttr(r.scrapeErrorFull) + '"' : '';
+                            const retryCell = r.retryPaidScrape
+                                ? '<button type="button" class="btn btn-sm btn-primary dashboard-retry-scrape-btn" data-university="' + escapeAttr(r.name) + '">Run paid scrape</button>'
+                                : '<span class="text-muted">—</span>';
+                            return '<tr><td>' + escapeHtml(r.name) + '</td><td class="' + scrapeCls + '"' + titleAttr + '>' + escapeHtml(r.scrapeStatus) + '</td><td class="' + uploadCls + '">' + escapeHtml(r.uploadStatus) + '</td><td>' + escapeHtml(String(rec)) + '</td><td>' + downloadCell + '</td><td>' + retryCell + '</td></tr>';
+                        }).join('');
+                    tbody.querySelectorAll('.dashboard-retry-scrape-btn').forEach(btn => {
+                        btn.addEventListener('click', function () {
+                            const u = this.getAttribute('data-university');
+                            if (u) dashboardRetryPaidScrape(u, this);
+                        });
+                    });
+                })
+                .catch(() => {
+                    if (placeholder) { placeholder.textContent = 'Failed to load stats.'; placeholder.style.display = 'block'; }
+                    if (summaryEl) summaryEl.style.display = 'none';
+                    tbody.innerHTML = '<tr><td colspan="6" class="error">Failed to load</td></tr>';
+                });
+        }
+
+        /** DD-MM-YYYY (matches script_scraper / NPF manual scrape) */
+        function formatManualDateDDMMYYYY(d) {
+            const dd = String(d.getDate()).padStart(2, '0');
+            const mm = String(d.getMonth() + 1).padStart(2, '0');
+            const yyyy = String(d.getFullYear());
+            return dd + '-' + mm + '-' + yyyy;
+        }
+
+        function ensureManualDefaultDates() {
+            const fromEl = document.getElementById('manual-from-date');
+            const toEl = document.getElementById('manual-to-date');
+            if (!fromEl || !toEl) return;
+            const f = (fromEl.value || '').trim();
+            const t = (toEl.value || '').trim();
+            if (f || t) return;
+            const today = new Date();
+            const yesterday = new Date(today);
+            yesterday.setDate(yesterday.getDate() - 1);
+            fromEl.value = formatManualDateDDMMYYYY(yesterday);
+            toEl.value = formatManualDateDDMMYYYY(today);
+        }
+
+        function loadManualUrlOptions() {
+            const sel = document.getElementById('manual-url-select');
+            const custom = document.getElementById('manual-url-custom');
+            if (!sel) return;
+            const prefer = 'https://publisher.nopaperforms.com/lead/details';
+            fetch('/api/manual-scrape/urls')
+                .then(r => r.json())
+                .then(data => {
+                    let urls = Array.isArray(data.urls) ? data.urls.filter(Boolean) : [];
+                    if (!urls.length) urls = [prefer];
+                    urls = [...new Set(urls)];
+                    urls.sort(function (a, b) { return String(a).toLowerCase().localeCompare(String(b).toLowerCase()); });
+                    sel.innerHTML = urls.map(function (u) {
+                        return '<option value="' + escapeHtml(u) + '">' + escapeHtml(u) + '</option>';
+                    }).join('') + '<option value="__custom__">Custom URL…</option>';
+                    sel.value = urls.indexOf(prefer) !== -1 ? prefer : urls[0];
+                    if (custom) { custom.style.display = 'none'; custom.value = ''; }
+                })
+                .catch(function () {
+                    sel.innerHTML = '<option value="' + escapeHtml(prefer) + '">' + escapeHtml(prefer) + '</option><option value="__custom__">Custom URL…</option>';
+                    sel.value = prefer;
+                    if (custom) { custom.style.display = 'none'; custom.value = ''; }
+                });
+        }
+
+        function onManualUrlSelectChange() {
+            const sel = document.getElementById('manual-url-select');
+            const custom = document.getElementById('manual-url-custom');
+            if (!sel || !custom) return;
+            if (sel.value === '__custom__') {
+                custom.style.display = 'block';
+                custom.focus();
+            } else {
+                custom.style.display = 'none';
+            }
+        }
+
+        function getManualResolvedUrl() {
+            const sel = document.getElementById('manual-url-select');
+            const custom = document.getElementById('manual-url-custom');
+            if (!sel) return '';
+            if (sel.value === '__custom__') {
+                const v = (custom && custom.value) ? custom.value.trim() : '';
+                return v || 'https://publisher.nopaperforms.com/lead/details';
+            }
+            return (sel.value || '').trim() || 'https://publisher.nopaperforms.com/lead/details';
+        }
+
+        function loadManualInstitutes() {
+            const sel = document.getElementById('manual-institute');
+            if (!sel) return;
+            fetch('/api/institutes')
+                .then(r => r.json())
+                .then(data => {
+                    const list = Array.isArray(data) ? data : [];
+                    const names = [...new Set(list.map(i => (i.university || i.college || '').trim()).filter(Boolean))].sort();
+                    sel.innerHTML = '<option value="">Select institute</option>' +
+                        names.map(n => '<option value="' + escapeHtml(n) + '">' + escapeHtml(n) + '</option>').join('');
+                    loadManualUrlOptions();
+                    ensureManualDefaultDates();
+                })
+                .catch(() => {
+                    sel.innerHTML = '<option value="">Select institute</option>';
+                    loadManualUrlOptions();
+                    ensureManualDefaultDates();
+                });
+        }
+
+        let manualPollTimer = null;
+        let manualCurrentJobId = null;
+        /** Avoid auto-downloading the same job twice when polling */
+        let manualAutoDownloadedJobId = null;
+
+        /**
+         * Download job file via fetch+blob so the browser saves to Downloads with the right name.
+         * Plain <a href> can fail as "download.htm" / site unavailable if the server stops or returns JSON errors.
+         */
+        function downloadManualArtifact(jobId, fileName) {
+            const url = '/api/manual-scrape/download?job_id=' + encodeURIComponent(jobId) + '&file=' + encodeURIComponent(fileName);
+            return fetch(url, { credentials: 'same-origin' })
+                .then(function (r) {
+                    if (!r.ok) {
+                        return r.json().then(function (j) {
+                            throw new Error(j.error || r.statusText || ('HTTP ' + r.status));
+                        }).catch(function () {
+                            throw new Error(r.statusText || ('HTTP ' + r.status));
+                        });
+                    }
+                    return r.blob();
+                })
+                .then(function (blob) {
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = fileName;
+                    a.rel = 'noopener';
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    setTimeout(function () { URL.revokeObjectURL(a.href); }, 60000);
+                });
+        }
+        let manualAdvancedFilters = [];
+        let manualSubfilterFilterIds = [];
+        let manualSelectedFilterIds = [];
+        let manualSubfilterOptionsData = {};
+        let manualSelectedSubfilterOptions = {};
+
+        function getManualFormPayload(screenshot) {
+            const container = document.getElementById('manual-advanced-filters');
+            if (container) manualSelectedFilterIds = Array.from(container.querySelectorAll('.manual-filter-cb:checked')).map(c => c.getAttribute('data-id'));
+            manualSelectedSubfilterOptions = {};
+            document.querySelectorAll('.manual-subfilter-select').forEach(function(sel) {
+                const fid = sel.getAttribute('data-id');
+                if (fid) manualSelectedSubfilterOptions[fid] = Array.from(sel.selectedOptions).map(o => o.value);
+            });
+            const institute = (document.getElementById('manual-institute') && document.getElementById('manual-institute').value) || '';
+            const fromDate = (document.getElementById('manual-from-date') && document.getElementById('manual-from-date').value) || '';
+            const toDate = (document.getElementById('manual-to-date') && document.getElementById('manual-to-date').value) || '';
+            const payload = {
+                institute: institute,
+                credentials: (document.getElementById('manual-credentials') && document.getElementById('manual-credentials').value) || 'central',
+                url: getManualResolvedUrl(),
+                source: (document.getElementById('manual-source') && document.getElementById('manual-source').value) || 'Collegedunia',
+                from_date: fromDate,
+                to_date: toDate,
+                instance: (document.getElementById('manual-instance') && document.getElementById('manual-instance').value) || 'All',
+                rows: (document.getElementById('manual-rows') && document.getElementById('manual-rows').value) || '5000',
+                order: (document.getElementById('manual-order') && document.getElementById('manual-order').value) || 'Ascending',
+                advanced_filter_ids: manualSelectedFilterIds,
+                subfilter_options: manualSelectedSubfilterOptions
+            };
+            if (screenshot) payload.screenshot = true;
+            return payload;
+        }
+
+        function loadManualFilters() {
+            const institute = (document.getElementById('manual-institute') && document.getElementById('manual-institute').value) || '';
+            const statusEl = document.getElementById('manual-filters-status');
+            const container = document.getElementById('manual-advanced-filters');
+            const subfilterContainer = document.getElementById('manual-subfilter-options');
+            const subfilterBtn = document.getElementById('manual-load-subfilter-options-btn');
+            const urlSel = document.getElementById('manual-url-select');
+            if (urlSel && urlSel.value === '__custom__') {
+                const cu = (document.getElementById('manual-url-custom') && document.getElementById('manual-url-custom').value.trim()) || '';
+                if (!cu) { if (statusEl) statusEl.textContent = 'Enter a custom URL or choose a preset.'; return; }
+            }
+            if (!institute) { if (statusEl) statusEl.textContent = 'Select an institute first.'; return; }
+            if (statusEl) statusEl.textContent = 'Loading filters...';
+            if (container) container.innerHTML = '';
+            if (subfilterContainer) subfilterContainer.innerHTML = '';
+            if (subfilterBtn) subfilterBtn.style.display = 'none';
+            manualAdvancedFilters = [];
+            manualSubfilterFilterIds = [];
+            manualSelectedFilterIds = [];
+            manualSubfilterOptionsData = {};
+            manualSelectedSubfilterOptions = {};
+            const body = {
+                institute: institute,
+                credentials: (document.getElementById('manual-credentials') && document.getElementById('manual-credentials').value) || 'central',
+                url: getManualResolvedUrl(),
+                source: (document.getElementById('manual-source') && document.getElementById('manual-source').value) || 'Collegedunia'
+            };
+            fetch('/api/manual-scrape/filters', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.error) { if (statusEl) statusEl.textContent = data.error; return; }
+                    manualAdvancedFilters = data.filters || [];
+                    manualSubfilterFilterIds = data.subfilterFilterIds || [];
+                    if (statusEl) statusEl.textContent = manualAdvancedFilters.length ? 'Select filters below (optional).' : 'No advanced filters for this institute/source.';
+                    if (container && manualAdvancedFilters.length) {
+                        container.innerHTML = manualAdvancedFilters.map(f => {
+                            const id = 'mf_' + (f.id || '').replace(/\W/g, '_');
+                            return '<label><input type="checkbox" class="manual-filter-cb" data-id="' + escapeHtml(f.id) + '" id="' + id + '"> ' + escapeHtml(f.label || f.id) + '</label>';
+                        }).join('');
+                        container.querySelectorAll('.manual-filter-cb').forEach(cb => {
+                            cb.addEventListener('change', function() {
+                                manualSelectedFilterIds = Array.from(container.querySelectorAll('.manual-filter-cb:checked')).map(c => c.getAttribute('data-id'));
+                                if (subfilterBtn) subfilterBtn.style.display = manualSelectedFilterIds.some(id => manualSubfilterFilterIds.includes(id)) ? 'inline-block' : 'none';
+                            });
+                        });
+                    }
+                })
+                .catch(() => { if (statusEl) statusEl.textContent = 'Failed to load filters.'; });
+        }
+
+        function loadManualSubfilterOptions() {
+            const institute = (document.getElementById('manual-institute') && document.getElementById('manual-institute').value) || '';
+            const statusEl = document.getElementById('manual-filters-status');
+            const subfilterContainer = document.getElementById('manual-subfilter-options');
+            const filterIds = manualSelectedFilterIds.filter(id => manualSubfilterFilterIds.includes(id));
+            if (!filterIds.length || !institute) return;
+            if (statusEl) statusEl.textContent = 'Loading subfilter options...';
+            const body = {
+                institute: institute,
+                credentials: (document.getElementById('manual-credentials') && document.getElementById('manual-credentials').value) || 'central',
+                url: getManualResolvedUrl(),
+                source: (document.getElementById('manual-source') && document.getElementById('manual-source').value) || 'Collegedunia',
+                filterIds: filterIds
+            };
+            fetch('/api/manual-scrape/subfilter-options', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+                .then(r => r.json())
+                .then(data => {
+                    if (statusEl) statusEl.textContent = 'Select subfilter options below (optional).';
+                    manualSubfilterOptionsData = data.options || {};
+                    manualSelectedSubfilterOptions = {};
+                    if (subfilterContainer) {
+                        subfilterContainer.innerHTML = Object.keys(manualSubfilterOptionsData).map(fid => {
+                            const opts = manualSubfilterOptionsData[fid] || [];
+                            const id = 'ms_' + fid.replace(/\W/g, '_');
+                            return '<div class="subfilter-group"><label>' + escapeHtml(fid) + '</label><select class="manual-subfilter-select" data-id="' + escapeHtml(fid) + '" id="' + id + '" multiple>' +
+                                opts.map(o => '<option value="' + escapeHtml(o) + '">' + escapeHtml(o) + '</option>').join('') + '</select></div>';
+                        }).join('');
+                        subfilterContainer.querySelectorAll('.manual-subfilter-select').forEach(sel => {
+                            sel.addEventListener('change', function() {
+                                const fid = this.getAttribute('data-id');
+                                manualSelectedSubfilterOptions[fid] = Array.from(this.selectedOptions).map(o => o.value);
+                            });
+                        });
+                    }
+                })
+                .catch(() => { if (statusEl) statusEl.textContent = 'Failed to load subfilter options.'; });
+        }
+
+        function runManualScrape() {
+            const statusEl = document.getElementById('manual-status-text');
+            const resultEl = document.getElementById('manual-result');
+            const urlSel = document.getElementById('manual-url-select');
+            if (urlSel && urlSel.value === '__custom__') {
+                const cu = (document.getElementById('manual-url-custom') && document.getElementById('manual-url-custom').value.trim()) || '';
+                if (!cu) { if (statusEl) { statusEl.textContent = 'Enter a custom URL or pick a preset from the URL list.'; statusEl.className = 'scrape-status error'; } return; }
+            }
+            const payload = getManualFormPayload(false);
+            const institute = payload.institute, fromDate = payload.from_date, toDate = payload.to_date;
+            if (!institute) { if (statusEl) { statusEl.textContent = 'Select an institute.'; statusEl.className = 'scrape-status error'; } return; }
+            if (!fromDate || !toDate) { if (statusEl) { statusEl.textContent = 'Enter From and To date (DD-MM-YYYY).'; statusEl.className = 'scrape-status error'; } return; }
+            if (statusEl) { statusEl.textContent = 'Starting...'; statusEl.className = 'scrape-status'; }
+            if (resultEl) resultEl.style.display = 'none';
+            if (manualPollTimer) { clearInterval(manualPollTimer); manualPollTimer = null; }
+            manualCurrentJobId = null;
+            manualAutoDownloadedJobId = null;
+            fetch('/api/manual-scrape/run', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.error) { if (statusEl) { statusEl.textContent = data.error; statusEl.className = 'scrape-status error'; } return; }
+                    manualCurrentJobId = data.job_id || null;
+                    if (statusEl) statusEl.textContent = data.job_id ? ('Queued (job ' + data.job_id.slice(0, 8) + '…)…') : 'Running...';
+                    const sm = document.getElementById('stop-manual-btn');
+                    if (sm) sm.disabled = false;
+                    pollManualStatus();
+                })
+                .catch(() => { if (statusEl) { statusEl.textContent = 'Failed to start.'; statusEl.className = 'scrape-status error'; } });
+        }
+
+        function runManualScreenshot() {
+            const statusEl = document.getElementById('manual-status-text');
+            const resultEl = document.getElementById('manual-result');
+            const urlSel = document.getElementById('manual-url-select');
+            if (urlSel && urlSel.value === '__custom__') {
+                const cu = (document.getElementById('manual-url-custom') && document.getElementById('manual-url-custom').value.trim()) || '';
+                if (!cu) { if (statusEl) { statusEl.textContent = 'Enter a custom URL or pick a preset from the URL list.'; statusEl.className = 'scrape-status error'; } return; }
+            }
+            const payload = getManualFormPayload(true);
+            const institute = payload.institute, fromDate = payload.from_date, toDate = payload.to_date;
+            if (!institute) { if (statusEl) { statusEl.textContent = 'Select an institute.'; statusEl.className = 'scrape-status error'; } return; }
+            if (!fromDate || !toDate) { if (statusEl) { statusEl.textContent = 'From and To date required for screenshot.'; statusEl.className = 'scrape-status error'; } return; }
+            if (statusEl) { statusEl.textContent = 'Taking screenshot...'; statusEl.className = 'scrape-status'; }
+            if (resultEl) resultEl.style.display = 'none';
+            if (manualPollTimer) { clearInterval(manualPollTimer); manualPollTimer = null; }
+            manualCurrentJobId = null;
+            manualAutoDownloadedJobId = null;
+            fetch('/api/manual-scrape/run', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.error) { if (statusEl) { statusEl.textContent = data.error; statusEl.className = 'scrape-status error'; } return; }
+                    manualCurrentJobId = data.job_id || null;
+                    if (statusEl) statusEl.textContent = data.job_id ? ('Queued (job ' + data.job_id.slice(0, 8) + '…)…') : 'Running...';
+                    const sm = document.getElementById('stop-manual-btn');
+                    if (sm) sm.disabled = false;
+                    pollManualStatus();
+                })
+                .catch(() => { if (statusEl) { statusEl.textContent = 'Failed to start.'; statusEl.className = 'scrape-status error'; } });
+        }
+
+        function pollManualStatus() {
+            if (manualPollTimer) return;
+            function poll() {
+                const jid = manualCurrentJobId;
+                if (!jid) return;
+                fetch('/api/manual-scrape/status?job_id=' + encodeURIComponent(jid))
+                    .then(r => r.json())
+                    .then(data => {
+                        const statusEl = document.getElementById('manual-status-text');
+                        const resultEl = document.getElementById('manual-result');
+                        const stopManualBtn = document.getElementById('stop-manual-btn');
+                        if (data.error && data.error === 'Job not found') {
+                            if (stopManualBtn) stopManualBtn.disabled = true;
+                            if (manualPollTimer !== null) { clearInterval(manualPollTimer); manualPollTimer = null; }
+                            if (statusEl) { statusEl.textContent = data.error; statusEl.className = 'scrape-status error'; }
+                            return;
+                        }
+                        if (stopManualBtn) stopManualBtn.disabled = !data.running;
+                        if (data.running) {
+                            if (statusEl) {
+                                let line = data.status || 'Running...';
+                                if (data.rq_status === 'queued') {
+                                    line += ' (waiting for worker — use python run_stack.py or rq worker with SimpleWorker)';
+                                }
+                                statusEl.textContent = line;
+                                statusEl.className = 'scrape-status';
+                            }
+                            return;
+                        }
+                        if (manualPollTimer !== null) {
+                            clearInterval(manualPollTimer);
+                            manualPollTimer = null;
+                        }
+                        if (statusEl) {
+                            if (data.error) {
+                                statusEl.textContent = (data.error_code ? ('[' + data.error_code + '] ') : '') + (data.error || 'Failed');
+                                statusEl.className = 'scrape-status error';
+                            } else if (data.meta_status === 'success') {
+                                statusEl.textContent = 'Done. Download output from the job folder (server).';
+                                statusEl.className = 'scrape-status';
+                            } else {
+                                statusEl.textContent = 'Finished (' + (data.rq_status || '?') + '). ' +
+                                    (data.meta_status ? ('Status: ' + data.meta_status + '. ') : '') +
+                                    'If no file appeared, check the RQ worker terminal for errors.';
+                                statusEl.className = 'scrape-status';
+                            }
+                        }
+                        if (resultEl) {
+                            resultEl.style.display = 'block';
+                            if (data.error) {
+                                resultEl.innerHTML = '<span class="error">' + escapeHtml(String(data.error)) + '</span>';
+                            } else if (data.meta_status === 'success' && jid) {
+                                const f = data.output_screenshot ? 'screenshot.png' : 'output.csv';
+                                const safeJid = escapeHtml(jid);
+                                const safeF = escapeHtml(f);
+                                resultEl.innerHTML =
+                                    '<span class="manual-dl-btns">' +
+                                    '<button type="button" class="btn btn-primary manual-dl-btn" data-jid="' + safeJid + '" data-file="' + safeF + '">Download ' + safeF + '</button> ';
+                                if (data.logs_file) {
+                                    resultEl.innerHTML += '<button type="button" class="btn manual-dl-btn" data-jid="' + safeJid + '" data-file="logs.txt">Download logs.txt</button>';
+                                }
+                                resultEl.innerHTML += ' <span class="manual-dl-err error" style="display:none;"></span></span>';
+                                resultEl.querySelectorAll('.manual-dl-btn').forEach(function (btn) {
+                                    btn.addEventListener('click', function () {
+                                        const id = this.getAttribute('data-jid');
+                                        const fn = this.getAttribute('data-file');
+                                        const errEl = resultEl.querySelector('.manual-dl-err');
+                                        if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
+                                        downloadManualArtifact(id, fn).catch(function (e) {
+                                            if (errEl) {
+                                                errEl.style.display = 'inline';
+                                                errEl.textContent = 'Download failed: ' + (e.message || String(e)) + ' (is Flask still running on port 5000?)';
+                                            }
+                                        });
+                                    });
+                                });
+                                if (manualAutoDownloadedJobId !== jid) {
+                                    manualAutoDownloadedJobId = jid;
+                                    downloadManualArtifact(jid, f).catch(function (e) {
+                                        const errEl = resultEl.querySelector('.manual-dl-err');
+                                        if (errEl) {
+                                            errEl.style.display = 'inline';
+                                            errEl.textContent = 'Auto-download failed: ' + (e.message || String(e)) + ' — use the button above.';
+                                        }
+                                    });
+                                }
+                            } else {
+                                resultEl.innerHTML = '<span>No download link. rq_status=' + escapeHtml(String(data.rq_status || '')) + '</span>';
+                            }
+                        }
+                    })
+                    .catch(() => {});
+            }
+            manualPollTimer = setInterval(poll, 2000);
+            poll();
+        }
+
+        function loadUploadDates() {
+            const sel = document.getElementById('upload-date-select');
+            if (!sel) return;
+            fetch('/api/upload-dates')
+                .then(r => r.json())
+                .then(data => {
+                    const dates = data.dates || [];
+                    const today = new Date();
+                    const dd = String(today.getDate()).padStart(2, '0');
+                    const mm = String(today.getMonth() + 1).padStart(2, '0');
+                    const yy = String(today.getFullYear()).slice(-2);
+                    const todayStr = dd + '-' + mm + '-' + yy;
+                    sel.innerHTML = '<option value="">Select date</option>' +
+                        dates.map(d => '<option value="' + escapeHtml(d) + '"' + (d === todayStr ? ' selected' : '') + '>' + escapeHtml(d) + '</option>').join('');
+                })
+                .catch(() => {
+                    sel.innerHTML = '<option value="">Select date</option>';
+                });
+        }
+
+        let uploadPollTimer = null;
+
+        function startUploadToDrive() {
+            const sel = document.getElementById('upload-date-select');
+            const dateStr = (sel && sel.value) ? sel.value.trim() : '';
+            const statusEl = document.getElementById('upload-status-text');
+            const resultsContainer = document.getElementById('upload-results-container');
+            const resultsEl = document.getElementById('upload-results');
+            if (!dateStr) {
+                if (statusEl) { statusEl.textContent = 'Select a date or ensure DATA_Scraped has a date folder.'; statusEl.className = 'scrape-status error'; }
+                return;
+            }
+            if (statusEl) { statusEl.textContent = 'Starting upload…'; statusEl.className = 'scrape-status'; }
+            if (resultsContainer) resultsContainer.style.display = 'none';
+            fetch('/api/upload-to-drive', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ date: dateStr })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.error) {
+                        if (statusEl) { statusEl.textContent = data.error; statusEl.className = 'scrape-status error'; }
+                        return;
+                    }
+                    if (statusEl) statusEl.textContent = 'Uploading…';
+                    const su = document.getElementById('stop-upload-btn');
+                    if (su) su.disabled = false;
+                    pollUploadStatus();
+                })
+                .catch(() => {
+                    if (statusEl) { statusEl.textContent = 'Failed to start upload.'; statusEl.className = 'scrape-status error'; }
+                });
+        }
+
+        function pollUploadStatus() {
+            if (uploadPollTimer) return;
+            function poll() {
+                fetch('/api/upload-status')
+                    .then(r => r.json())
+                    .then(data => {
+                        const statusEl = document.getElementById('upload-status-text');
+                        const resultsContainer = document.getElementById('upload-results-container');
+                        const resultsEl = document.getElementById('upload-results');
+                        const stopUploadBtn = document.getElementById('stop-upload-btn');
+                        if (stopUploadBtn) stopUploadBtn.disabled = !data.running;
+                        if (data.running) {
+                            if (statusEl) statusEl.textContent = 'Uploading ' + (data.date || '') + '…';
+                            return;
+                        }
+                        if (uploadPollTimer !== null) {
+                            clearInterval(uploadPollTimer);
+                            uploadPollTimer = null;
+                        }
+                        if (statusEl) {
+                            if (data.skipped) { statusEl.textContent = 'Skipped: already uploaded for this date.'; statusEl.className = 'scrape-status'; }
+                            else if (data.error) { statusEl.textContent = data.error; statusEl.className = 'scrape-status error'; }
+                            else { statusEl.textContent = 'Done: ' + (data.uploaded || 0) + ' uploaded, ' + (data.failed || 0) + ' failed.'; statusEl.className = 'scrape-status'; }
+                        }
+                        if (resultsContainer && resultsEl && (data.details || []).length) {
+                            resultsContainer.style.display = 'block';
+                            const failed = (data.details || []).filter(d => !d.success);
+                            const ok = (data.details || []).filter(d => d.success);
+                            resultsEl.innerHTML = '<p class="text-muted">' + (data.uploaded || 0) + ' uploaded, ' + (data.failed || 0) + ' failed.</p>' +
+                                (failed.length ? '<ul>' + failed.map(d => '<li class="error">' + escapeHtml(d.university || '') + (d.file ? ' / ' + escapeHtml(d.file) : '') + ': ' + escapeHtml(d.error || '') + '</li>').join('') + '</ul>' : '');
+                        }
+                    });
+            }
+            uploadPollTimer = setInterval(poll, 1500);
+            poll();
+        }
+
+        function startScrapeJob() {
+            if (currentScrapeList.length === 0) {
+                document.getElementById('scrape-status-text').textContent = 'Add at least one university to the list.';
+                document.getElementById('scrape-status-text').className = 'scrape-status error';
+                return;
+            }
+            document.getElementById('scrape-status-text').textContent = 'Starting…';
+            document.getElementById('scrape-status-text').className = 'scrape-status running';
+            fetch('/api/run-scrape', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ headless: false })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.error) {
+                        document.getElementById('scrape-status-text').textContent = data.error;
+                        document.getElementById('scrape-status-text').className = 'scrape-status error';
+                        return;
+                    }
+                    const ss = document.getElementById('stop-scrape-btn');
+                    if (ss) ss.disabled = false;
+                    pollScrapeStatus();
+                })
+                .catch(() => {
+                    document.getElementById('scrape-status-text').textContent = 'Failed to start scrape.';
+                    document.getElementById('scrape-status-text').className = 'scrape-status error';
+                });
+        }
+
+        document.getElementById('scrape-add-btn').addEventListener('click', openAddInstituteModal);
+        document.getElementById('scrape-run-btn').addEventListener('click', startScrapeJob);
+        document.getElementById('add-institute-cancel').addEventListener('click', closeAddInstituteModal);
+        document.getElementById('add-institute-submit').addEventListener('click', addSelectedToScrapeList);
+        document.getElementById('add-institute-select-all').addEventListener('click', function() { setAllAddInstituteCheckboxes(true); });
+        document.getElementById('add-institute-select-none').addEventListener('click', function() { setAllAddInstituteCheckboxes(false); });
+        document.getElementById('add-institute-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeAddInstituteModal();
+        });
+        document.getElementById('add-institute-search').addEventListener('input', filterAddInstituteList);
+        document.getElementById('add-institute-search').addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeAddInstituteModal();
+        });
+
+        function loadInstitutes() {
+            const container = document.getElementById('institutes-container');
+            container.innerHTML = '<p class="loading">Loading institutes…</p>';
+            fetch('/api/institutes')
+                .then(r => {
+                    if (!r.ok) throw new Error(r.status === 404 ? 'Institutes.json not found' : 'Failed to load');
+                    return r.json();
+                })
+                .then(data => {
+                    if (!Array.isArray(data)) {
+                        container.innerHTML = '<p class="error">Invalid data format.</p>';
+                        return;
+                    }
+                    container.innerHTML = '';
+                    const wrap = document.createElement('div');
+                    wrap.className = 'institutes-table-wrap';
+                    const table = document.createElement('table');
+                    table.className = 'institutes-table';
+                    table.innerHTML = `
+                        <thead>
+                            <tr>
+                                <th>Institute</th>
+                                <th>URL</th>
+                                <th>Source</th>
+                                <th>pcid</th>
+                                <th>FI</th>
+                                <th>College ID</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    `;
+                    const tbody = table.querySelector('tbody');
+                    data.forEach(row => {
+                        const tr = document.createElement('tr');
+                        const url = (row.url || '').trim();
+                        tr.innerHTML = `
+                            <td>${escapeHtml(row.university || '—')}</td>
+                            <td class="url-cell">${url ? '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener">' + escapeHtml(url) + '</a>' : '—'}</td>
+                            <td>${escapeHtml(row.source || '—')}</td>
+                            <td>${formatCell(row.pcid)}</td>
+                            <td>${formatCell(row.FI)}</td>
+                            <td>${formatCell(row.college_id)}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                    wrap.appendChild(table);
+                    container.appendChild(wrap);
+                })
+                .catch(err => {
+                    container.innerHTML = '<p class="error">' + escapeHtml(err.message) + '</p>';
+                });
+        }
+
+        function escapeHtml(s) {
+            const div = document.createElement('div');
+            div.textContent = s;
+            return div.innerHTML;
+        }
+
+        function escapeAttr(s) {
+            if (s == null || s === '') return '';
+            return String(s)
+                .replace(/&/g, '&amp;')
+                .replace(/"/g, '&quot;')
+                .replace(/</g, '&lt;');
+        }
+
+        function formatCell(val) {
+            if (val === null || val === undefined) return '—';
+            return escapeHtml(String(val));
+        }
+
+        let allInstitutes = [];
+        let currentScrapeList = [];
+        let scrapeListMaxLength = 100;
+        let modalAvailableInstitutes = [];
+
+        function loadScrapeList() {
+            const container = document.getElementById('scrape-list-container');
+            container.innerHTML = '<p class="text-muted">Loading list…</p>';
+            fetch('/api/scrape-list')
+                .then(r => r.json())
+                .then(data => {
+                    currentScrapeList = Array.isArray(data.list) ? data.list : [];
+                    scrapeListMaxLength = data.maxLength != null ? data.maxLength : 100;
+                    updateScrapeListMeta();
+                    renderScrapeList(container, currentScrapeList);
+                    document.getElementById('scrape-add-btn').disabled = currentScrapeList.length >= scrapeListMaxLength;
+                })
+                .catch(() => {
+                    container.innerHTML = '<p class="error">Failed to load scrape list.</p>';
+                });
+        }
+
+        function updateScrapeListMeta() {
+            const el = document.getElementById('scrape-list-meta');
+            if (el) el.textContent = `List: ${currentScrapeList.length} / ${scrapeListMaxLength}`;
+        }
+
+        function renderScrapeList(container, list) {
+            updateScrapeListMeta();
+            if (!list.length) {
+                container.innerHTML = '<p class="text-muted">No universities in the list. Click “Add university” to add from the institute list.</p>';
+                document.getElementById('scrape-add-btn').disabled = false;
+                return;
+            }
+            document.getElementById('scrape-add-btn').disabled = list.length >= scrapeListMaxLength;
+            const wrap = document.createElement('div');
+            wrap.className = 'institutes-table-wrap';
+            const table = document.createElement('table');
+            table.className = 'scrape-list-table';
+            table.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>University</th>
+                        <th>URL</th>
+                        <th>Source</th>
+                        <th>pcid</th>
+                        <th>FI</th>
+                        <th>College ID</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            `;
+            const tbody = table.querySelector('tbody');
+            list.forEach(row => {
+                const tr = document.createElement('tr');
+                const url = (row.url || '').trim();
+                const uni = (row.university || '').trim();
+                tr.innerHTML = `
+                    <td>${escapeHtml(uni || '—')}</td>
+                    <td class="url-cell">${url ? '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener">' + escapeHtml(url) + '</a>' : '—'}</td>
+                    <td>${escapeHtml(row.source || '—')}</td>
+                    <td>${formatCell(row.pcid)}</td>
+                    <td>${formatCell(row.FI)}</td>
+                    <td>${formatCell(row.college_id)}</td>
+                    <td><button type="button" class="btn btn-danger" data-university="${escapeHtml(uni)}">Remove</button></td>
+                `;
+                tr.querySelector('button').addEventListener('click', () => removeFromScrapeList(uni));
+                tbody.appendChild(tr);
+            });
+            wrap.appendChild(table);
+            container.innerHTML = '';
+            container.appendChild(wrap);
+        }
+
+        function removeFromScrapeList(university) {
+            fetch('/api/scrape-list', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ university: university })
+            })
+                .then(r => r.json())
+                .then(data => {
+                    const list = Array.isArray(data) ? data : (data.list || []);
+                    if (list.length || data.list !== undefined || Array.isArray(data)) {
+                        currentScrapeList = list;
+                        renderScrapeList(document.getElementById('scrape-list-container'), list);
+                    }
+                })
+                .catch(() => {});
+        }
+
+        function openAddInstituteModal() {
+            if (currentScrapeList.length >= scrapeListMaxLength) return;
+            document.getElementById('add-institute-modal').classList.add('open');
+            document.getElementById('add-institute-modal').setAttribute('aria-hidden', 'false');
+            document.getElementById('add-institute-search').value = '';
+            document.getElementById('add-institute-search').focus();
+            const canAdd = scrapeListMaxLength - currentScrapeList.length;
+            document.getElementById('add-modal-meta').textContent = `You can add up to ${canAdd} more. List: ${currentScrapeList.length} / ${scrapeListMaxLength}.`;
+            if (allInstitutes.length) {
+                renderAddInstituteList(allInstitutes);
+                updateAddSelectedButton();
+                return;
+            }
+            document.getElementById('add-institute-list').innerHTML = '<p class="modal-empty">Loading institutes…</p>';
+            fetch('/api/institutes')
+                .then(r => r.json())
+                .then(data => {
+                    allInstitutes = Array.isArray(data) ? data : [];
+                    renderAddInstituteList(allInstitutes);
+                    updateAddSelectedButton();
+                })
+                .catch(() => {
+                    document.getElementById('add-institute-list').innerHTML = '<p class="modal-empty">Failed to load institute list.</p>';
+                });
+        }
+
+        function closeAddInstituteModal() {
+            document.getElementById('add-institute-modal').classList.remove('open');
+            document.getElementById('add-institute-modal').setAttribute('aria-hidden', 'true');
+        }
+
+        function filterAddInstituteList() {
+            const q = (document.getElementById('add-institute-search').value || '').trim().toLowerCase();
+            const filtered = q
+                ? allInstitutes.filter(i =>
+                    (i.university || '').toLowerCase().includes(q) ||
+                    (i.source || '').toLowerCase().includes(q)
+                )
+                : allInstitutes;
+            renderAddInstituteList(filtered);
+        }
+
+        function renderAddInstituteList(institutes) {
+            const listEl = document.getElementById('add-institute-list');
+            const inScrapeList = new Set(currentScrapeList.map(i => (i.university || '').trim()));
+            const canAdd = scrapeListMaxLength - currentScrapeList.length;
+            const available = institutes.filter(i => !inScrapeList.has((i.university || '').trim()));
+            if (!available.length) {
+                listEl.innerHTML = '<p class="modal-empty">No matching institutes, or all are already in the scrape list.</p>';
+                listEl.dataset.count = '0';
+                return;
+            }
+            listEl.innerHTML = '';
+            listEl.dataset.count = available.length;
+            modalAvailableInstitutes = available;
+            available.forEach((inst, idx) => {
+                const div = document.createElement('div');
+                div.className = 'modal-list-item';
+                const cb = document.createElement('input');
+                cb.type = 'checkbox';
+                cb.className = 'add-institute-cb';
+                cb.dataset.idx = String(idx);
+                cb.addEventListener('change', updateAddSelectedButton);
+                cb.addEventListener('click', (e) => e.stopPropagation());
+                const label = document.createElement('label');
+                label.style.cursor = 'pointer';
+                label.style.display = 'flex';
+                label.style.alignItems = 'flex-start';
+                label.style.gap = '0.5rem';
+                label.appendChild(cb);
+                const text = document.createElement('span');
+                text.innerHTML = `<div>${escapeHtml(inst.university || '—')}</div><div class="item-source">${escapeHtml(inst.source || '')} · ${escapeHtml((inst.url || '').slice(0, 50))}${(inst.url || '').length > 50 ? '…' : ''}</div>`;
+                label.appendChild(text);
+                div.appendChild(label);
+                div.addEventListener('click', (e) => { if (e.target !== cb) { cb.checked = !cb.checked; updateAddSelectedButton(); } });
+                listEl.appendChild(div);
+            });
+            updateAddSelectedButton();
+        }
+
+        function setAllAddInstituteCheckboxes(checked) {
+            const maxAdd = scrapeListMaxLength - currentScrapeList.length;
+            const cbs = document.querySelectorAll('#add-institute-list .add-institute-cb');
+            let n = 0;
+            cbs.forEach(cb => {
+                if (checked && n >= maxAdd) return;
+                cb.checked = checked;
+                if (checked) n++;
+            });
+            updateAddSelectedButton();
+        }
+
+        function getSelectedInstitutes() {
+            const listEl = document.getElementById('add-institute-list');
+            const selected = [];
+            listEl.querySelectorAll('.add-institute-cb:checked').forEach(cb => {
+                const idx = parseInt(cb.dataset.idx, 10);
+                if (!isNaN(idx) && modalAvailableInstitutes[idx]) selected.push(modalAvailableInstitutes[idx]);
+            });
+            return selected;
+        }
+
+        function updateAddSelectedButton() {
+            const n = getSelectedInstitutes().length;
+            const btn = document.getElementById('add-institute-submit');
+            if (btn) {
+                btn.textContent = 'Add selected (' + n + ')';
+                btn.disabled = n === 0;
+            }
+        }
+
+        function addSelectedToScrapeList() {
+            const selected = getSelectedInstitutes();
+            if (!selected.length) return;
+            fetch('/api/scrape-list', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(selected)
+            })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.list) {
+                        currentScrapeList = data.list;
+                        updateScrapeListMeta();
+                        renderScrapeList(document.getElementById('scrape-list-container'), data.list);
+                        document.getElementById('scrape-add-btn').disabled = currentScrapeList.length >= scrapeListMaxLength;
+                        closeAddInstituteModal();
+                    }
+                })
+                .catch(() => {});
+        }
+
+        function postStopJob(url, confirmMsg, body) {
+            if (confirmMsg && !confirm(confirmMsg)) return;
+            const payload = body !== undefined && body !== null ? JSON.stringify(body) : '{}';
+            fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.message) alert(data.message);
+                })
+                .catch(() => alert('Could not send stop request.'));
+        }
+
+        document.getElementById('stop-scrape-btn').addEventListener('click', function () {
+            postStopJob('/api/stop/scrape', 'Stop batch scrape?\n\nFinishes the current university, then exits (same engine as dashboard “Run paid scrape”).');
+        });
+        const stopDashScrapeBtn = document.getElementById('stop-dashboard-scrape-btn');
+        if (stopDashScrapeBtn) {
+            stopDashScrapeBtn.addEventListener('click', function () {
+                postStopJob('/api/stop/scrape', 'Stop scrape?\n\nFinishes the current university, then exits.');
+            });
+        }
+        document.getElementById('stop-upload-btn').addEventListener('click', function () {
+            postStopJob('/api/stop/upload', 'Stop upload to Drive?\n\nFinishes the current file, then exits.');
+        });
+        document.getElementById('stop-manual-btn').addEventListener('click', function () {
+            const body = manualCurrentJobId ? { job_id: manualCurrentJobId } : {};
+            postStopJob('/api/stop/manual', 'Stop manual scrape?\n\nFinishes the current page; CSV may not be written if stopped early.', body);
+        });
+        document.getElementById('stop-feedback-ready-btn').addEventListener('click', function () {
+            postStopJob('/api/stop/feedback-ready', 'Stop feedback-ready job?\n\nFinishes the current file, then exits.');
+        });
+
+        (function initStopAllJobs() {
+            const btn = document.getElementById('stop-all-scrapers-btn');
+            if (!btn) return;
+            btn.addEventListener('click', function () {
+                if (!confirm('Stop all running jobs?\n\nBatch scrape stops after the current university. Manual scrape stops after the current page (no CSV). Upload and feedback-ready stop after the current file.')) return;
+                fetch('/api/stop-all-scrapers', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' })
+                    .then(r => r.json())
+                    .then(data => {
+                        if (data.message) alert(data.message);
+                    })
+                    .catch(() => alert('Could not send stop request.'));
+            });
+        })();
+
+        (function initDashboardStopSyncIfVisible() {
+            const dash = document.getElementById('content-dashboard');
+            if (dash && window.getComputedStyle(dash).display !== 'none') startDashboardScrapeStopSync();
+        })();
+    </script>
+</body>
+</html>

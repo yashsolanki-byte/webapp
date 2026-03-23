@@ -1,0 +1,48 @@
+2026-03-23 18:25:04 - INFO - ============================================================
+2026-03-23 18:25:04 - INFO - Script_Scraper - Nopaperforms Data Scraper
+2026-03-23 18:25:04 - INFO - Log file: C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\logs\script\script_scraper_20260323_182504.log
+2026-03-23 18:25:04 - INFO - ============================================================
+2026-03-23 18:25:07 - INFO - Playwright Chromium browser is working
+2026-03-23 18:25:09 - INFO - NumExpr defaulting to 8 threads.
+2026-03-23 18:25:10 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:10] "POST /api/manual-scrape/filters HTTP/1.1" 200 -
+2026-03-23 18:25:16 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:16] "POST /api/manual-scrape/subfilter-options HTTP/1.1" 200 -
+2026-03-23 18:25:26 - INFO - Manual web app: skipping Campaign Detailed View (filter list fetch)
+2026-03-23 18:25:34 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:34] "POST /api/manual-scrape/run HTTP/1.1" 200 -
+2026-03-23 18:25:34 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:34] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:25:37 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:37] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:25:39 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:39] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:25:41 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:41] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:25:43 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:43] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:25:45 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:45] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:25:45 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:45] "POST /api/manual-scrape/filters HTTP/1.1" 200 -
+2026-03-23 18:25:47 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:47] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:25:49 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:49] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:25:51 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:51] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:25:53 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:53] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:25:55 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:55] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:25:56 - INFO - Manual web app: skipping Campaign Detailed View (subfilter fetch)
+2026-03-23 18:25:57 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:57] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:25:59 - INFO - 127.0.0.1 - - [23/Mar/2026 18:25:59] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:26:01 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:01] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:26:03 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:03] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:26:05 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:05] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:26:06 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:06] "POST /api/manual-scrape/subfilter-options HTTP/1.1" 200 -
+2026-03-23 18:26:06 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:06] "GET /api/manual-scrape/status?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f HTTP/1.1" 200 -
+2026-03-23 18:26:07 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:07] "GET /api/manual-scrape/download?job_id=213969b3-f8ad-434b-a208-d01bbf209e0f&file=screenshot.png HTTP/1.1" 200 -
+2026-03-23 18:26:24 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:24] "POST /api/manual-scrape/run HTTP/1.1" 200 -
+2026-03-23 18:26:24 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:24] "GET /api/manual-scrape/status?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e HTTP/1.1" 200 -
+2026-03-23 18:26:26 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:26] "GET /api/manual-scrape/status?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e HTTP/1.1" 200 -
+2026-03-23 18:26:28 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:28] "GET /api/manual-scrape/status?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e HTTP/1.1" 200 -
+2026-03-23 18:26:30 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:30] "GET /api/manual-scrape/status?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e HTTP/1.1" 200 -
+2026-03-23 18:26:32 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:32] "GET /api/manual-scrape/status?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e HTTP/1.1" 200 -
+2026-03-23 18:26:34 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:34] "GET /api/manual-scrape/status?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e HTTP/1.1" 200 -
+2026-03-23 18:26:36 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:36] "GET /api/manual-scrape/status?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e HTTP/1.1" 200 -
+2026-03-23 18:26:38 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:38] "GET /api/manual-scrape/status?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e HTTP/1.1" 200 -
+2026-03-23 18:26:40 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:40] "GET /api/manual-scrape/status?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e HTTP/1.1" 200 -
+2026-03-23 18:26:42 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:42] "GET /api/manual-scrape/status?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e HTTP/1.1" 200 -
+2026-03-23 18:26:44 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:44] "GET /api/manual-scrape/status?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e HTTP/1.1" 200 -
+2026-03-23 18:26:46 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:46] "GET /api/manual-scrape/status?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e HTTP/1.1" 200 -
+2026-03-23 18:26:48 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:48] "GET /api/manual-scrape/status?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e HTTP/1.1" 200 -
+2026-03-23 18:26:50 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:50] "GET /api/manual-scrape/status?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e HTTP/1.1" 200 -
+2026-03-23 18:26:52 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:52] "GET /api/manual-scrape/status?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e HTTP/1.1" 200 -
+2026-03-23 18:26:52 - INFO - 127.0.0.1 - - [23/Mar/2026 18:26:52] "GET /api/manual-scrape/download?job_id=51ce2f1c-f5a0-4961-ae59-5b894b1dc37e&file=screenshot.png HTTP/1.1" 200 -

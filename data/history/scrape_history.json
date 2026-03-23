@@ -1,0 +1,660 @@
+{
+  "Indian Institute of Art and Design": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 299,
+    "filename": "Indian Institute of Art and Design_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "ABBS Institute": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 27,
+    "filename": "ABBS Institute_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Alliance University": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 10,
+    "filename": "Alliance University_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "AURO UNIVERSITY": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 6,
+    "filename": "AURO UNIVERSITY_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Bennett University": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 284,
+    "filename": "Bennett University_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Bharathidasan Institute of Management": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 103,
+    "filename": "Bharathidasan Institute of Management_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "BIMTECH, Greater Noida": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 1942,
+    "filename": "BIMTECH, Greater Noida_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "BIRLA GLOBAL UNIVERSITY": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 63,
+    "filename": "BIRLA GLOBAL UNIVERSITY_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Unitedworld Institute of Design (UID)": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Paid application filter not found"
+  },
+  "BM Group of Institutions": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 4,
+    "filename": "BM Group of Institutions_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "CENTURION UNIVERSITY OF TECHNOLOGY AND MANAGEMENT": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 10,
+    "filename": "CENTURION UNIVERSITY OF TECHNOLOGY AND MANAGEMENT_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "CGC University, Mohali": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 170,
+    "filename": "CGC University, Mohali_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "CII - INSTITUTE OF HOSPITALITY": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": null
+  },
+  "Dev Bhoomi Uttarakhand University": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 5,
+    "filename": "Dev Bhoomi Uttarakhand University_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Dnyaan Prasad Global University": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": null
+  },
+  "The Design Village Foundation": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Paid application filter not found"
+  },
+  "Dr. DY Patil School of Design": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 37,
+    "filename": "Dr. DY Patil School of Design_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "ATLAS SkillTech University": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Paid application filter not found"
+  },
+  "EMPI Business School": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 48,
+    "filename": "EMPI Business School_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Firebird Institute of Research in Management": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 11,
+    "filename": "Firebird Institute of Research in Management_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Galileo Global Education": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 8,
+    "filename": "Galileo Global Education_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Geeta University": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 8,
+    "filename": "Geeta University_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "GEMS B SCHOOL": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": null
+  },
+  "GIBS Business School, Bengaluru": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 687,
+    "filename": "GIBS Business School, Bengaluru_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "SDA Bocconi Asia Center": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Paid application filter not found"
+  },
+  "Globsyn Business School": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 98,
+    "filename": "Globsyn Business School_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Delhi School of Business": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Paid application filter not found"
+  },
+  "GNANAM SCHOOL OF BUSINESS": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 4,
+    "filename": "GNANAM SCHOOL OF BUSINESS_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Graphic Era Deemed to be University": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 44,
+    "filename": "Graphic Era Deemed to be University_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Greater Noida Institute of Technology (GNIOT)": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 366,
+    "filename": "Greater Noida Institute of Technology (GNIOT)_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "IFIM Institutions": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 13,
+    "filename": "IFIM Institutions_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "IFMR GSB, Krea University": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 64,
+    "filename": "IFMR GSB, Krea University_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "IMS Ghaziabad": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 131,
+    "filename": "IMS Ghaziabad_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "IMS Ghaziabad, University Courses Campus": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 20,
+    "filename": "IMS Ghaziabad, University Courses Campus_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Indian Institute of Fashion Technology": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 2,
+    "filename": "Indian Institute of Fashion Technology_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Indira University, Pune": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 12,
+    "filename": "Indira University, Pune_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Indus Business Academy (IBA), Bangalore": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 67,
+    "filename": "Indus Business Academy (IBA), Bangalore_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "International Institute of Business Studies": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 729,
+    "filename": "International Institute of Business Studies_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "International School of Management Excellence": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 94,
+    "filename": "International School of Management Excellence_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Lovely Professional University": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": null
+  },
+  "INTERNATIONAL SCHOOL OF MANAGEMENT EXCELLENCE": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 94,
+    "filename": "INTERNATIONAL SCHOOL OF MANAGEMENT EXCELLENCE_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "IQ City United World School of Business": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": null
+  },
+  "ISBR Bangalore": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 15,
+    "filename": "ISBR Bangalore_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "ITM Business School": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 437,
+    "filename": "ITM Business School_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "ITM Institute of Design and Media": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 166,
+    "filename": "ITM Institute of Design and Media_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "ITM Skills University": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 18,
+    "filename": "ITM Skills University_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "ITS College": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 3,
+    "filename": "ITS College_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Rajalakshmi Institute of Technology": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Institute not found"
+  },
+  "IZee Business School": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 13,
+    "filename": "IZee Business School_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Jagan Institute of Management Studies": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 10,
+    "filename": "Jagan Institute of Management Studies_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Jagdish Sheth School of Management": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 243,
+    "filename": "Jagdish Sheth School of Management_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Jaipuria School Of Business": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 100,
+    "filename": "Jaipuria School Of Business_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "JD Institute Of Fashion Technology": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 27,
+    "filename": "JD Institute Of Fashion Technology_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Pillai University -Navi Mumbai": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": null
+  },
+  "Taxila Business School, Jaipur": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Paid application filter not found"
+  },
+  "JIMS, Kalkaji": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 28,
+    "filename": "JIMS, Kalkaji_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "JBIT Group of Institutions": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": null
+  },
+  "JK Lakshmipat University": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 25,
+    "filename": "JK Lakshmipat University_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Kalinga Institute of Industrial Technology": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 1450,
+    "filename": "Kalinga Institute of Industrial Technology_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Karnavati University": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 63,
+    "filename": "Karnavati University_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "ITM Institute of Hotel Management": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Paid application filter not found"
+  },
+  "KCC Group of Institutions": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 22,
+    "filename": "KCC Group of Institutions_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Ecole Intuit Lab": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Institute not found"
+  },
+  "Dr. D. Y. Patil B-School": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Institute not found"
+  },
+  "EIMR Business School": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Institute not found"
+  },
+  "Whistling Woods International": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Paid application filter not found"
+  },
+  "Gian Jyoti Institute of Management and Technology, Mohali": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Institute not found"
+  },
+  "KIET Deemed to be University": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 27,
+    "filename": "KIET Deemed to be University_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "DPGU - SBS & SMR (DY Patil Unitech Society)": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Institute not found"
+  },
+  "Lal Bahadur Shastri Institute of Management, Delhi": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 56,
+    "filename": "Lal Bahadur Shastri Institute of Management, Delhi_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Soundarya Institute of Management and Science": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Institute not found"
+  },
+  "RMS Business School Gurugram (Delhi NCR)": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Paid application filter not found"
+  },
+  "Lead College of Management": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": null
+  },
+  "Lexicon MILE": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 56,
+    "filename": "Lexicon MILE_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "ITS Mohan Nagar Campus, Ghaziabad": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": null
+  },
+  "LISAA SCHOOL OF DESIGN": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 20,
+    "filename": "LISAA SCHOOL OF DESIGN_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "LM THAPAR SCHOOL OF MANAGEMENT": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 10,
+    "filename": "LM THAPAR SCHOOL OF MANAGEMENT_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Management Development Institute": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 30,
+    "filename": "Management Development Institute_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Management Education And Research Institute": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": null
+  },
+  "GRD IMT": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 1,
+    "filename": "GRD IMT_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "SRM University Delhi-NCR, Sonepat": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Paid application filter not found"
+  },
+  "Mangalmay Group of Institution": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": null
+  },
+  "CGC, Landran": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Institute not found"
+  },
+  "JAIPUR NATIONAL UNIVERSITY": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Institute not found"
+  },
+  "Arya College of Engineering and IT": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Paid application filter not found"
+  },
+  "MICA": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 1458,
+    "filename": "MICA_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "KR Mangalam university": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": null
+  },
+  "Delhi Metropolitan Education": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": null
+  },
+  "MIT Vishwaprayag University": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 17,
+    "filename": "MIT Vishwaprayag University_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "MIT-WPU Pune": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 10,
+    "filename": "MIT-WPU Pune_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "Geeta Institue of Law": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Institute not found"
+  },
+  "Mody University": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 6,
+    "filename": "Mody University_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "MYRA School of Business": {
+    "lastScrapeDate": "23-03-26",
+    "success": true,
+    "recordCount": 29,
+    "filename": "MYRA School of Business_01-10-2025_23-03-2026.csv",
+    "lastError": null
+  },
+  "MIT AOE": {
+    "lastScrapeDate": "23-03-26",
+    "success": false,
+    "recordCount": 0,
+    "filename": null,
+    "lastError": "Paid application filter not found"
+  }
+}

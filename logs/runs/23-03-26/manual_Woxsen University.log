@@ -1,0 +1,44 @@
+2026-03-23 12:47:23 - Run started: institute='Woxsen University', 01-02-2026–15-02-2026, screenshot=False, output_dir=C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\DATA_Scraped\manual\23-03-26\Woxsen University
+2026-03-23 12:47:43 - Run aborted (manual scrape lead limit): Too many records (127,728 > limit 100,000). Reduce the From/To date range and run again.
+2026-03-23 12:47:52 - Run started: institute='Woxsen University', 01-02-2026–15-02-2026, screenshot=True, output_dir=C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\DATA_Scraped\manual\23-03-26\Woxsen University
+2026-03-23 12:48:13 - Run finished with no output path (check UI status).
+2026-03-23 12:48:58 - Run started: institute='Woxsen University', 01-02-2026–15-02-2026, screenshot=True, output_dir=C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\DATA_Scraped\manual\23-03-26\Woxsen University
+2026-03-23 12:49:20 - Run finished OK: C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\DATA_Scraped\manual\screenshots\23-03-26\Woxsen University_23-03-26_124858.png
+2026-03-23 12:50:04 - Run started: institute='Woxsen University', 14-02-2026–15-02-2026, screenshot=False, output_dir=C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\DATA_Scraped\manual\23-03-26\Woxsen University
+2026-03-23 12:51:34 - Run finished OK: C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\DATA_Scraped\manual\23-03-26\Woxsen University\Woxsen University_23-03-26.csv
+2026-03-23 13:05:45 - Run started: institute='Woxsen University', 22-03-26–23-03-26, screenshot=True, downloads_dir=C:\Users\CollegeDunia\Downloads
+2026-03-23 13:06:11 - Run finished with no output path (check UI status).
+2026-03-23 13:06:17 - Run started: institute='Woxsen University', 22-03-26–23-03-26, screenshot=True, downloads_dir=C:\Users\CollegeDunia\Downloads
+2026-03-23 13:06:24 - Run finished with no output path (check UI status).
+2026-03-23 13:06:46 - Run started: institute='Woxsen University', 22-03-26–23-03-26, screenshot=True, downloads_dir=C:\Users\CollegeDunia\Downloads
+2026-03-23 13:06:52 - Run finished with no output path (check UI status).
+2026-03-23 13:07:57 - Run started: institute='Woxsen University', 22-02-26–23-02-26, screenshot=True, downloads_dir=C:\Users\CollegeDunia\Downloads
+2026-03-23 13:08:05 - Run finished with no output path (check UI status).
+2026-03-23 13:08:20 - Run started: institute='Woxsen University', 22-02-2026–23-02-2026, screenshot=True, downloads_dir=C:\Users\CollegeDunia\Downloads
+2026-03-23 13:08:44 - Run finished with no output path (check UI status).
+2026-03-23 13:08:57 - Run started: institute='Woxsen University', 22-02-2026–23-02-2026, screenshot=True, downloads_dir=C:\Users\CollegeDunia\Downloads
+2026-03-23 13:09:25 - Run finished OK: C:\Users\CollegeDunia\Downloads\Woxsen University_23-03-26_130857.png
+2026-03-23 13:12:20 - Run started: institute='Woxsen University', 22-03-2026–23-03-2026, screenshot=False, downloads_dir=C:\Users\CollegeDunia\Downloads
+2026-03-23 13:13:03 - Run finished OK: C:\Users\CollegeDunia\Downloads\Woxsen University_23-03-26.csv
+2026-03-23 17:40:35 - Enqueued manual scrape job_id=9c3056f7-fac7-4be5-9e83-92d1c4e26eb3 institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 17:45:06 - Enqueued manual scrape job_id=332b392e-589f-4890-9aaa-87b5b7f51b66 institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 17:45:08 - Enqueued manual scrape job_id=30505c63-83bc-4329-9168-ecd9fe781544 institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 17:45:24 - Enqueued manual scrape job_id=c6b27615-d02a-489d-bc40-75ecbd7d2f31 institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 17:48:24 - Enqueued manual scrape job_id=78ded735-0c9a-43cb-a29e-dd47fe41ff92 institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 17:48:34 - Enqueued manual scrape job_id=d39ff4f9-b2ae-44f3-ab94-f14c44e1ac10 institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 17:48:38 - Enqueued manual scrape job_id=7e2b458b-c213-4086-88ea-96e30d2ea01a institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=False
+2026-03-23 17:57:01 - Enqueued manual scrape job_id=390e2d23-e051-4ae4-835d-fcbc5574c972 institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 17:59:07 - Enqueued manual scrape job_id=d055af7c-52f0-44d5-a10f-c07eae1c85b4 institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 18:02:41 - Enqueued manual scrape job_id=3a04873d-e8f1-4879-bf99-d1f01cbe08ec institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 18:10:58 - Enqueued manual scrape job_id=07de16fb-d33e-4fff-806f-f515894de53a institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 18:13:53 - Enqueued manual scrape job_id=6c7bd4b6-a1b6-49fd-b09c-570d0f118cf1 institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 18:15:47 - Enqueued manual scrape job_id=5351921f-b94b-4dd6-a259-06b2cd7b048a institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 18:17:13 - Enqueued manual scrape job_id=a3f2e647-f795-4950-87ff-ca094126f271 institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 18:18:04 - Enqueued manual scrape job_id=497ece10-e05f-46df-8a37-ad83da51fd9e institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 18:19:20 - Enqueued manual scrape job_id=a270c255-9a70-402a-baa6-30f1920ae680 institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 18:20:38 - Enqueued manual scrape job_id=407cd0e7-221f-4cf9-9c16-96424a539a69 institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=False
+2026-03-23 18:23:04 - Enqueued manual scrape job_id=64d603d7-d0e0-4358-b38b-f921131b2edc institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=False
+2026-03-23 18:25:34 - Enqueued manual scrape job_id=213969b3-f8ad-434b-a208-d01bbf209e0f institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 18:30:37 - Enqueued manual scrape job_id=e192785d-c798-4ad4-aa1f-ef7f68ea7e87 institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 18:31:39 - Enqueued manual scrape job_id=083fec15-d672-4c66-8111-fe1c8636b126 institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True
+2026-03-23 18:32:26 - Enqueued manual scrape job_id=24ec9a42-5ddc-4d84-bb14-520642002610 institute='Woxsen University' 22-03-2026–23-03-2026 screenshot=True

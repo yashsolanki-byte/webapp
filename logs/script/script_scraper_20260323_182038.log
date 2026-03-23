@@ -1,0 +1,17 @@
+2026-03-23 18:20:38 - INFO - ============================================================
+2026-03-23 18:20:38 - INFO - Script_Scraper - Nopaperforms Data Scraper
+2026-03-23 18:20:38 - INFO - Log file: C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\logs\script\script_scraper_20260323_182038.log
+2026-03-23 18:20:38 - INFO - ============================================================
+2026-03-23 18:20:41 - INFO - Playwright Chromium browser is working
+2026-03-23 18:20:42 - INFO - NumExpr defaulting to 8 threads.
+2026-03-23 18:20:46 - INFO - Step 1: Logging in...
+2026-03-23 18:20:53 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-23 18:20:53 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-23 18:20:53 - INFO - Step 2: Selecting institute and source...
+2026-03-23 18:20:55 - INFO - Skipping Instance filter
+2026-03-23 18:20:55 - INFO - Skipping advanced filters (none selected)
+2026-03-23 18:20:55 - INFO - Skipping sub-filter options (none selected)
+2026-03-23 18:20:55 - INFO - Applying date filter...
+2026-03-23 18:21:03 - INFO - Date range selected: 22-03-2026 - 23-03-2026
+2026-03-23 18:21:11 - INFO - ✅ Date filter applied successfully
+2026-03-23 18:21:12 - INFO - Step 3: Configuring columns (Select All)...

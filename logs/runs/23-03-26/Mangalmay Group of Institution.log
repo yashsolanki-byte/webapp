@@ -1,0 +1,46 @@
+2026-03-23 15:18:57 - INFO - [Mangalmay Group of Institution] Open URL, login...
+2026-03-23 15:19:25 - INFO - [Mangalmay Group of Institution] Campaign Detailed View (/campaign/details)…
+2026-03-23 15:19:26 - INFO - [Mangalmay Group of Institution] Sidebar: Campaigns → Detailed View
+2026-03-23 15:19:26 - INFO - [Mangalmay Group of Institution] Clicked Detailed View (accessible name)
+2026-03-23 15:19:29 - INFO - [Mangalmay Group of Institution] Campaign Detailed View UI ready (after sidebar)
+2026-03-23 15:19:29 - INFO - [Mangalmay Group of Institution] Waiting 2500ms after Detailed View for institute list / filters to load…
+2026-03-23 15:19:32 - INFO - [Mangalmay Group of Institution] Fill institute...
+2026-03-23 15:19:34 - INFO - [Mangalmay Group of Institution] Fill source...
+2026-03-23 15:19:36 - INFO - [Mangalmay Group of Institution] Fill date range...
+2026-03-23 15:19:41 - INFO - Date range: 01-10-2025 - 23-03-2026
+2026-03-23 15:19:41 - INFO - [Mangalmay Group of Institution] Apply Paid Applications = Yes...
+2026-03-23 15:19:43 - INFO - [Mangalmay Group of Institution] Search...
+2026-03-23 15:20:01 - INFO - [Mangalmay Group of Institution] Page 1: 0 records
+2026-03-23 15:20:31 - INFO - [Mangalmay Group of Institution] Pagination error on page 2: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("a[aria-label='Next']").nth(1)
+    - locator resolved to <a _ngcontent-c13="" aria-label="Next" class="page-link" href="javascript:void(0)">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div _ngcontent-c25="" class="fixed-loader ng-tns-c25-2 ng-star-inserted">…</div> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div _ngcontent-c25="" class="fixed-loader ng-tns-c25-2 ng-star-inserted">…</div> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div _ngcontent-c25="" class="fixed-loader ng-tns-c25-2 ng-star-inserted">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+2026-03-23 15:20:32 - INFO - [Mangalmay Group of Institution] No API data – falling back to DOM scraping
+2026-03-23 15:20:40 - INFO - DOM fallback error: Page.wait_for_selector: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator("app-leadsdatatable table thead tr th") to be visible
+
+2026-03-23 15:20:40 - INFO - [Mangalmay Group of Institution] No records captured

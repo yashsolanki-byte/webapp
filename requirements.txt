@@ -1,0 +1,14 @@
+# Web app
+flask>=3.0.0
+python-dotenv>=1.0.0
+redis>=4.5.0
+# RQ 2.x imports fork-based scheduler at import time — breaks on Windows. Stay on 1.x for local dev.
+rq>=1.15.0,<2.0.0
+
+# Scraper (scrapers/batch_scraper.py – logic from NPF paid application/Batch_Scraper.py)
+playwright>=1.40.0
+pandas>=2.0.0
+
+# Upload to Drive (scrapers/upload_to_drive.py)
+google-auth>=2.0.0
+google-api-python-client>=2.0.0
