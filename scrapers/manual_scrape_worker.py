@@ -32,12 +32,11 @@ MAX_TRANSIENT_RETRIES = int(os.getenv("MANUAL_SCRAPE_TRANSIENT_RETRIES", "3"))
 
 def _manual_scrape_headless_browser() -> bool:
     """
-    If MANUAL_SCRAPE_HEADLESS is 0 / false / no / off → visible Chromium (local debugging).
-    Default (unset or 1 / true) → headless (servers / background workers).
+    Always run manual scrape in headless mode for server-safe worker execution.
     """
     raw = (os.getenv("MANUAL_SCRAPE_HEADLESS") or "1").strip().lower()
     if raw in ("0", "false", "no", "off"):
-        return False
+        logger.warning("MANUAL_SCRAPE_HEADLESS=%r ignored for RQ worker; forcing headless mode.", raw)
     return True
 
 

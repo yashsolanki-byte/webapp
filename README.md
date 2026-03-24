@@ -8,7 +8,6 @@
 |----------|---------|
 | **`app.py`** | Run the Flask server only |
 | **`run_stack.py`** | **One command:** Flask + RQ manual-scrape worker(s) (Redis must already be running) |
-| **`docker-compose.yml`** | Optional: `docker compose up -d` â†’ Redis on port 6379, then `python run_stack.py` |
 | **`project_paths.py`** | All directory paths (edit once if you move folders) |
 | **`data/`** | Sectioned JSON (see `data/README.md`): **`history/`** (scrape/upload/feedback history), **`reference/`** (Institutes, URLs, universities TSV), **`runtime/`** (scrape list, filter cache, credentials, exports) |
 | **`scrapers/`** | Scraper engines: `script_scraper.py`, `batch_scraper.py`, `scraper_runner.py`, `upload_runner.py`, `upload_to_drive.py` |
@@ -21,7 +20,7 @@ Imports use the `scrapers` package (e.g. `from scrapers.script_scraper import â€
 
 ### Quick start (manual scrape with Redis + workers)
 
-1. **Redis** listening on `127.0.0.1:6379` (Windows service, [Docker](docker-compose.yml), WSL, etc.).
+1. **Redis** listening on `127.0.0.1:6379` (Windows service, native Linux service, WSL, etc.).
 2. From this folder:
    ```bash
    python run_stack.py
@@ -29,8 +28,6 @@ Imports use the `scrapers` package (e.g. `from scrapers.script_scraper import â€
    This starts **one RQ worker** and **Flask** on `http://127.0.0.1:5000/`.  
    More workers: `python run_stack.py --workers 4`  
    Flask only: `python run_stack.py --no-worker` (run workers in other terminals).
-
-If you use Docker only for Redis: `docker compose up -d` then `python run_stack.py`.
 
 `python app.py` still works but does **not** start workers â€” manual scrape jobs would stay queued unless you run `rq worker â€¦` separately.
 

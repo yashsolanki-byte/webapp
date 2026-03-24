@@ -3,7 +3,7 @@
 Start Flask + one RQ manual-scrape worker in a single process tree.
 
 Redis must already be listening (default redis://127.0.0.1:6379/0).
-Does NOT start the Redis server — use Windows Service, Docker, WSL, etc.
+Does NOT start the Redis server — use a native service (Windows/Linux), WSL, etc.
 
 Usage (from npf-scraper-webapp):
   python run_stack.py
@@ -44,7 +44,7 @@ def _ping_redis(url: str) -> None:
         print(
             "Cannot connect to Redis at",
             url,
-            "\nStart Redis first (service, Docker, WSL, etc.), or set REDIS_URL in .env\n",
+            "\nStart Redis first (service, WSL, etc.), or set REDIS_URL in .env\n",
             f"Error: {e}",
             file=sys.stderr,
         )

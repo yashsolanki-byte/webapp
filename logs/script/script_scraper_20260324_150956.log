@@ -1,0 +1,51 @@
+2026-03-24 15:09:56 - INFO - ============================================================
+2026-03-24 15:09:56 - INFO - Script_Scraper - Nopaperforms Data Scraper
+2026-03-24 15:09:56 - INFO - Log file: C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\logs\script\script_scraper_20260324_150956.log
+2026-03-24 15:09:56 - INFO - ============================================================
+2026-03-24 15:10:14 - ERROR - Chromium browser failed: BrowserType.launch: Executable doesn't exist at C:\Users\CollegeDunia\anaconda3\envs\webapp\Lib\site-packages\playwright\driver\package\.local-browsers\chromium-1208\chrome-win64\chrome.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+2026-03-24 15:10:15 - WARNING - Playwright browsers not available, attempting installation...
+2026-03-24 15:10:15 - INFO - Installing Playwright browsers... This may take a few minutes.
+2026-03-24 15:11:14 - INFO - Playwright browsers installed successfully
+2026-03-24 15:11:20 - INFO - Step 1: Logging in...
+2026-03-24 15:11:40 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-24 15:11:40 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-24 15:11:40 - INFO - Step 2: Selecting institute and source...
+2026-03-24 15:11:42 - INFO - Skipping Instance filter
+2026-03-24 15:11:42 - INFO - Skipping advanced filters (none selected)
+2026-03-24 15:11:42 - INFO - Skipping sub-filter options (none selected)
+2026-03-24 15:11:42 - INFO - Applying date filter...
+2026-03-24 15:11:46 - INFO - Date range selected: 23-03-2026 - 24-03-2026
+2026-03-24 15:11:52 - INFO - Waiting 5s for page to load...
+2026-03-24 15:11:58 - INFO - ✅ Date filter applied successfully
+2026-03-24 15:11:59 - INFO - Capturing screenshot...
+2026-03-24 15:11:59 - INFO - ✅ Screenshot saved to C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\data\runtime\manual_jobs\15057162-6618-407a-acf2-c65b71b0c77a\screenshot.png
+2026-03-24 15:12:00 - INFO - [32mmanual_scrape[39;49;00m: [34mJob OK[39;49;00m (15057162-6618-407a-acf2-c65b71b0c77a)
+2026-03-24 15:12:00 - INFO - Result is kept for 500 seconds
+2026-03-24 15:16:00 - INFO - [32mmanual_scrape[39;49;00m: [34mscrapers.manual_scrape_worker.run_manual_scrape_worker('6124372c-e909-4876-8932-cad8210a55dd', {'login_url': 'https://publisher.nopaperforms.com/lead/details', 'email': '...)[39;49;00m (6124372c-e909-4876-8932-cad8210a55dd)
+2026-03-24 15:16:02 - INFO - Step 1: Logging in...
+2026-03-24 15:16:05 - INFO - Step 1b: Post-login (skipping Campaign Detailed View)…
+2026-03-24 15:16:05 - INFO - Manual web app: skipping ensure_campaign_detailed_view after login
+2026-03-24 15:16:05 - INFO - Step 2: Selecting institute and source...
+2026-03-24 15:16:07 - INFO - Skipping Instance filter
+2026-03-24 15:16:07 - INFO - Applying 1 advanced filter(s)...
+2026-03-24 15:16:10 - INFO - ✅ Applied 1 advanced filter(s)
+2026-03-24 15:16:10 - INFO - Applying sub-filter options...
+2026-03-24 15:16:11 - INFO - ✅ Applied sub-filter options
+2026-03-24 15:16:11 - INFO - Applying date filter...
+2026-03-24 15:16:16 - INFO - Date range selected: 23-03-2026 - 24-03-2026
+2026-03-24 15:16:21 - INFO - Waiting 5s for page to load...
+2026-03-24 15:16:26 - INFO - ✅ Date filter applied successfully
+2026-03-24 15:16:27 - INFO - Capturing screenshot...
+2026-03-24 15:16:28 - INFO - ✅ Screenshot saved to C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\data\runtime\manual_jobs\6124372c-e909-4876-8932-cad8210a55dd\screenshot.png
+2026-03-24 15:16:28 - INFO - [32mmanual_scrape[39;49;00m: [34mJob OK[39;49;00m (6124372c-e909-4876-8932-cad8210a55dd)
+2026-03-24 15:16:28 - INFO - Result is kept for 500 seconds
+2026-03-24 15:23:14 - INFO - Worker eebe2260b5684f028e657485c6a1e9a4 [PID 26616]: warm shut down requested
+2026-03-24 15:23:14 - INFO - Unsubscribing from channel rq:pubsub:eebe2260b5684f028e657485c6a1e9a4

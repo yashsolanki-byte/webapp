@@ -152,11 +152,25 @@ import asyncio
 import json
 import re
 import pandas as pd
-import tkinter as tk
-from tkinter import ttk, messagebox
 import threading
 import datetime
 from datetime import datetime as dt
+from types import SimpleNamespace
+
+try:
+    import tkinter as tk
+    from tkinter import ttk, messagebox
+    TKINTER_AVAILABLE = True
+except Exception:
+    tk = None
+    ttk = None
+    messagebox = SimpleNamespace(
+        showinfo=lambda *a, **k: None,
+        showerror=lambda *a, **k: None,
+        showwarning=lambda *a, **k: None,
+        askyesno=lambda *a, **k: False,
+    )
+    TKINTER_AVAILABLE = False
 
 # Import Playwright only if available
 if PLAYWRIGHT_AVAILABLE:
@@ -2436,6 +2450,9 @@ class ScraperApp:
 
 def main():
     # Check if we need to show installation prompt
+    if not TKINTER_AVAILABLE:
+        logger.error("tkinter is not installed. GUI mode is unavailable on this machine.")
+        return
     if not PLAYWRIGHT_AVAILABLE:
         root = tk.Tk()
         root.withdraw()  # Hide main window
@@ -2482,6 +2499,9 @@ def main():
     root.mainloop()
 
 def _stub_messagebox():
+    # Server/headless environments may not have tkinter installed.
+    if not TKINTER_AVAILABLE:
+        return
     import tkinter.messagebox as _mb
     _mb.showinfo = lambda *a, **k: None
     _mb.showerror = lambda *a, **k: None

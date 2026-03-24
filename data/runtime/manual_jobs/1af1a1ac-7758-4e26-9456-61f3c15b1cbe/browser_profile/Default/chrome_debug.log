@@ -1,0 +1,24 @@
+[0324/152723.132:INFO:CONSOLE:0] "Failed to decode downloaded font: https://publisher.nopaperforms.com/fontawesome-webfont.af7ae505a9eed503f8b8.woff2?v=4.7.0", source: https://publisher.nopaperforms.com/login (0)
+[0324/152723.132:INFO:CONSOLE:0] "OTS parsing error: invalid sfntVersion: 1008821359", source: https://publisher.nopaperforms.com/login (0)
+[0324/152726.549:INFO:CONSOLE:1] "
+      It looks like you're using the disabled attribute with a reactive form directive. If you set disabled to true
+      when you set up this control in your component class, the disabled attribute will actually be set in the DOM for
+      you. We recommend using this approach to avoid 'changed after checked' errors.
+       
+      Example: 
+      form = new FormGroup({
+        first: new FormControl({value: 'Nancy', disabled: true}, Validators.required),
+        last: new FormControl('Drew', Validators.required)
+      });
+    ", source: https://publisher.nopaperforms.com/1.e1cbdaef9538c117a152.js (1)
+[0324/152735.112:INFO:CONSOLE:1] "
+      It looks like you're using the disabled attribute with a reactive form directive. If you set disabled to true
+      when you set up this control in your component class, the disabled attribute will actually be set in the DOM for
+      you. We recommend using this approach to avoid 'changed after checked' errors.
+       
+      Example: 
+      form = new FormGroup({
+        first: new FormControl({value: 'Nancy', disabled: true}, Validators.required),
+        last: new FormControl('Drew', Validators.required)
+      });
+    ", source: https://publisher.nopaperforms.com/1.e1cbdaef9538c117a152.js (1)

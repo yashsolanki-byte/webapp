@@ -173,10 +173,4 @@ sudo ufw enable
 - **Redis elsewhere** → set `REDIS_URL` to managed Redis URL on **web + all workers**.
 - **Heavy RAM**: each Chromium ~300MB–1GB+; size the VM for `workers × browsers`.
 
-## 10. Docker (optional)
-
-Use one Compose stack: `redis`, `web` (gunicorn), `worker` scaled with `docker compose up -d --scale worker=4`. Mount a volume for `data/` and `DATA_Scraped/`. Use Playwright’s official image or install Chromium in your Dockerfile.
-
----
-
 **Summary:** Redis is a **separate service**. **Gunicorn** serves the site and **only enqueues** jobs. **RQ worker processes** (4× if you want) connect to the **same Redis** and run Playwright jobs. Nginx terminates TLS and proxies to Gunicorn.

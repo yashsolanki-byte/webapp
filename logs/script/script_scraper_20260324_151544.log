@@ -1,0 +1,25 @@
+2026-03-24 15:15:44 - INFO - ============================================================
+2026-03-24 15:15:44 - INFO - Script_Scraper - Nopaperforms Data Scraper
+2026-03-24 15:15:44 - INFO - Log file: C:\Users\CollegeDunia\NPF WEB APP\npf-scraper-webapp\logs\script\script_scraper_20260324_151544.log
+2026-03-24 15:15:44 - INFO - ============================================================
+2026-03-24 15:15:47 - INFO - Playwright Chromium browser is working
+2026-03-24 15:15:49 - INFO - 127.0.0.1 - - [24/Mar/2026 15:15:49] "POST /api/manual-scrape/filters HTTP/1.1" 200 -
+2026-03-24 15:15:57 - INFO - 127.0.0.1 - - [24/Mar/2026 15:15:57] "POST /api/manual-scrape/subfilter-options HTTP/1.1" 200 -
+2026-03-24 15:16:00 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:00] "POST /api/manual-scrape/run HTTP/1.1" 200 -
+2026-03-24 15:16:00 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:00] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:02 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:02] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:04 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:04] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:07 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:07] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:09 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:09] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:11 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:11] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:13 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:13] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:15 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:15] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:17 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:17] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:19 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:19] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:21 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:21] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:23 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:23] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:25 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:25] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:26 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:26] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:28 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:28] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:31 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:31] "GET /api/manual-scrape/status?job_id=6124372c-e909-4876-8932-cad8210a55dd HTTP/1.1" 200 -
+2026-03-24 15:16:31 - INFO - 127.0.0.1 - - [24/Mar/2026 15:16:31] "GET /api/manual-scrape/download?job_id=6124372c-e909-4876-8932-cad8210a55dd&file=screenshot.png HTTP/1.1" 200 -
